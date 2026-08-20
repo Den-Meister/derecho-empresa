@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Derecho y Empresa · Guía de Estudio · FEN-UDD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --bg:#0e1116;
+  --bg-2:#151a21;
+  --bg-3:#1b222c;
+  --card:#171d26;
+  --card-2:#1e2733;
+  --ink:#e8edf3;
+  --ink-soft:#aab6c4;
+  --ink-faint:#7c8896;
+  --line:#28323f;
+  --accent:#7aa2ff;
+  --accent-2:#9d7bff;
+  --gold:#e8c15a;
+  --gold-bg:#2a2410;
+  --blue:#5aa9e8;
+  --blue-bg:#0f2436;
+  --green:#5fd08a;
+  --green-bg:#0f2a1c;
+  --red:#f0805f;
+  --purple:#b98cff;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  line-height:1.65;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+/* iOS Safari dark-mode failsafe: keep our dark palette regardless */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0e1116;--bg-2:#151a21;--bg-3:#1b222c;--card:#171d26;--card-2:#1e2733;
+    --ink:#e8edf3;--ink-soft:#aab6c4;--ink-faint:#7c8896;--line:#28323f;
+  }
+  body{background:var(--bg);color:var(--ink);}
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#0e1116;--bg-2:#151a21;--bg-3:#1b222c;--card:#171d26;--card-2:#1e2733;
+    --ink:#e8edf3;--ink-soft:#aab6c4;--ink-faint:#7c8896;--line:#28323f;
+  }
+  body{background:var(--bg);color:var(--ink);}
+}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;line-height:1.15;font-weight:600;}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* ---------- Top bar / nav ---------- */
+header.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,17,22,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top-inner{display:flex;align-items:center;gap:16px;height:60px}
+.brand{font-family:'Fraunces';font-weight:700;font-size:19px;color:var(--ink);white-space:nowrap}
+.brand small{display:block;font-family:'Inter';font-weight:500;font-size:11px;color:var(--ink-faint);letter-spacing:.06em;text-transform:uppercase}
+nav.main{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav.main a{
+  font-size:13.5px;color:var(--ink-soft);padding:7px 11px;border-radius:9px;font-weight:500;
+}
+nav.main a:hover{background:var(--bg-3);color:var(--ink);text-decoration:none}
+.nav-toggle{display:none}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:64px 0 40px;
+  background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(122,162,255,.14), transparent 60%),
+    radial-gradient(900px 400px at 0% 0%, rgba(157,123,255,.10), transparent 55%);
+  border-bottom:1px solid var(--line);
+}
+.hero .kicker{color:var(--accent);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px}
+.hero h1{font-size:clamp(34px,6vw,54px);margin:12px 0 10px;font-weight:700}
+.hero p.lead{font-size:19px;color:var(--ink-soft);max-width:720px;margin:0 0 24px}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.chip{background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink-soft);font-weight:500}
+.chip b{color:var(--ink)}
+.exam-banner{
+  margin-top:26px;background:linear-gradient(90deg,var(--gold-bg),transparent);
+  border:1px solid #4a3f16;border-left:4px solid var(--gold);border-radius:12px;
+  padding:16px 18px;font-size:15px;color:var(--ink-soft);
+}
+.exam-banner b{color:var(--gold)}
+
+/* ---------- Section shell ---------- */
+section.block{padding:56px 0;border-bottom:1px solid var(--line)}
+.sec-tag{color:var(--accent-2);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-bottom:6px}
+section.block > .wrap > h2{font-size:clamp(26px,4vw,36px);margin:0 0 8px}
+.sec-sub{color:var(--ink-soft);font-size:17px;max-width:760px;margin:0 0 28px}
+
+/* Big idea banner */
+.bigidea{
+  background:linear-gradient(135deg,var(--card-2),var(--card));
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 24px;margin:0 0 28px;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.bigidea::before{content:"IDEA CLAVE";position:absolute;top:14px;right:18px;font-size:10.5px;letter-spacing:.14em;color:var(--ink-faint);font-weight:700}
+.bigidea h3{font-size:22px;margin:0 0 6px;color:var(--ink)}
+.bigidea p{margin:0;color:var(--ink-soft);font-size:16.5px}
+
+/* Card grid */
+.grid{display:grid;gap:16px}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;
+}
+.card h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
+.card p{margin:0;color:var(--ink-soft);font-size:15px}
+.card .num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:9px;background:var(--bg-3);color:var(--accent);font-weight:700;font-family:'Fraunces';margin-bottom:10px;font-size:16px}
+
+/* Callouts */
+.callout{border-radius:12px;padding:15px 17px;margin:18px 0;font-size:15px;border:1px solid var(--line)}
+.callout .lab{font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:5px}
+.callout p{margin:0;color:var(--ink-soft)}
+.ex{background:var(--blue-bg);border-color:#1d3a52}
+.ex .lab{color:var(--blue)}
+.trap{background:var(--gold-bg);border-color:#4a3f16}
+.trap .lab{color:var(--gold)}
+.glob{background:var(--green-bg);border-color:#194d33}
+.glob .lab{color:var(--green)}
+.outside{background:#301616;border-color:#5a2626}
+.outside .lab{color:var(--red)}
+
+/* Pyramid */
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:6px;margin:8px 0 6px}
+.pyr-row{
+  border:1px solid var(--line);border-radius:10px;padding:14px 18px;text-align:center;
+  background:var(--card-2);width:100%;transition:transform .15s ease, border-color .15s ease;cursor:default;
+}
+.pyr-row:hover{transform:translateY(-2px);border-color:var(--accent)}
+.pyr-row .lv{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:700}
+.pyr-row .tt{font-family:'Fraunces';font-size:19px;color:var(--ink);font-weight:600}
+.pyr-row .ds{font-size:13.5px;color:var(--ink-soft);margin-top:3px}
+.pyr-row.l1{width:56%;background:linear-gradient(135deg,#2a3350,#1e2733);border-color:#3a4a7a}
+.pyr-row.l2{width:72%}
+.pyr-row.l3{width:88%}
+.pyr-row.l4{width:100%}
+.pyr-arrow{color:var(--ink-faint);font-size:12px;text-align:center;margin:2px 0}
+
+/* Table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:560px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg-3);color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.03em}
+td{color:var(--ink-soft)}
+tr:last-child td{border-bottom:none}
+td b,th b{color:var(--ink)}
+
+/* Compare two-col */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+.vs .col{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.vs .col h4{margin:0 0 10px;font-size:17px}
+.vs .col.a h4{color:var(--blue)}
+.vs .col.b h4{color:var(--purple)}
+.vs ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+.vs li{margin:6px 0}
+
+/* Practice (collapsible) */
+.practice{margin:14px 0}
+.practice > summary{
+  list-style:none;cursor:pointer;background:var(--card-2);border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:10px;
+}
+.practice > summary::-webkit-details-marker{display:none}
+.practice > summary .tag{
+  font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
+  padding:3px 8px;border-radius:6px;background:var(--bg-3);color:var(--accent);
+}
+.practice > summary .tag.aplicar{color:var(--green)}
+.practice > summary .tag.comparar{color:var(--gold)}
+.practice > summary .tag.integrar{color:var(--purple)}
+.practice > summary .arw{margin-left:auto;color:var(--ink-faint);transition:transform .2s}
+.practice[open] > summary .arw{transform:rotate(90deg)}
+.practice .ans{padding:16px 18px;border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;background:var(--card);color:var(--ink-soft);font-size:15px}
+.practice .ans .qq{color:var(--ink);font-weight:600;margin:0 0 10px}
+.practice .ans .hint{color:var(--ink-faint);font-size:13.5px;font-style:italic;margin-bottom:12px}
+.practice .ans .model{border-left:3px solid var(--green);padding-left:14px;margin-top:6px}
+.practice .ans .model .ml{color:var(--green);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:4px}
+
+/* Takeaway */
+.takeaway{background:var(--bg-2);border:1px dashed var(--line);border-radius:12px;padding:16px 18px;margin-top:22px}
+.takeaway .lab{color:var(--green);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
+.takeaway p{margin:0;color:var(--ink-soft);font-size:15.5px}
+
+/* Skeleton box for structure drill */
+.skeleton{background:#10151c;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-family:'Inter';margin:14px 0}
+.skeleton .sl{color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.skeleton ol{margin:0;padding-left:20px;color:var(--ink-soft)}
+.skeleton li{margin:6px 0}
+.skeleton code{background:var(--bg-3);color:var(--gold);padding:2px 6px;border-radius:5px;font-size:13px}
+
+/* Footer */
+footer{padding:40px 0 60px;color:var(--ink-faint);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));z-index:60;transition:width .1s}
+
+/* back to top */
+#toTop{position:fixed;right:20px;bottom:20px;z-index:55;background:var(--card-2);border:1px solid var(--line);color:var(--ink);width:44px;height:44px;border-radius:12px;cursor:pointer;font-size:18px;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:var(--shadow)}
+#toTop.show{opacity:1;pointer-events:auto}
+
+@media(max-width:820px){
+  .grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}
+  .vs{grid-template-columns:1fr}
+  nav.main{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 16px 14px}
+  nav.main.open{display:flex}
+  nav.main a{padding:11px 12px;font-size:15px}
+  .nav-toggle{display:inline-flex;margin-left:auto;background:var(--card-2);border:1px solid var(--line);color:var(--ink);border-radius:10px;width:42px;height:38px;align-items:center;justify-content:center;cursor:pointer;font-size:18px}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">Derecho y Empresa<small>Guía de estudio · FEN-UDD</small></div>
+    <button class="nav-toggle" aria-label="Menú" onclick="document.querySelector('nav.main').classList.toggle('open')">☰</button>
+    <nav class="main">
+      <a href="#intro">Intro</a>
+      <a href="#estado-derecho">Estado de Derecho</a>
+      <a href="#kelsen">Kelsen ★</a>
+      <a href="#piramide">Pirámide ★</a>
+      <a href="#normas">Tipos de norma</a>
+      <a href="#diagnostico">Diagnóstico ★</a>
+      <a href="#responsabilidad">Resp. civil</a>
+      <a href="#repaso">Repaso</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">Unidad I · Aspectos Legales Fundamentales</div>
+    <h1>El mapa del sistema jurídico chileno</h1>
+    <p class="lead">Guía de estudio para el curso Derecho y Empresa. Entender el orden de las normas, saber ubicarlas y diagnosticar qué hacer frente a ellas — con la lógica de <b>riesgo y valor</b> de un profesional de negocios, no de un abogado.</p>
+    <div class="chips">
+      <span class="chip">Prof. <b>Manuel Somarriva L.</b></span>
+      <span class="chip">FEN · Ing. Comercial · <b>2° sem 2026</b></span>
+      <span class="chip">Enfoque: <b>Control 1</b></span>
+    </div>
+    <div class="exam-banner">
+      <b>★ Foco del profesor para el certamen:</b> el concepto debe estar <b>claro</b> (no de memoria). Prioridad absoluta: <b>Kelsen y su pirámide</b> (jerarquía normativa) y el <b>diagnóstico de normas</b>. Las secciones marcadas con ★ son el corazón del control.
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="block" id="intro">
+  <div class="wrap">
+    <div class="sec-tag">Marco del curso</div>
+    <h2>Para qué sirve el derecho a quien decide en una empresa</h2>
+    <p class="sec-sub">El derecho no es un obstáculo operativo: es la <b>arquitectura invisible</b> que hace posible el crecimiento sostenible de una empresa. Se estudia con dos ejes.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <span class="num">🛡</span>
+        <h4>Eje defensivo — Gestión de riesgo</h4>
+        <p>Conocer las reglas del juego evita la destrucción de valor. Ignorarlas no solo trae multas: paraliza a la directiva y hunde la reputación.</p>
+      </div>
+      <div class="card">
+        <span class="num">⚔</span>
+        <h4>Eje ofensivo — Creación de valor</h4>
+        <p>Una empresa bien estructurada legalmente (buenos contratos, sociedad clara, reglas justas) genera confianza. Y la confianza atrae inversionistas, retiene talento y cierra ventas.</p>
+      </div>
+    </div>
+
+    <div class="callout ex" style="margin-top:18px">
+      <span class="lab">📌 El criterio del curso</span>
+      <p>No busca formar abogados, sino profesionales de negocio que sepan <b>usar</b> el marco legal para proteger activos, optimizar contratos y prevenir litigios. Cada evaluación exige resolver un conflicto de negocio con la ley como herramienta — no repetir la norma de memoria.</p>
+    </div>
+
+    <div class="takeaway">
+      <span class="lab">En una frase</span>
+      <p>El derecho de la empresa es el conjunto de normas que regulan la actividad del empresario, y cruza <b>transversalmente</b> cada decisión: contratar, vender, financiarse, despedir o expandirse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ESTADO DE DERECHO -->
+<section class="block" id="estado-derecho">
+  <div class="wrap">
+    <div class="sec-tag">El principio rector</div>
+    <h2>Estado de Derecho: nadie está por encima de la ley</h2>
+
+    <div class="bigidea">
+      <h3>La idea en su núcleo</h3>
+      <p>Todas las personas, instituciones y entidades — públicas y privadas, <b>incluido el propio Estado</b> — están sometidas a leyes que se promulgan públicamente, se hacen cumplir por igual y se aplican con independencia.</p>
+    </div>
+
+    <div class="grid c2">
+      <div class="card">
+        <h4>Para la empresa</h4>
+        <p>Las reglas del juego son <b>predecibles</b>: el Estado no puede cambiarlas arbitrariamente para perjudicar a un actor específico. Esa previsibilidad es lo que permite invertir y planificar.</p>
+      </div>
+      <div class="card">
+        <h4>El riesgo de su ausencia</h4>
+        <p>Sin Estado de Derecho, cualquier funcionario podría inventar una regla que contradiga la Constitución, generando <b>caos regulatorio</b> para empresas e inversionistas.</p>
+      </div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Principios asociados</span>
+      <p>Primacía de la ley · igualdad ante la ley · rendición de cuentas · separación de poderes · seguridad jurídica · no arbitrariedad · transparencia procesal.</p>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag">Recordar</span> ¿Qué significa que el Estado también esté sometido a la ley? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Explícalo con tus palabras antes de abrir.</p>
+        <p class="hint">Piensa en quién queda incluido y por qué a una empresa le conviene.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        El Estado de Derecho somete a <b>todos</b> — personas, instituciones privadas y el propio Estado — a leyes públicas que se aplican por igual e independientemente. Que el Estado también esté sometido significa que no puede cambiar las reglas a su antojo para perjudicar a un actor; eso da <b>seguridad jurídica</b>, y sin esa previsibilidad nadie invertiría.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- KELSEN -->
+<section class="block" id="kelsen">
+  <div class="wrap">
+    <div class="sec-tag">★ Tema central del certamen</div>
+    <h2>Kelsen: por qué las normas se ordenan en niveles</h2>
+    <p class="sec-sub">Si hay un solo concepto que domines a fondo para el control, es este. No es la fecha ni la biografía: es <b>por qué</b> ordenar las normas en niveles resuelve un problema de negocio real.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <h4>Quién fue</h4>
+        <p>Hans Kelsen, jurista austríaco (1881–1973). Ordenó el derecho en niveles para que ninguna norma menor pudiera contradecir a una mayor.</p>
+      </div>
+      <div class="card">
+        <h4>Su obsesión</h4>
+        <p>Que cada norma tenga un <b>lugar fijo</b> en la jerarquía, para dar previsibilidad a quien decide en base a ella.</p>
+      </div>
+      <div class="card">
+        <h4>Su aporte a los negocios</h4>
+        <p>Diseñó un sistema <b>escalonado</b> de normas para dar seguridad jurídica. Sin ese orden, cualquier funcionario podría inventar una regla que contradiga la Constitución.</p>
+      </div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 La analogía para entenderlo</span>
+      <p>Piensa en una empresa: el <b>directorio</b> fija la política general, la <b>gerencia</b> dicta procedimientos que la desarrollan, y un <b>supervisor</b> da instrucciones del día a día. Ninguna instrucción del supervisor puede contradecir la política del directorio. Kelsen aplica exactamente esa lógica al Estado: cada nivel obedece al de arriba, y la Constitución es el "directorio".</p>
+    </div>
+
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa común</span>
+      <p>Quedarse en "Kelsen ordenó las normas en una pirámide" sin poder explicar <b>para qué sirve</b> ese orden. El punto de negocio es la <b>seguridad jurídica / previsibilidad</b>: el orden existe para que nadie invente reglas por encima de su nivel. Si puedes decir eso con tus palabras, tienes el concepto.</p>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag aplicar">Aplicar</span> ¿Por qué a un inversionista le importa la teoría de Kelsen? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Conecta la jerarquía con una decisión de inversión real.</p>
+        <p class="hint">La palabra clave empieza con "previsi…".</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Porque la jerarquía da <b>previsibilidad</b>: el inversionista sabe que ninguna circular o reglamento podrá contradecir la ley o la Constitución bajo las que decidió invertir. Sin ese orden escalonado, un funcionario podría dictar una regla arbitraria que destruya el valor de su inversión de un día para otro. Kelsen = seguridad jurídica = base para invertir.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- PIRAMIDE -->
+<section class="block" id="piramide">
+  <div class="wrap">
+    <div class="sec-tag">★ Tema central del certamen</div>
+    <h2>La Pirámide de Kelsen</h2>
+    <p class="sec-sub">Toda norma inferior debe ajustarse a la superior. Nada puede contradecir a la Constitución. Cada nivel tiene un ejemplo de negocio — apréndete <b>la lógica</b> y un ejemplo por nivel.</p>
+
+    <div class="pyramid">
+      <div class="pyr-row l1">
+        <div class="lv">Cúspide · Nivel Constitucional</div>
+        <div class="tt">Constitución + Tratados de DD.HH.</div>
+        <div class="ds">La "norma madre": nada puede contradecirla. Ej.: Art. 19 N°21 garantiza la libertad de emprender.</div>
+      </div>
+      <div class="pyr-arrow">▲ se ajusta a ▲</div>
+      <div class="pyr-row l2">
+        <div class="lv">Nivel Legal</div>
+        <div class="tt">Leyes (LOC · LQC · Ordinarias · DFL · DL)</div>
+        <div class="ds">Las grandes regulaciones del mercado: Código del Trabajo, Ley de la Renta, Ley de Sociedades Anónimas.</div>
+      </div>
+      <div class="pyr-arrow">▲ se ajusta a ▲</div>
+      <div class="pyr-row l3">
+        <div class="lv">Nivel Sub-legal · Administrativo</div>
+        <div class="tt">Reglamentos · Decretos · Circulares · Ordenanzas</div>
+        <div class="ds">Donde el Estado "opera" día a día: fija cuántos baños debe tener una empresa o cómo el SII interpreta una norma.</div>
+      </div>
+      <div class="pyr-arrow">▲ se ajusta a ▲</div>
+      <div class="pyr-row l4">
+        <div class="lv">Base · Nivel Individualizado</div>
+        <div class="tt">Sentencias judiciales · Contratos</div>
+        <div class="ds">Un contrato es "ley" para las partes (Art. 1545 CC), siempre que respete las normas superiores.</div>
+      </div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Cómo leerla</span>
+      <p>La flecha apunta hacia <b>arriba</b>: cada nivel debe <b>ajustarse</b> al superior. La fuerza de una norma la determina su <b>posición</b> en la pirámide, no quién la firmó. Un contrato manda entre dos empresas… pero si choca con una ley, pierde.</p>
+    </div>
+
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampas frecuentes en este tema</span>
+      <p>(1) Invertir la dirección: la inferior se ajusta a la superior, no al revés. (2) Olvidar que <b>los tratados de DD.HH. tienen jerarquía constitucional</b> (Art. 5 CPR, "bloque de constitucionalidad"), no legal. (3) Creer que una sentencia o contrato "es igual" a una ley: es "ley" solo <b>para las partes</b>, y siempre subordinada a lo superior.</p>
+    </div>
+
+    <div class="skeleton">
+      <div class="sl">Esqueleto para responder "explica la pirámide de Kelsen"</div>
+      <ol>
+        <li><b>Qué es y para qué</b>: sistema escalonado de normas → da <code>seguridad jurídica</code> / previsibilidad.</li>
+        <li><b>Regla base</b>: toda norma inferior se ajusta a la superior; nada contradice la Constitución.</li>
+        <li><b>Los 4 niveles</b>, de arriba abajo, <b>con un ejemplo de negocio en cada uno</b>: Constitución (Art. 19 N°21) → Ley (Ley de S.A.) → Sub-legal (circular del SII) → Individualizado (un contrato, Art. 1545 CC).</li>
+        <li><b>El cierre de negocio</b>: por eso una circular no puede pasar por encima de una ley → sé dónde impugnar.</li>
+      </ol>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag">Recordar</span> Nombra los 4 niveles de la pirámide, de arriba hacia abajo, con un ejemplo en cada uno <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Escríbelos <b>ordenados y etiquetados</b> antes de abrir. El grado premia que estén los 4, en orden.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>1. Constitucional</b> — Constitución + tratados de DD.HH. (ej.: Art. 19 N°21, libertad de emprender).<br>
+        <b>2. Legal</b> — leyes: LOC, LQC, ordinarias, DFL, DL (ej.: Ley de Sociedades Anónimas).<br>
+        <b>3. Sub-legal / administrativo</b> — reglamentos, decretos, circulares, ordenanzas (ej.: circular del SII, Decreto Supremo N°594).<br>
+        <b>4. Individualizado / base</b> — sentencias y contratos (ej.: un contrato entre dos empresas, Art. 1545 CC).</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag comparar">Comparar</span> Un contrato dice una cosa y una ley dice otra. ¿Cuál manda y por qué? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Responde usando la pirámide.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Manda la <b>ley</b>. El contrato está en la base de la pirámide (nivel individualizado): es "ley para las partes" (Art. 1545 CC) <b>solo si respeta las normas superiores</b>. Como la ley está en un nivel más alto, la cláusula contraria a la ley es inválida. La posición en la pirámide, no la voluntad de las partes, decide.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ORIGEN / CONSTITUCION -->
+<section class="block" id="constitucion">
+  <div class="wrap">
+    <div class="sec-tag">La cúspide en detalle</div>
+    <h2>La Constitución: organiza, distribuye y limita el poder</h2>
+
+    <div class="bigidea">
+      <h3>Doble función</h3>
+      <p>La Constitución <b>reconoce derechos</b> (libertad de emprender, propiedad) y <b>organiza el poder</b> (Presidente, Congreso, Tribunales) para que ninguno actúe sin control. Da el marco; la ley da el detalle.</p>
+    </div>
+
+    <div class="grid c3">
+      <div class="card">
+        <h4>Poder Constituyente</h4>
+        <p>La capacidad soberana del pueblo para decidir su estructura fundamental: cómo se organiza el Estado y qué derechos se garantizan.</p>
+      </div>
+      <div class="card">
+        <h4>Fuente de derechos</h4>
+        <p>Los principios constitucionales se desarrollan después por normas menores, sobre todo leyes: Código de Comercio, del Trabajo, Tributario.</p>
+      </div>
+      <div class="card">
+        <h4>Por qué importa</h4>
+        <p>Cualquier ley, reglamento o circular que afecte a la empresa debe poder <b>rastrearse</b> hasta un fundamento constitucional. Si no lo tiene, es <b>impugnable</b>.</p>
+      </div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Art. 19 N°21 CPR — la garantía económica clave</span>
+      <p><b>La regla:</b> libertad para desarrollar cualquier actividad económica lícita; no se necesita permiso previo para emprender. <b>Los tres límites:</b> la actividad no puede atentar contra (i) la moral, (ii) el orden público, ni (iii) la seguridad nacional. <b>Estado Empresario (inciso 2°):</b> para que el Estado actúe como empresario se exige una <b>Ley de Quórum Calificado</b>, y debe jugar con las mismas reglas — mismos impuestos y leyes laborales, sin privilegios.</p>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag aplicar">Aplicar</span> Una municipalidad quiere prohibirte abrir un negocio lícito "porque sí". ¿Qué te protege? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Nombra la norma y el razonamiento.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        El <b>Art. 19 N°21 CPR</b>: garantiza el derecho a desarrollar cualquier actividad económica <b>lícita</b> sin permiso previo. Como el negocio es lícito y no atenta contra la moral, el orden público ni la seguridad nacional, la prohibición carece de fundamento constitucional. Una ordenanza municipal (nivel sub-legal) no puede pasar por encima de una garantía constitucional → es impugnable.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- TIPOS DE NORMA -->
+<section class="block" id="normas">
+  <div class="wrap">
+    <div class="sec-tag">Nivel legal y sub-legal</div>
+    <h2>Tipos de norma y sus quórums</h2>
+    <p class="sec-sub">No hay que memorizar cada quórum como un dato suelto: la clave es entender que <b>a mayor importancia de la materia, mayor quórum se exige</b>. Aquí el mapa completo.</p>
+
+    <h3 style="font-size:20px;margin:22px 0 6px">Nivel legal (I) — del tratado a la ley orgánica</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Tipo de norma</th><th>Qué regula</th><th>Quórum</th></tr>
+        <tr><td><b>Tratados internacionales</b></td><td>Relaciones externas, fronteras, DD.HH. Los de DD.HH. tienen jerarquía constitucional (Art. 5 CPR, "bloque de constitucionalidad").</td><td>Aprobación del Congreso + ratificación presidencial</td></tr>
+        <tr><td><b>Leyes interpretativas de la Constitución</b></td><td>Aclaran o fijan el sentido de una norma constitucional confusa. Se entienden incorporadas al texto constitucional.</td><td>4/7 de diputados y senadores en ejercicio</td></tr>
+        <tr><td><b>Leyes Orgánicas Constitucionales (LOC)</b></td><td>Instituciones básicas del Estado: Banco Central, Municipalidades, sistema electoral.</td><td>4/7 de diputados y senadores en ejercicio</td></tr>
+      </table>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Nivel legal (II) — de la ley de quórum calificado al decreto ley</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Tipo de norma</th><th>Qué regula / por qué existe</th><th>Quórum o forma</th></tr>
+        <tr><td><b>Leyes de Quórum Calificado (LQC)</b></td><td>Materias sensibles: seguridad social, conductas terroristas, actividad empresarial del Estado, control de armas.</td><td>Mayoría absoluta (50% + 1) en ejercicio</td></tr>
+        <tr><td><b>Leyes Ordinarias (comunes)</b></td><td>La regla general: vida diaria y negocios (Ley de Sociedades Anónimas, Ley del Consumidor).</td><td>Mayoría simple de los presentes</td></tr>
+        <tr><td><b>Decretos con Fuerza de Ley (DFL)</b></td><td>El Presidente legisla <b>con permiso</b> del Congreso en materias técnicas (ej. plantas de personal de un ministerio).</td><td>Delegación de facultades por ley</td></tr>
+        <tr><td><b>Decretos Leyes (DL)</b></td><td>Normas del Ejecutivo <b>sin</b> autorización del Congreso, típicas de rupturas institucionales. Muchos siguen vigentes (DL 3.500 de AFP, DL 211 de Libre Competencia) con rango de ley.</td><td>Sin base parlamentaria; origen irregular</td></tr>
+      </table>
+    </div>
+
+    <div class="callout trap">
+      <span class="lab">⚠️ El par que más se confunde: DFL vs. DL</span>
+      <p><b>DFL</b> = el Presidente legisla <b>CON permiso</b> del Congreso (hay delegación). <b>DL</b> = el Ejecutivo dicta normas con rango de ley <b>SIN</b> autorización del Congreso, típico de rupturas institucionales. Truco: DF<b>L</b> tiene la "L" de <b>L</b>egal/permiso; el D<b>L</b> "solo" es un decreto que se toma la fuerza de ley sin pedirla.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Nivel sub-legal — donde el Estado opera día a día</h3>
+    <div class="grid c3">
+      <div class="card">
+        <h4>Reglamentos y Decretos Supremos</h4>
+        <p>Órdenes del Presidente para ejecutar una ley. Ej.: la ley dice "cuiden la salud de los trabajadores"; el Decreto Supremo N°594 dice cuántos baños debe haber y qué temperatura máxima se permite.</p>
+      </div>
+      <div class="card">
+        <h4>Circulares</h4>
+        <p>Instrucciones que los Jefes de Servicio (ej. el Director del SII) envían a sus funcionarios para interpretar la ley y unificar criterios. Son internas, pero en la práctica le dicen a la empresa cómo le van a cobrar impuestos.</p>
+      </div>
+      <div class="card">
+        <h4>Ordenanzas municipales</h4>
+        <p>Normas de las municipalidades que regulan la vida local: horarios de funcionamiento, patentes de alcoholes, ruidos molestos.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Nivel base — la "ley privada" de la empresa</h3>
+    <div class="grid c2">
+      <div class="card">
+        <h4>Sentencias judiciales</h4>
+        <p>La resolución de un juez es obligatoria para las partes del juicio. <b>Art. 3 CC (efecto relativo):</b> "las sentencias no tienen fuerza obligatoria sino respecto de las causas en que actualmente se pronunciaren". No crea jurisprudencia general obligatoria (como el <i>Common Law</i>), pero sí un mandato vinculante para las partes de ese juicio.</p>
+      </div>
+      <div class="card">
+        <h4>Contratos (Art. 1545 CC)</h4>
+        <p>"Todo contrato legalmente celebrado es una ley para los contratantes." El Estado da libertad para crear "leyes" privadas (precios, plazos, multas), <b>siempre que no vayan contra normas superiores</b>. Una vez firmado, no se puede desistir unilateralmente — por eso la redacción contractual es la primera línea de defensa.</p>
+      </div>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag comparar">Comparar</span> ¿Por qué una LQC exige más votos que una ley ordinaria? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Piensa en la lógica detrás del quórum.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Porque regula <b>materias más sensibles</b> (seguridad social, actividad empresarial del Estado, control de armas). A mayor importancia o riesgo de la materia, el sistema exige un <b>acuerdo político más amplio</b> para cambiarla — mayoría absoluta en la LQC vs. mayoría simple de los presentes en la ordinaria. El quórum es un "candado" proporcional a lo sensible del tema.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- DIAGNOSTICO -->
+<section class="block" id="diagnostico">
+  <div class="wrap">
+    <div class="sec-tag">★ Tema central del certamen · Herramienta práctica</div>
+    <h2>El diagnóstico rápido de una norma</h2>
+    <p class="sec-sub">Frente a cualquier norma nueva (una circular del SII, un reglamento sanitario, una ordenanza), un profesional de negocios no necesita saberse el Código de memoria: necesita hacerse <b>4 preguntas en orden</b>. Domina esta secuencia — es carne de certamen.</p>
+
+    <div class="grid c2">
+      <div class="card">
+        <span class="num">1</span>
+        <h4>¿Qué norma es?</h4>
+        <p>Ubícala en la Pirámide de Kelsen: ¿ley, reglamento, circular o contrato? Su <b>nivel</b> determina su fuerza.</p>
+      </div>
+      <div class="card">
+        <span class="num">2</span>
+        <h4>¿Quién la dictó y con qué facultad?</h4>
+        <p>Verifica si el órgano que la emitió tenía <b>competencia</b> para hacerlo (Congreso, Presidente, un Jefe de Servicio como el Director del SII).</p>
+      </div>
+      <div class="card">
+        <span class="num">3</span>
+        <h4>¿Puedo impugnarla?</h4>
+        <p>Si es de rango inferior y contradice una superior, hay herramientas: <b>recurso de protección</b>, reclamación tributaria o nulidad de derecho público.</p>
+      </div>
+      <div class="card">
+        <span class="num">4</span>
+        <h4>¿Qué pasa si la ignoro?</h4>
+        <p>Dimensiona el riesgo real: ¿multa administrativa, nulidad del acto, delito, o solo una diferencia de interpretación discutible?</p>
+      </div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Por qué el orden importa</span>
+      <p>Las preguntas van encadenadas: primero <b>ubicas</b> la norma (1), lo que te dice contra qué se puede medir; luego revisas si <b>quien la dictó podía</b> (2); recién ahí evalúas si <b>choca con algo superior y se impugna</b> (3); y cierras midiendo el <b>riesgo de negocio</b> (4). Saltarse el orden hace perder el hilo del razonamiento.</p>
+    </div>
+
+    <div class="skeleton">
+      <div class="sl">Esqueleto para responder un caso de diagnóstico</div>
+      <ol>
+        <li><b>1. Qué es</b>: "Es una <code>[circular / reglamento / ley…]</code>, ubicada en el nivel <code>[sub-legal / legal…]</code> de la pirámide."</li>
+        <li><b>2. Quién y con qué facultad</b>: "La dictó <code>[órgano]</code>; ¿tenía competencia? <code>[sí/no]</code>."</li>
+        <li><b>3. Impugnable</b>: "¿Contradice una norma superior? Si sí → <code>[recurso de protección / reclamación / nulidad de derecho público]</code>."</li>
+        <li><b>4. Riesgo si la ignoro</b>: "<code>[multa / nulidad / delito / discusión interpretativa]</code>."</li>
+      </ol>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> Caso: el SII emite una circular que, según tu empresa, cobra un impuesto que la ley no contempla. Diagnostica. <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Aplica las 4 preguntas, en orden y etiquetadas, antes de abrir.</p>
+        <p class="hint">Una circular es nivel sub-legal; la ley está más arriba.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>1. Qué es:</b> una <b>circular</b>, nivel <b>sub-legal</b> de la pirámide (instrucción interna del Director del SII para interpretar la ley).<br>
+        <b>2. Quién / facultad:</b> la dictó el Director del SII, un Jefe de Servicio; puede interpretar la ley y unificar criterios, <b>pero no crear un impuesto nuevo</b> — eso es reserva legal.<br>
+        <b>3. Impugnable:</b> sí. Al cobrar algo que la ley no contempla, contradice una norma superior; procede una <b>reclamación tributaria</b> (o nulidad de derecho público). La circular no puede pasar por encima de la ley.<br>
+        <b>4. Riesgo si la ignoro:</b> la empresa arriesga una diferencia de impuestos y eventual fiscalización, pero tiene base sólida para discutirla porque la circular excede su nivel.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- RESPONSABILIDAD -->
+<section class="block" id="responsabilidad">
+  <div class="wrap">
+    <div class="sec-tag">Riesgo civil en los negocios</div>
+    <h2>Responsabilidad contractual vs. extracontractual</h2>
+    <p class="sec-sub">Cuando una empresa causa un daño, el derecho civil ofrece <b>dos caminos</b> según exista o no un contrato previo entre las partes. Cambian qué se prueba, el plazo y si una cláusula protege.</p>
+
+    <div class="vs">
+      <div class="col a">
+        <h4>Contractual</h4>
+        <ul>
+          <li><b>Origen:</b> incumplir una obligación pactada en un contrato (no entregar a tiempo, entregar defectuoso).</li>
+          <li><b>Prueba:</b> el acreedor <b>no</b> prueba la culpa — se <b>presume</b> por el solo incumplimiento.</li>
+          <li><b>Prescripción:</b> <b>5 años</b>.</li>
+          <li><b>Relación previa:</b> sí, hay contrato entre las partes.</li>
+        </ul>
+      </div>
+      <div class="col b">
+        <h4>Extracontractual</h4>
+        <ul>
+          <li><b>Origen:</b> el deber general de no dañar a otro, <b>sin</b> contrato previo (un accidente, un producto que daña a un tercero).</li>
+          <li><b>Prueba:</b> la víctima <b>debe probar</b> el dolo o la culpa del autor.</li>
+          <li><b>Prescripción:</b> <b>4 años</b>.</li>
+          <li><b>Relación previa:</b> no, son terceros.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Ejemplo de negocio</span>
+      <p>Un proveedor que entrega tarde a un cliente responde <b>contractualmente</b> ante ese cliente. Si el mismo retraso provoca que su camión choque a un tercero en la ruta, la empresa responde <b>extracontractualmente</b> ante ese tercero — bajo reglas distintas.</p>
+    </div>
+
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa clave</span>
+      <p>Una <b>cláusula de limitación de responsabilidad</b> solo protege frente a la <b>contraparte del contrato</b>. <b>Nunca</b> protege a la empresa frente a un tercero ajeno al contrato — ahí se responde por vía extracontractual, con sus propias reglas.</p>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag comparar">Comparar</span> ¿Quién prueba la culpa en cada régimen y en cuánto tiempo prescribe? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Da los cuatro datos: quién prueba (×2) y plazo (×2).</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>Contractual:</b> la culpa se <b>presume</b> por el solo incumplimiento (el acreedor no la prueba); prescribe en <b>5 años</b>.<br>
+        <b>Extracontractual:</b> la <b>víctima debe probar</b> el dolo o la culpa del autor; prescribe en <b>4 años</b>.<br>
+        Truco de memoria: en el contrato ya había un compromiso, así que la ley es más dura con quien incumple (presume su culpa) y da más plazo.</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> ¿Qué 4 preguntas usas para saber qué régimen de responsabilidad enfrenta la empresa? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Es una herramienta paralela a la del diagnóstico de normas.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>1.</b> ¿Existe un contrato entre las partes? (define contractual vs. extracontractual).<br>
+        <b>2.</b> ¿Quién debe probar la culpa? (se presume en la contractual; la víctima la prueba en la extracontractual).<br>
+        <b>3.</b> ¿Cuál es el plazo para demandar? (5 años contractual / 4 años extracontractual).<br>
+        <b>4.</b> ¿Protege una cláusula de limitación de responsabilidad? (solo frente a la contraparte; nunca frente a un tercero).</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- REPASO -->
+<section class="block" id="repaso">
+  <div class="wrap">
+    <div class="sec-tag">Cierre</div>
+    <h2>Repaso relámpago</h2>
+    <p class="sec-sub">Si puedes responder estas de corrido y con tus palabras, tienes la Unidad I lista para el control. Lo marcado con ★ es lo que el profesor priorizó.</p>
+
+    <div class="grid c2">
+      <div class="card"><h4>★ Kelsen en una frase</h4><p>Sistema escalonado de normas donde cada inferior se ajusta a la superior, para dar <b>seguridad jurídica</b>.</p></div>
+      <div class="card"><h4>★ Los 4 niveles</h4><p>Constitución → Ley → Sub-legal → Individualizado (sentencias/contratos), cada uno con un ejemplo de negocio.</p></div>
+      <div class="card"><h4>★ Diagnóstico de una norma</h4><p>(1) Qué es · (2) Quién la dictó y con qué facultad · (3) ¿Se impugna? · (4) Riesgo si la ignoro.</p></div>
+      <div class="card"><h4>Estado de Derecho</h4><p>Todos, incluido el Estado, bajo la ley → reglas predecibles → base para invertir.</p></div>
+      <div class="card"><h4>Art. 19 N°21</h4><p>Libertad de emprender lícitamente; límites: moral, orden público, seguridad nacional; Estado empresario vía LQC.</p></div>
+      <div class="card"><h4>Resp. contractual vs. extracontractual</h4><p>Contrato → culpa presumida, 5 años. Sin contrato → víctima prueba, 4 años. Cláusula solo protege entre las partes.</p></div>
+    </div>
+
+    <div class="glob callout" style="margin-top:24px">
+      <span class="lab">🌍 Cómo estudiar esto (según el profesor)</span>
+      <p>El certamen no premia recitar de memoria, sino tener el <b>concepto claro</b>. Para cada tarjeta de arriba: ciérrala, explícala en voz alta con tus palabras, y solo si te trabas, vuelve a abrir la sección. Prioriza Kelsen, la pirámide y el diagnóstico — son el corazón del control.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Derecho y Empresa · Unidad I · Guía de estudio (FEN-UDD, 2° sem 2026)</span>
+    <span>Contenido basado en el material del curso. Se irá ampliando con las próximas unidades.</span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Progress bar + back-to-top
+const prog=document.getElementById('progress');
+const toTop=document.getElementById('toTop');
+function onScroll(){
+  const h=document.documentElement;
+  const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
+  prog.style.width=(scrolled*100)+'%';
+  toTop.classList.toggle('show', h.scrollTop>400);
+}
+document.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+// Close mobile nav on link click
+document.querySelectorAll('nav.main a').forEach(a=>a.addEventListener('click',()=>{
+  document.querySelector('nav.main').classList.remove('open');
+}));
+</script>
+</body>
+</html>
