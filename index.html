@@ -225,7 +225,58 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 #toTop{position:fixed;right:20px;bottom:20px;z-index:55;background:var(--card-2);border:1px solid var(--line);color:var(--ink);width:44px;height:44px;border-radius:12px;cursor:pointer;font-size:18px;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:var(--shadow)}
 #toTop.show{opacity:1;pointer-events:auto}
 
+/* ---------- Tabs ---------- */
+.tabs{margin-left:auto;display:flex;gap:6px}
+.tab{
+  font-family:'Inter';font-size:14px;font-weight:600;color:var(--ink-soft);
+  background:transparent;border:1px solid transparent;border-radius:10px;padding:8px 14px;cursor:pointer;
+}
+.tab:hover{background:var(--bg-3);color:var(--ink)}
+.tab.active{background:var(--card-2);border-color:var(--line);color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+.quizlet-link{
+  display:inline-flex;align-items:center;gap:6px;margin-left:10px;white-space:nowrap;
+  font-size:13.5px;font-weight:600;color:var(--bg);background:var(--gold);
+  border-radius:10px;padding:8px 13px;text-decoration:none;
+}
+.quizlet-link:hover{filter:brightness(1.08);text-decoration:none}
+.quizlet-link span{font-size:11px}
+.tabpane{display:none}
+.tabpane.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* Sub-nav (within Contenido) */
+.subnav{position:sticky;top:60px;z-index:40;background:rgba(21,26,33,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.subnav-inner{display:flex;gap:2px;overflow-x:auto;padding:8px 22px;-webkit-overflow-scrolling:touch}
+.subnav a{white-space:nowrap;font-size:13px;color:var(--ink-soft);padding:6px 10px;border-radius:8px;font-weight:500}
+.subnav a:hover{background:var(--bg-3);color:var(--ink);text-decoration:none}
+
+/* Alt hero tints for other tabs */
+.hero-sim{background:radial-gradient(1000px 460px at 80% -10%,rgba(232,193,90,.12),transparent 60%),radial-gradient(800px 380px at 0% 0%,rgba(95,208,138,.08),transparent 55%)}
+.hero-last{background:radial-gradient(1000px 460px at 80% -10%,rgba(157,123,255,.16),transparent 60%),radial-gradient(800px 380px at 0% 0%,rgba(122,162,255,.10),transparent 55%)}
+
+/* Simulacro question card */
+.simq{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px;margin:0 0 18px;box-shadow:var(--shadow)}
+.simq-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.simq-head .qnum{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--bg-3);color:var(--accent);font-family:'Fraunces';font-weight:700;font-size:18px}
+.simq-head .qmeta{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);font-weight:700}
+.simq .qtext{font-size:17px;color:var(--ink);margin:0 0 14px}
+.practice.sim > summary{background:var(--bg-3)}
+.pauta{margin-top:14px;border-left:3px solid var(--accent);padding-left:14px}
+.pauta .pl{color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+.pauta ul{margin:0;padding-left:18px}
+.pauta li{margin:5px 0;color:var(--ink-soft);font-size:14.5px}
+
+/* Last Read headings */
+.lr-h{font-size:20px;margin:28px 0 12px;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:6px}
+
 @media(max-width:820px){
+  .brand small{display:none}
+  .top-inner{flex-wrap:wrap;height:auto;padding:8px 0;gap:8px}
+  .tabs{margin-left:0}
+  .quizlet-link{margin-left:auto;padding:7px 10px;font-size:12px}
+  .subnav{top:auto}
+  .tab{padding:7px 10px;font-size:13px}
+  .subnav{top:52px}
   .grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}
   .vs{grid-template-columns:1fr}
   nav.main{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg-2);border-bottom:1px solid var(--line);flex-direction:column;padding:8px 16px 14px}
@@ -241,36 +292,52 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 <header class="top">
   <div class="wrap top-inner">
     <div class="brand">Derecho y Empresa<small>Guía de estudio · FEN-UDD</small></div>
-    <button class="nav-toggle" aria-label="Menú" onclick="document.querySelector('nav.main').classList.toggle('open')">☰</button>
-    <nav class="main">
-      <a href="#intro">Intro</a>
-      <a href="#estado-derecho">Estado de Derecho</a>
-      <a href="#kelsen">Kelsen ★</a>
-      <a href="#piramide">Pirámide ★</a>
-      <a href="#normas">Tipos de norma</a>
-      <a href="#diagnostico">Diagnóstico ★</a>
-      <a href="#responsabilidad">Resp. civil</a>
-      <a href="#repaso">Repaso</a>
-    </nav>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="contenido">📖 Contenido</button>
+      <button class="tab" data-tab="simulacro">✍️ Simulacro</button>
+      <button class="tab" data-tab="lastread">⚡ Last Read</button>
+    </div>
+    <a class="quizlet-link" href="https://quizlet.com/cl/1204574252/derecho-y-empresa-certamen-1-flash-cards/?i=5fmega&amp;x=1qqt" target="_blank" rel="noopener">🗂️ Quizlet <span>↗</span></a>
   </div>
 </header>
+
+<!-- ============ TAB: CONTENIDO ============ -->
+<div id="tab-contenido" class="tabpane active">
 
 <!-- HERO -->
 <div class="hero">
   <div class="wrap">
-    <div class="kicker">Unidad I · Aspectos Legales Fundamentales</div>
-    <h1>El mapa del sistema jurídico chileno</h1>
-    <p class="lead">Guía de estudio para el curso Derecho y Empresa. Entender el orden de las normas, saber ubicarlas y diagnosticar qué hacer frente a ellas — con la lógica de <b>riesgo y valor</b> de un profesional de negocios, no de un abogado.</p>
+    <div class="kicker">Certamen 1 · Unidades I y II</div>
+    <h1>Del sistema jurídico al vehículo societario</h1>
+    <p class="lead">Guía de estudio para el curso Derecho y Empresa. Cubre el orden de las normas y su diagnóstico (Unidad I) y la elección de la estructura jurídica del negocio (inicio de Unidad II) — con la lógica de <b>riesgo y valor</b> de un profesional de negocios, no de un abogado.</p>
     <div class="chips">
-      <span class="chip">Prof. <b>Manuel Somarriva L.</b></span>
       <span class="chip">FEN · Ing. Comercial · <b>2° sem 2026</b></span>
-      <span class="chip">Enfoque: <b>Control 1</b></span>
+      <span class="chip">Certamen 1 · <b>escrito individual</b></span>
+      <span class="chip">Unidades <b>I y II</b></span>
     </div>
     <div class="exam-banner">
-      <b>★ Foco del profesor para el certamen:</b> el concepto debe estar <b>claro</b> (no de memoria). Prioridad absoluta: <b>Kelsen y su pirámide</b> (jerarquía normativa) y el <b>diagnóstico de normas</b>. Las secciones marcadas con ★ son el corazón del control.
+      <b>★ Foco declarado del certamen:</b> el concepto debe estar <b>claro</b> (no memorizado). Prioridad: <b>Kelsen y su pirámide</b>, el <b>diagnóstico de normas</b>, y —como excepción de memoria exacta— los <b>quórums por tipo de ley</b>. Las secciones marcadas con ★ son el núcleo.
     </div>
   </div>
 </div>
+
+<nav class="subnav">
+  <div class="wrap subnav-inner">
+    <a href="#intro">Intro</a>
+    <a href="#estado-derecho">Estado de Derecho</a>
+    <a href="#kelsen">Kelsen ★</a>
+    <a href="#piramide">Pirámide ★</a>
+    <a href="#constitucion">Constitución</a>
+    <a href="#normas">Tipos de norma</a>
+    <a href="#diagnostico">Diagnóstico ★</a>
+    <a href="#responsabilidad">Resp. civil</a>
+    <a href="#etica">Ética &amp; Compliance</a>
+    <a href="#conflictos">Conflictos</a>
+    <a href="#comercio">Acto de comercio</a>
+    <a href="#sociedades">Sociedades &amp; EIRL</a>
+    <a href="#repaso">Repaso</a>
+  </div>
+</nav>
 
 <!-- INTRO -->
 <section class="block" id="intro">
@@ -700,6 +767,339 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
   </div>
 </section>
 
+<!-- ETICA / COMPLIANCE PENAL -->
+<section class="block" id="etica">
+  <div class="wrap">
+    <div class="sec-tag">Unidad I · Ética, compliance penal y delitos económicos</div>
+    <h2>Dónde termina la gestión legítima y empieza el delito</h2>
+    <p class="sec-sub">Una empresa influye en decisiones públicas y toma decisiones internas todos los días. La pregunta legal es <b>dónde está la línea</b>: qué es un derecho regulado, qué es delito, y qué escudo tiene la empresa.</p>
+
+    <div class="bigidea">
+      <h3>La idea en su núcleo</h3>
+      <p>El lobby es un <b>derecho regulado</b>, no un delito. Pero cruzar la línea (soborno, influencia indebida) puede hacer responder penalmente a la <b>propia empresa</b> con su patrimonio. El único escudo real es un <b>Modelo de Prevención de Delitos</b> serio.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:22px 0 6px">Lobby (Ley 20.730): un derecho regulado</h3>
+    <p class="sec-sub" style="margin-bottom:16px">Gestión de intereses particulares ante autoridades públicas para aportar puntos de vista técnicos en las decisiones. No es delito: es un derecho, siempre que sea <b>transparente</b>.</p>
+    <div class="grid c3">
+      <div class="card">
+        <span class="num">1</span>
+        <h4>Sujetos</h4>
+        <p>Un <b>sujeto activo</b> (quien representa el interés) y un <b>sujeto pasivo</b> (la autoridad con poder de decisión).</p>
+      </div>
+      <div class="card">
+        <span class="num">2</span>
+        <h4>Intención de influir</h4>
+        <p>La conversación busca incidir en una <b>decisión pública concreta</b> (un proyecto de ley, un permiso, una licitación).</p>
+      </div>
+      <div class="card">
+        <span class="num">3</span>
+        <h4>Especificidad</h4>
+        <p>Versa sobre un <b>asunto identificable</b>, no sobre temas genéricos.</p>
+      </div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 El requisito que lo hace legítimo</span>
+      <p><b>Transparencia:</b> registro en el portal <b>Infolobby</b> y acta de la reunión. Sin registro, la conducta puede reunir los tres elementos del lobby y aun así exponer a la empresa a riesgo legal y reputacional por incumplir el deber de publicidad.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">La línea: lobby legítimo vs. cohecho vs. tráfico de influencias</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Concepto</th><th>El hecho</th><th>La "red flag"</th><th>Riesgo penal</th></tr>
+        <tr><td><b>Lobby legítimo</b></td><td>Reunión formal registrada para exponer una postura técnica.</td><td>Todo es público y por canales oficiales.</td><td>Ninguno (cumplimiento normativo).</td></tr>
+        <tr><td><b>Cohecho (soborno)</b></td><td>Entregar un beneficio económico a cambio de una decisión favorable.</td><td>"Platas de por medio". Intercambio de favores.</td><td>Cárcel + multas + disolución de la persona jurídica.</td></tr>
+        <tr><td><b>Tráfico de influencias</b></td><td>Usar una posición o relación personal para obtener una ventaja indebida.</td><td>"El pituto / el cuñado". Influencia indebida sobre el funcionario.</td><td>Cárcel + inhabilidad.</td></tr>
+      </table>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa común</span>
+      <p>Confundir los tres. Truco: <b>lobby</b> = influencia <b>transparente y registrada</b>; <b>cohecho</b> = hay <b>plata/beneficio</b> de por medio a cambio de una decisión; <b>tráfico de influencias</b> = se usa una <b>relación o cargo</b> ("el pituto"), sin necesariamente pagar. La diferencia está en <i>cómo</i> se busca influir.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Responsabilidad penal de la empresa: Leyes 20.393 y 21.595</h3>
+    <div class="grid c2">
+      <div class="card">
+        <h4>Ley 20.393 — el fin de la impunidad corporativa</h4>
+        <p>Antes se decía que "las sociedades no pueden delinquir". Chile rompió ese principio siguiendo la tendencia <b>OCDE</b>. Establece responsabilidad penal de la <b>persona jurídica</b> por delitos cometidos en su beneficio por ejecutivos o representantes (cohecho, lavado de activos, financiamiento del terrorismo, y hoy delitos económicos). La empresa responde con su <b>propio patrimonio</b>: multas altas, prohibición de contratar con el Estado y, en casos graves, <b>disolución</b>.</p>
+      </div>
+      <div class="card">
+        <h4>Ley 21.595 — el nuevo radar de delitos económicos (2024)</h4>
+        <p>Amplió el <b>catálogo</b> de delitos por los que la empresa —no solo quien firmó— puede responder: administración desleal, uso de información privilegiada, corrupción entre particulares, entre otros. Bandera roja: decisiones <b>sin respaldo</b>, en beneficio de un tercero relacionado o <b>escondidas del directorio</b>.</p>
+      </div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 La lógica de fondo (tendencia OCDE)</span>
+      <p>"Si la empresa se autorregula, el Estado la trata mejor cuando algo sale mal." La ley premia a la empresa que se toma en serio la prevención — y castiga a la que mira para el lado.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">El único escudo: Modelo de Prevención de Delitos (MPD)</h3>
+    <p class="sec-sub" style="margin-bottom:16px">Frente a las Leyes 20.393 y 21.595, la empresa no puede alegar ignorancia: debe <b>demostrar</b> que adoptó medidas serias para evitar el delito. Un MPD certificado y efectivamente implementado es lo único que permite acreditar ante un juez que hizo lo razonable.</p>
+    <div class="grid c4">
+      <div class="card"><span class="num">1</span><h4>Encargado de Prevención</h4><p>Designado con <b>autonomía y presupuesto</b> directo; reporta a la administración pero actúa con independencia funcional.</p></div>
+      <div class="card"><span class="num">2</span><h4>Matriz de riesgos</h4><p>Identifica en qué procesos (ventas, compras, relación con autoridades) es más probable que ocurra cohecho o lavado.</p></div>
+      <div class="card"><span class="num">3</span><h4>Canales de denuncia + cultura</h4><p>Mecanismos internos para reportar irregularidades y capacitación constante: pasar de reaccionar a <b>prevenir</b>.</p></div>
+      <div class="card"><span class="num">4</span><h4>Efecto legal</h4><p>Un MPD certificado y realmente implementado es el "escudo" que acredita ante el juez que la empresa hizo lo razonable.</p></div>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag comparar">Comparar</span> Diferencia entre lobby, cohecho y tráfico de influencias <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Da la diferencia central de cada uno antes de abrir.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>Lobby legítimo:</b> influir de forma <b>transparente y registrada</b> (Infolobby + acta) para aportar una postura técnica; sin riesgo penal.<br>
+        <b>Cohecho:</b> entregar un <b>beneficio económico</b> a cambio de una decisión favorable ("platas de por medio"); cárcel, multas y hasta disolución de la persona jurídica.<br>
+        <b>Tráfico de influencias:</b> usar una <b>posición o relación personal</b> ("el pituto") para una ventaja indebida; cárcel e inhabilidad.<br>
+        Clave: el lobby es lícito por la transparencia; los otros dos son delitos por el medio usado para influir.</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag aplicar">Aplicar</span> ¿Por qué a la empresa le conviene tener un MPD aunque nadie la obligue caso a caso? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Conecta el MPD con la responsabilidad de la persona jurídica.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Porque bajo las Leyes 20.393 y 21.595 la empresa responde penalmente con su <b>propio patrimonio</b> (multas, prohibición de contratar con el Estado, disolución). El MPD es el <b>único escudo</b> que le permite acreditar ante un juez que hizo lo razonable para evitar el delito. Sin él, no puede alegar ignorancia; con él, demuestra autorregulación y el Estado la trata mejor.</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> Caso: reunión no registrada con una Senadora + entrega de vino de $200.000 <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Analiza el caso "El vino y la Senadora" (lobby, delito y escudo) antes de abrir.</p>
+        <p class="hint">Aplica los 3 elementos del lobby, ubica el delito, y nombra el escudo.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>a) ¿Lobby legítimo?</b> Reúne elementos del lobby: hay <b>sujetos</b> (gerente / senadora con poder de decisión), <b>intención de influir</b> (proyecto que sube impuestos al sector) y <b>especificidad</b> (un proyecto concreto). Pero le falta lo esencial: <b>transparencia</b> — no hubo registro en Infolobby ni acta. Sin eso, no es lobby legítimo.<br>
+        <b>b) ¿Qué delito?</b> Entregar las botellas a cambio de una decisión favorable apunta a <b>cohecho</b>. Bajo la <b>Ley 20.393</b>, la empresa pesquera puede responder penalmente con su propio patrimonio (multas, prohibición de contratar con el Estado, incluso disolución).<br>
+        <b>c) ¿Único escudo?</b> Un <b>Modelo de Prevención de Delitos</b> con Encargado de Prevención autónomo, matriz de riesgos, canales de denuncia + cultura de integridad, y efectivamente implementado/certificado.</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> Caso: conversación "casual" con un Senador en un matrimonio, sin registro <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Analiza el caso "El matrimonio y el Senador" antes de abrir.</p>
+        <p class="hint">Aplica los 3 elementos del lobby; luego evalúa qué pasa si se ofrece financiar la campaña.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>a) ¿Debió registrarse como lobby?</b> Sí. Se cumplen los tres elementos: <b>sujetos</b> (gerente / senador con poder de decisión), <b>intención de influir</b> (que vote contra el impuesto) y <b>especificidad</b> (un proyecto concreto sobre el sector). Que sea "casual" en un matrimonio no lo saca de la Ley 20.730: al buscar incidir en una decisión pública concreta, debió transparentarse (Infolobby + acta).<br>
+        <b>b) ¿Riesgo si ofrece "financiar la campaña" a cambio del voto?</b> Deja de ser lobby y entra en <b>cohecho</b> (beneficio a cambio de una decisión favorable). Bajo la <b>Ley 20.393</b>, la empresa responde penalmente con su patrimonio: multas, prohibición de contratar con el Estado, incluso disolución.<br>
+        <b>c) Dos preguntas para decidir en el momento si "se encienden las alarmas":</b> (1) ¿Estoy buscando influir en una decisión pública concreta? → si sí, hay que transparentar. (2) ¿Hay algún beneficio, pago o favor de por medio (o insinuado)? → si sí, se cruza a terreno de delito.</div>
+      </div>
+    </details>
+
+    <div class="takeaway">
+      <span class="lab">En una frase</span>
+      <p>Influir es legítimo si es <b>transparente</b>; si media plata o "pituto", es delito; y frente a ese riesgo penal de la empresa, el <b>MPD</b> es el único escudo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RESOLUCION DE CONFLICTOS -->
+<section class="block" id="conflictos">
+  <div class="wrap">
+    <div class="sec-tag">Unidad I · Resolución de conflictos comerciales</div>
+    <h2>Cuando el contrato se rompe: ¿qué camino conviene al negocio?</h2>
+    <p class="sec-sub">Cuando un conflicto comercial ya existe, la empresa puede elegir —o mejor, <b>pactar de antemano</b>— cómo resolverlo. La decisión es de negocio, no solo legal.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Mecanismo</th><th>Cómo funciona</th><th>Ventaja / riesgo</th></tr>
+        <tr><td><b>Litigio ordinario</b></td><td>Se tramita ante los tribunales de justicia.</td><td>Público, generalmente <b>lento</b> (puede tomar años) y apelable ante tribunales superiores.</td></tr>
+        <tr><td><b>Mediación</b></td><td>Un tercero neutral <b>facilita</b> un acuerdo entre las partes, sin imponer solución.</td><td>Rápida y de bajo costo, pero solo funciona si <b>ambas partes</b> quieren negociar.</td></tr>
+        <tr><td><b>Arbitraje comercial</b></td><td>Un árbitro privado (ej. <b>CAM Santiago</b>) resuelve con el mismo efecto que una sentencia judicial.</td><td>Confidencial, más rápido que un juicio; su fallo (<b>laudo</b>) normalmente no admite apelación.</td></tr>
+      </table>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Punto que suele confundirse</span>
+      <p>En la <b>mediación</b> el tercero <b>no decide</b>: solo ayuda a que las partes acuerden. En el <b>arbitraje</b> el árbitro <b>sí decide</b> (dicta un laudo con fuerza de sentencia). No son lo mismo por ser "privados".</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Guía de decisión: ¿litigio o arbitraje?</h3>
+    <div class="grid c4">
+      <div class="card"><span class="num">1</span><h4>¿Cuánto valor está en juego?</h4><p>Montos altos y alta complejidad técnica → <b>arbitraje</b>: se elige un árbitro experto en la materia.</p></div>
+      <div class="card"><span class="num">2</span><h4>¿Necesito confidencialidad?</h4><p>Si el conflicto expone reputación o información sensible → arbitraje, <b>privado</b> por naturaleza.</p></div>
+      <div class="card"><span class="num">3</span><h4>¿Necesito solución urgente?</h4><p>Si el negocio no puede esperar años → <b>arbitraje o mediación</b>, más rápidos que el litigio.</p></div>
+      <div class="card"><span class="num">4</span><h4>¿La relación debe continuar?</h4><p>Si se seguirá trabajando con la contraparte → partir por la <b>mediación</b> antes de escalar a algo adversarial.</p></div>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Enfoque financiero — la ley es una variable financiera</span>
+      <p>"Ignorar el entorno legal implica calcular mal el valor de la empresa y apostar su patrimonio." El riesgo regulatorio <b>aumenta la tasa de descuento</b> exigida a un proyecto (impacta el VAN): la ley no es un obstáculo administrativo, es una variable financiera. El <b>compliance</b> actúa como el <b>sistema inmunológico</b> de la organización: detecta y previene riesgos antes de que se vuelvan graves.</p>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag comparar">Comparar</span> Mediación vs. arbitraje vs. litigio: ¿quién decide y qué se gana? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Di quién resuelve y la ventaja clave de cada uno.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>Litigio:</b> decide un <b>tribunal</b>; es público, lento y apelable.<br>
+        <b>Mediación:</b> <b>nadie impone</b> — un tercero neutral facilita que las partes acuerden; rápida y barata, pero requiere voluntad de ambas.<br>
+        <b>Arbitraje:</b> decide un <b>árbitro privado</b> (ej. CAM Santiago) con efecto de sentencia; confidencial y rápido, y su laudo normalmente no se apela.</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag aplicar">Aplicar</span> Disputa millonaria y técnica con un proveedor clave con quien quieres seguir trabajando. ¿Qué eliges? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Usa la guía de decisión (las 4 preguntas).</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Como la relación debe continuar, conviene <b>partir por la mediación</b> (preserva el vínculo y es rápida). Si no prospera, escalar a <b>arbitraje</b>: el monto alto y la complejidad técnica permiten elegir un árbitro experto, y la confidencialidad protege la reputación de ambos. El litigio ordinario sería la peor opción aquí: público, lento y adversarial.</div>
+      </div>
+    </details>
+
+    <div class="takeaway">
+      <span class="lab">En una frase</span>
+      <p>Mediación si la relación importa y hay voluntad; arbitraje si hay monto/complejidad, urgencia o confidencialidad; litigio como última carta — y todo esto se decide <b>antes</b>, al redactar el contrato.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACTO DE COMERCIO -->
+<section class="block" id="comercio">
+  <div class="wrap">
+    <div class="sec-tag">Unidad II · El estatuto del comerciante</div>
+    <h2>Acto de comercio: cuándo una actividad es mercantil</h2>
+    <p class="sec-sub">No toda compraventa es comercial. Lo que distingue al acto de comercio no es el objeto, sino la <b>intención</b>: intermediar con ánimo de lucro.</p>
+
+    <div class="bigidea">
+      <h3>La fórmula del acto de comercio</h3>
+      <p><b>Comprar → (transformar) → vender</b>, con la intención de obtener una ganancia mediante la <b>reventa o intermediación</b> del bien. Comprar pan para la casa es civil; comprar harina para la panadería es comercial.</p>
+    </div>
+
+    <div class="callout ex">
+      <span class="lab">📌 Código de Comercio — Arts. 3 y 7</span>
+      <p>El <b>Art. 3</b> enumera <b>taxativamente</b> los actos mercantiles. El <b>Art. 7</b> define al <b>comerciante</b>: toda persona, natural o jurídica, que se dedica en forma <b>habitual</b> a uno o varios actos de comercio.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:22px 0 6px">Los elementos del comerciante</h3>
+    <div class="grid c3">
+      <div class="card"><h4>Capacidad</h4><p>Debe poder obligarse legalmente por sí mismo.</p></div>
+      <div class="card"><h4>Habitualidad, ánimo e intermediación</h4><p>No basta vender un auto una vez: debe ser una actividad <b>constante y profesional</b>, con ánimo de lucro. Es el elemento que separa al comerciante del simple particular.</p></div>
+      <div class="card"><h4>Ejercicio en nombre propio</h4><p>Asume los riesgos del negocio, sea persona natural (dueño de almacén) o jurídica (S.A. o SpA).</p></div>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Teoría de lo accesorio</h3>
+    <p class="sec-sub" style="margin-bottom:14px">"Lo accesorio sigue la suerte de lo principal": si un acto aislado facilita o complementa una actividad comercial, se <b>contagia</b> y también es comercial. Un mismo objeto puede tener dos calificaciones.</p>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Objeto</th><th>Situación A — Acto civil</th><th>Situación B — Acto comercial</th></tr>
+        <tr><td><b>Una camioneta</b></td><td>Un padre la compra para ir de camping.</td><td>Una empresa de logística la compra para repartos (accesorio a su giro).</td></tr>
+        <tr><td><b>Laptops</b></td><td>Un estudiante compra un notebook para su tesis.</td><td>Una tienda compra 50 notebooks para revenderlos con ganancia.</td></tr>
+        <tr><td><b>Agricultura</b></td><td>Un agricultor vende las papas que cosechó (vende lo que produce).</td><td>Un supermercado compra esas papas y las revende (intermediación y lucro).</td></tr>
+      </table>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Acto civil vs. acto comercial: cinco criterios</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Criterio</th><th>Acto civil</th><th>Acto comercial</th></tr>
+        <tr><td><b>Finalidad</b></td><td>Satisfacer necesidades personales o domésticas.</td><td>Obtener ganancia mediante intermediación.</td></tr>
+        <tr><td><b>Normativa</b></td><td>Código Civil (regla general).</td><td>Código de Comercio (ley especial).</td></tr>
+        <tr><td><b>Prueba</b></td><td>Más restringida (no siempre valen testigos en montos altos).</td><td>Más flexible (se admiten testigos con mayor facilidad).</td></tr>
+        <tr><td><b>Prescripción</b></td><td>Plazos más largos (generalmente 5 años).</td><td>Plazos más cortos (4 años), por la certeza del tráfico.</td></tr>
+        <tr><td><b>Solidaridad</b></td><td>No se presume: cada deudor paga su cuota.</td><td>Se presume en muchas obligaciones: se cobra el total a cualquier codeudor.</td></tr>
+      </table>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa común</span>
+      <p>Clasificar por el <b>objeto</b> ("un auto es civil") en vez de por la <b>intención y el uso</b>. El mismo bien es civil o comercial según haya intermediación y ánimo de lucro, o sea accesorio a un giro comercial.</p>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> Caso: ¿comerciante o no? (zapatos, tortas, muebles de oficina) <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Clasificar cada caso (civil / comercial / mixto) aplicando habitualidad, ánimo de lucro e intermediación.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>(A) Comprar 500 pares de zapatos para revender:</b> acto <b>comercial</b> — hay intermediación (compra para revender) y ánimo de lucro claro.<br>
+        <b>(B) Tortas por WhatsApp:</b> parte como acto <b>civil aislado</b> (esporádico), pero se convierte en acto de comercio <b>habitual</b> cuando pasa a ser una actividad constante y profesional (20 tortas/mes, contrata ayuda): ahí aparecen habitualidad + intermediación + lucro.<br>
+        <b>(C) Abogado compra muebles para su oficina:</b> acto <b>civil</b>. Por la teoría de lo accesorio no se vuelve comercial: la actividad principal (servicios jurídicos) no es mercantil, así que lo accesorio tampoco.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- SOCIEDADES / EIRL -->
+<section class="block" id="sociedades">
+  <div class="wrap">
+    <div class="sec-tag">Unidad II · Eligiendo el vehículo societario</div>
+    <h2>Empresa, sociedad y la elección de estructura</h2>
+    <p class="sec-sub">Elegir el vehículo societario correcto es, en esencia, decidir <b>cómo se protege y organiza jurídicamente</b> una actividad económica. La variable central es la <b>responsabilidad</b>.</p>
+
+    <div class="bigidea">
+      <h3>Empresa ≠ sociedad</h3>
+      <p>La <b>empresa</b> es el fenómeno económico (la actividad: vender, producir, prestar servicios). La <b>sociedad</b> es la estructura jurídica que la soporta: el "ropaje jurídico". Puede existir empresa sin sociedad (persona natural) y sociedad sin actividad de empresa.</p>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Definición legal de empresa (Art. 3 inc. final Código del Trabajo)</span>
+      <p>Toda <b>organización de medios personales, materiales e inmateriales</b>, ordenados bajo una dirección, para el logro de fines económicos, sociales, culturales o benéficos, dotada de una <b>individualidad legal determinada</b>.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:22px 0 6px">Tres ejes para clasificar los tipos sociales</h3>
+    <div class="grid c3">
+      <div class="card"><h4>¿Quién es el dueño? — Estructura</h4><p><b>Individual</b> (Empresario Individual, EIRL) vs. <b>colectiva</b> (Ltda., S.A., SpA, Comandita).</p></div>
+      <div class="card"><h4>¿Qué está en juego? — Responsabilidad</h4><p><b>Ilimitada:</b> el dueño responde con todo su patrimonio (caso único: Empresario Individual). <b>Limitada:</b> "muralla" que responde solo hasta el aporte (EIRL, Ltda., S.A., SpA).</p></div>
+      <div class="card"><h4>¿Qué manda? — Capital vs. persona</h4><p><b>Intuitu personae:</b> importa quién es el socio (S.R.L.). <b>Intuitu pecuniae:</b> importa cuánto se aporta y las acciones se transan fácil (S.A., SpA).</p></div>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">El mapa completo de tipos sociales</h3>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Tipo social</th><th>Estructura</th><th>Responsabilidad</th><th>Qué manda</th><th>Ley aplicable</th></tr>
+        <tr><td><b>Empresario Individual</b></td><td>Individual (1 persona)</td><td><b>Ilimitada</b></td><td>La persona</td><td>Código Civil / Comercio</td></tr>
+        <tr><td><b>E.I.R.L.</b></td><td>Individual (1 persona)</td><td>Limitada al aporte</td><td>La persona, con patrimonio separado</td><td><b>Ley 19.857</b></td></tr>
+        <tr><td><b>Soc. Resp. Ltda.</b></td><td>Colectiva (2 a 50 socios)</td><td>Limitada al aporte</td><td>Las personas (confianza)</td><td><b>Ley 3.918</b> / C. Civil</td></tr>
+        <tr><td><b>Sociedad Anónima (S.A.)</b></td><td>Colectiva (accionistas)</td><td>Limitada al monto de acciones</td><td>El capital</td><td><b>Ley 18.046</b></td></tr>
+        <tr><td><b>Sociedad por Acciones (SpA)</b></td><td>Colectiva (1 o más accionistas)</td><td>Limitada al monto de acciones</td><td>El capital, flexible</td><td>C. de Comercio Arts. <b>424</b> y ss.</td></tr>
+        <tr><td><b>Sociedad en Comandita</b></td><td>Colectiva (gestores y comanditarios)</td><td>Mixta: gestores ilimitada / comanditarios limitada</td><td>Gestión + capital</td><td>C. de Comercio Arts. <b>470</b> y ss.</td></tr>
+      </table>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa común</span>
+      <p>Creer que "toda sociedad limita la responsabilidad". El <b>Empresario Individual</b> es el caso único de responsabilidad <b>ilimitada</b>, y en la <b>Comandita</b> los <b>gestores</b> responden de forma ilimitada. La limitación no es automática por ser "sociedad": depende del tipo.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">Empresario Individual y sus riesgos</h3>
+    <div class="grid c2">
+      <div class="card"><h4>Qué es y cómo se forma</h4><p>Empresa cuyo dominio es de <b>una sola persona natural</b>, que actúa por su cuenta y riesgo. Formalidades mínimas: inicio de actividades ante el SII, funciona con el <b>mismo RUT</b> de la persona, patentes y autorizaciones sectoriales.</p></div>
+      <div class="card"><h4>Los tres riesgos</h4><p>(1) <b>Confusión de patrimonios</b> ("bolsillo único"): no se distingue la caja del negocio de las finanzas domésticas. (2) <b>Muerte del negocio</b>: la empresa es la persona; si fallece o se incapacita, se paraliza. (3) <b>Responsabilidad ilimitada</b> (<b>Art. 2465 CC</b>, derecho de prenda general): los acreedores persiguen todos los bienes presentes y futuros — casa, auto, ahorros.</p></div>
+    </div>
+
+    <h3 style="font-size:20px;margin:26px 0 6px">E.I.R.L. — Ley 19.857 (2003)</h3>
+    <div class="bigidea">
+      <h3>La solución al "socio de mentira"</h3>
+      <p>Antes de 2003, para limitar responsabilidad había que buscar un socio "de mentira" (con el 1%) y formar una Ltda. La <b>E.I.R.L.</b> eliminó esa necesidad: permite emprender <b>solo</b>, con responsabilidad limitada, separando el RUT personal del RUT del negocio.</p>
+    </div>
+    <div class="grid c3">
+      <div class="card"><h4>Qué es</h4><p>Persona jurídica formada <b>exclusivamente por una persona natural</b>, con patrimonio propio y distinto al del titular. Jurídicamente hay <b>dos sujetos</b>: el Titular (ej. Juan Pérez) y la Empresa ("…E.I.R.L."). Marco supletorio: reglas de la <b>Ltda.</b></p></div>
+      <div class="card"><h4>Responsabilidad</h4><p>El <b>titular</b> responde solo hasta su aporte (casa, auto y ahorros protegidos, salvo fraude o mala fe). La <b>empresa</b> responde con todos sus bienes. Los actos "consigo mismo" (arrendar al propio dueño) exigen formalidades y publicidad estrictas para evitar fraude.</p></div>
+      <div class="card"><h4>Requisitos formales</h4><p><b>Nombre:</b> nombre del constituyente o de fantasía + referencia al giro + "E.I.R.L.". <b>Objeto:</b> cualquier actividad civil o comercial, salvo las reservadas a S.A. (bancos, seguros, AFP). <b>Administración:</b> del propietario, que puede designar un gerente.</p></div>
+    </div>
+
+    <details class="practice">
+      <summary><span class="tag aplicar">Aplicar</span> ¿Por qué la EIRL fue una solución para el pequeño empresario? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Conecta el problema anterior a 2003 con lo que resolvió la Ley 19.857.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Porque antes, para limitar la responsabilidad, el empresario que quería emprender solo debía inventar un "socio de mentira" (con 1%) y formar una Ltda. La EIRL permitió a una <b>sola persona natural</b> crear una persona jurídica con <b>patrimonio separado</b> y responsabilidad limitada al aporte, protegiendo su patrimonio personal e incentivando la <b>formalización</b> (separa el RUT personal del RUT del negocio).</div>
+      </div>
+    </details>
+
+    <details class="practice">
+      <summary><span class="tag comparar">Comparar</span> Empresario Individual vs. EIRL: ¿cuál es la diferencia clave? <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Enfócate en el patrimonio y la responsabilidad.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        Ambos son de una sola persona, pero el <b>Empresario Individual</b> no crea una persona jurídica distinta: hay un solo patrimonio y responsabilidad <b>ilimitada</b> (Art. 2465 CC, se persiguen todos sus bienes). La <b>EIRL</b> sí crea una persona jurídica con <b>patrimonio propio</b>: el titular responde solo hasta su aporte (salvo fraude), separando el negocio de su patrimonio personal.</div>
+      </div>
+    </details>
+
+    <div class="takeaway">
+      <span class="lab">En una frase</span>
+      <p>La empresa es la actividad económica; la sociedad es su ropaje jurídico; y elegir el vehículo (Empresario Individual, EIRL, Ltda., S.A., SpA, Comandita) es decidir <b>cuánto patrimonio personal queda expuesto</b>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- REPASO -->
 <section class="block" id="repaso">
   <div class="wrap">
@@ -714,6 +1114,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
       <div class="card"><h4>Estado de Derecho</h4><p>Todos, incluido el Estado, bajo la ley → reglas predecibles → base para invertir.</p></div>
       <div class="card"><h4>Art. 19 N°21</h4><p>Libertad de emprender lícitamente; límites: moral, orden público, seguridad nacional; Estado empresario vía LQC.</p></div>
       <div class="card"><h4>Resp. contractual vs. extracontractual</h4><p>Contrato → culpa presumida, 5 años. Sin contrato → víctima prueba, 4 años. Cláusula solo protege entre las partes.</p></div>
+      <div class="card"><h4>Lobby vs. cohecho vs. tráfico</h4><p>Lobby = influir transparente (Infolobby). Cohecho = plata de por medio. Tráfico = usar el "pituto". Los dos últimos son delito.</p></div>
+      <div class="card"><h4>Ley 20.393 / 21.595 + MPD</h4><p>La empresa responde penalmente con su patrimonio. El Modelo de Prevención de Delitos es el único escudo (encargado, matriz, canales, efecto legal).</p></div>
+      <div class="card"><h4>Resolución de conflictos</h4><p>Litigio (tribunal, público, lento) · mediación (facilita, no impone) · arbitraje (árbitro privado, laudo con fuerza de sentencia, confidencial).</p></div>
+      <div class="card"><h4>Acto de comercio</h4><p>Comprar → (transformar) → vender con lucro. Distingue la intención, no el objeto. Arts. 3 y 7 C. de Comercio. Teoría de lo accesorio.</p></div>
+      <div class="card"><h4>Empresa vs. sociedad</h4><p>Empresa = fenómeno económico (no es sujeto de derecho). Sociedad = ropaje jurídico (persona jurídica con patrimonio propio).</p></div>
+      <div class="card"><h4>Tipos sociales + responsabilidad</h4><p>Ilimitada solo en Empresario Individual (y gestores en Comandita). Limitada: EIRL, Ltda., S.A., SpA. Capital manda en S.A./SpA; persona en Ltda.</p></div>
+      <div class="card"><h4>EIRL (Ley 19.857)</h4><p>Persona jurídica de una sola persona natural, patrimonio propio, responde hasta el aporte. Fin del "socio de mentira".</p></div>
     </div>
 
     <div class="glob callout" style="margin-top:24px">
@@ -722,6 +1129,420 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
     </div>
   </div>
 </section>
+</div><!-- /tab-contenido -->
+
+<!-- ============ TAB: SIMULACRO ============ -->
+<div id="tab-simulacro" class="tabpane">
+  <div class="hero hero-sim">
+    <div class="wrap">
+      <div class="kicker">Modo examen · Certamen 1</div>
+      <h1>Simulacro de Certamen 1</h1>
+      <p class="lead">Certamen escrito individual. Método de uso: leer la pregunta, escribir la respuesta aparte y <b>solo después</b> abrir la pauta. Abrir la pauta antes anula el ejercicio; el valor está en producir la respuesta en frío.</p>
+      <div class="exam-banner">
+        <b>Formato de referencia:</b> 4 preguntas, <b>70 puntos</b>, dificultad creciente (Básica → Desafiante). <b>Criterio de corrección:</b> se asigna puntaje por cada componente presente (ver checklist "El corrector busca"). Clasificar sin explicar el porqué vale la mitad del puntaje del ítem. <em>El formato se infiere de una pauta de otra sección del mismo curso; puede variar entre profesores.</em>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+
+      <h3 class="lr-h" style="margin-top:0">Simulacro oficial — formato real (4 preguntas · 70 pts)</h3>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">P1</span><span class="qmeta">Básica · 20 pts</span></div>
+        <p class="qtext">Definir <b>Estado de Derecho</b>, señalar tres de sus características, y explicar por qué esa previsibilidad importa para una empresa que decide invertir.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            Principio de gobernanza en que todas las personas, instituciones y entidades —incluido el propio Estado— están sometidas a leyes que se promulgan públicamente, se hacen cumplir por igual y se aplican con independencia. Características (tres): separación de poderes; respeto de las normas por gobernantes y gobernados; seguridad jurídica (estabilidad y certidumbre). Importa a la empresa porque hace las reglas <b>predecibles</b>: el Estado no puede cambiarlas arbitrariamente, y esa previsibilidad es la base para invertir y planificar.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Definición correcta, incluyendo que el Estado también queda sometido.</li>
+              <li>Tres características válidas.</li>
+              <li>Conexión con previsibilidad / seguridad jurídica como base para invertir.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">P2</span><span class="qmeta">Básica/Media · 20 pts · ★ quórums (dato exacto)</span></div>
+        <p class="qtext">El sistema reconoce distintos tipos de ley. Para cada uno de los siguientes, indicar el <b>quórum exacto</b> de aprobación: (i) ley orgánica constitucional, (ii) ley de quórum calificado, (iii) ley ordinaria. Explicar además la diferencia entre <b>DFL</b> y <b>DL</b>, y ubicar todas estas normas en el nivel que les corresponde en la pirámide de Kelsen.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>(i) LOC</b> (y leyes interpretativas de la Constitución): <b>4/7</b> de diputados y senadores en ejercicio.<br>
+            <b>(ii) LQC</b>: <b>mayoría absoluta (50% + 1)</b> de los parlamentarios en ejercicio.<br>
+            <b>(iii) Ley ordinaria</b>: <b>mayoría simple</b> de los presentes.<br>
+            <b>DFL</b>: el Presidente legisla <b>con</b> autorización (delegación) del Congreso en materias técnicas. <b>DL</b>: el Ejecutivo dicta normas con fuerza de ley <b>sin</b> autorización del Congreso (típico de rupturas institucionales).<br>
+            Todas pertenecen al <b>nivel legal</b> de la pirámide (bajo la Constitución y sobre las normas sub-legales).</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Los tres quórums <b>exactos</b>: 4/7 · mayoría absoluta (50%+1) · mayoría simple.</li>
+              <li>DFL = con permiso del Congreso; DL = sin permiso.</li>
+              <li>Ubica correctamente estas normas en el nivel legal de la pirámide.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">P3</span><span class="qmeta">Análisis · 20 pts</span></div>
+        <p class="qtext">Una persona opera un negocio con empleados y bienes (un vehículo, entre otros) <b>como persona natural</b>, sin constituir sociedad. (a) Analizar al menos tres riesgos jurídicos de operar así. (b) Explicar qué cambiaría al constituir una <b>SpA o una EIRL</b> y por qué la separación patrimonial es relevante.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>(a) Riesgos:</b> (1) <b>Responsabilidad ilimitada</b> (Art. 2465 CC, derecho de prenda general): los acreedores persiguen todos los bienes personales, incluido el vehículo. (2) <b>Confusión de patrimonios</b>: no se distingue la caja del negocio de las finanzas personales. (3) <b>Falta de continuidad</b>: la empresa es la persona; si fallece o se incapacita, el negocio se paraliza. (También: los empleados tienen vínculo laboral con la persona directamente.)<br>
+            <b>(b) Con EIRL o SpA</b> nace una <b>persona jurídica distinta</b>, con patrimonio propio, nombre y RUT. Las deudas del negocio son de la sociedad, no de la persona: se responde solo hasta el aporte. Los bienes (el vehículo) pasan a la sociedad. En una SpA, además, otras personas pueden incorporarse como accionistas con derechos reconocidos.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Al menos tres riesgos, <b>desarrollados y vinculados al caso</b> (no solo nombrados).</li>
+              <li>Menciona la responsabilidad ilimitada (idealmente Art. 2465 CC) y la confusión patrimonial.</li>
+              <li>Explica que la sociedad crea persona jurídica con patrimonio propio → responsabilidad hasta el aporte.</li>
+              <li>Nota que el beneficio alcanza a todos los involucrados, no solo al dueño original.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">P4</span><span class="qmeta">Desafiante · 10 pts · exige matizar</span></div>
+        <p class="qtext">"La empresa y la sociedad son exactamente lo mismo." Evaluar críticamente la afirmación: qué tiene de correcta, por qué es incompleta o errónea, y una conclusión propia.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>Parte correcta:</b> la sociedad es el "ropaje jurídico" de la empresa — la forma legal que da existencia jurídica a la actividad económica.<br>
+            <b>Por qué NO son lo mismo:</b> la empresa es un concepto <b>económico</b> (organización de medios para producir); la sociedad es un concepto <b>jurídico</b> (persona ficticia con atributos de la personalidad). La empresa <b>no es sujeto de derecho</b>: no tiene derechos ni contrae obligaciones; la sociedad sí (nombre, domicilio, patrimonio, capacidad). El sujeto de derecho es el <b>dueño</b>. Además, hay empresa sin sociedad (empresario individual) y sociedad sin empresa activa.<br>
+            <b>Conclusión:</b> se relacionan pero operan en planos distintos —económico y jurídico—; confundirlos lleva a errores sobre quién responde y quién es titular de derechos.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Reconoce la parte correcta (sociedad = ropaje jurídico).</li>
+              <li>Distingue plano económico vs. jurídico y que la empresa no es sujeto de derecho.</li>
+              <li><b>Matiza</b> (ni blanco ni negro) y cierra con conclusión propia. Posición extrema sin matiz = puntaje tope reducido.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <h3 class="lr-h">Banco de práctica adicional</h3>
+      <p class="sec-sub" style="margin-bottom:16px">Preguntas extra para cubrir el resto de la materia con una repetición de producción. Mismo método: responder primero, abrir la pauta después.</p>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">1</span><span class="qmeta">Conceptual · ★ Alta probabilidad</span></div>
+        <p class="qtext">Explica qué es la <b>Pirámide de Kelsen</b>, para qué sirve, y nombra sus cuatro niveles de arriba hacia abajo con un ejemplo de negocio en cada uno.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            Sistema <b>escalonado</b> de normas donde toda norma inferior debe ajustarse a la superior; nada puede contradecir la Constitución. Sirve para dar <b>seguridad jurídica / previsibilidad</b>: nadie puede inventar reglas por encima de su nivel.<br>
+            <b>1. Constitucional</b> — Constitución + tratados DD.HH. (ej.: Art. 19 N°21, libertad de emprender).<br>
+            <b>2. Legal</b> — leyes: LOC, LQC, ordinarias, DFL, DL (ej.: Ley de Sociedades Anónimas).<br>
+            <b>3. Sub-legal</b> — reglamentos, decretos, circulares, ordenanzas (ej.: circular del SII).<br>
+            <b>4. Individualizado</b> — sentencias y contratos (ej.: un contrato, Art. 1545 CC).</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca (date 1 pto por cada uno)</span>
+            <ul>
+              <li>Dice que la inferior se ajusta a la superior (dirección correcta).</li>
+              <li>Nombra el propósito: <b>seguridad jurídica / previsibilidad</b>.</li>
+              <li>Los 4 niveles, <b>en orden</b> y etiquetados.</li>
+              <li>Un ejemplo concreto en cada nivel.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">2</span><span class="qmeta">Aplicación · ★ Alta probabilidad</span></div>
+        <p class="qtext">El <b>SII emite una circular</b> que, según tu empresa, cobra un impuesto que la ley no contempla. Aplica el <b>diagnóstico de la norma</b> (las 4 preguntas, en orden) y concluye qué puede hacer la empresa.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>1. ¿Qué es?</b> Una circular, nivel <b>sub-legal</b> de la pirámide (instrucción interna del Director del SII).<br>
+            <b>2. ¿Quién y con qué facultad?</b> La dictó un Jefe de Servicio; puede interpretar la ley, pero <b>no crear un impuesto</b> (reserva legal).<br>
+            <b>3. ¿Impugnable?</b> Sí: contradice una norma superior → reclamación tributaria o nulidad de derecho público.<br>
+            <b>4. ¿Riesgo si la ignoro?</b> Diferencia de impuestos y fiscalización, pero con base sólida para discutir porque la circular excede su nivel.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Ubica la circular en el nivel sub-legal (usa la pirámide).</li>
+              <li>Detecta que el SII no puede crear impuestos (competencia / reserva legal).</li>
+              <li>Nombra una vía de impugnación concreta.</li>
+              <li>Dimensiona el riesgo real, sin exagerar.</li>
+              <li>Responde en las 4 preguntas <b>etiquetadas y en orden</b>.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">3</span><span class="qmeta">Caso · Ética y compliance penal</span></div>
+        <p class="qtext">Un gerente se reúne informalmente con una autoridad para pedirle que rechace un proyecto que perjudica a su sector. No registra la reunión y le entrega un regalo costoso. <b>(a)</b> ¿Es lobby legítimo? Aplica los 3 elementos y di qué le falta. <b>(b)</b> ¿Qué delito podría configurarse y qué rol juega la Ley 20.393 para la empresa? <b>(c)</b> ¿Cuál es el único escudo legal y qué elementos tiene?</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>(a)</b> Reúne los elementos del lobby: <b>sujetos</b> (gerente / autoridad con poder de decisión), <b>intención de influir</b> (rechazar el proyecto) y <b>especificidad</b> (un asunto concreto). Le falta la <b>transparencia</b>: registro en Infolobby + acta. Sin eso no es lobby legítimo.<br>
+            <b>(b)</b> El regalo a cambio de una decisión favorable configura <b>cohecho</b>. Bajo la <b>Ley 20.393</b>, la <b>empresa</b> responde penalmente con su patrimonio: multas, prohibición de contratar con el Estado, incluso disolución.<br>
+            <b>(c)</b> El <b>Modelo de Prevención de Delitos</b>: Encargado de Prevención autónomo (con presupuesto), matriz de riesgos, canales de denuncia + cultura de integridad, y efecto legal (acredita ante el juez que hizo lo razonable).</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Aplica los 3 elementos del lobby y detecta que falta la <b>transparencia</b>.</li>
+              <li>Nombra el delito correcto (<b>cohecho</b>) y no lo confunde con tráfico de influencias.</li>
+              <li>Dice que responde la <b>persona jurídica</b> (Ley 20.393), no solo la persona.</li>
+              <li>Identifica el MPD como escudo y lista al menos 3 de sus elementos.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">4</span><span class="qmeta">Aplicación · Resolución de conflictos</span></div>
+        <p class="qtext">Tu empresa tiene una disputa <b>millonaria y técnicamente compleja</b> con un <b>proveedor clave</b> con quien quieres seguir trabajando, y necesitas <b>confidencialidad</b>. ¿Qué mecanismo(s) de resolución elegirías y por qué? Justifica con la guía de decisión.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            Como la relación debe continuar, conviene <b>partir por la mediación</b> (preserva el vínculo, rápida y de bajo costo). Si no prospera, escalar a <b>arbitraje</b>: el monto alto y la complejidad técnica permiten elegir un árbitro experto, y su carácter <b>privado protege la confidencialidad</b>; el laudo tiene fuerza de sentencia y normalmente no se apela. El <b>litigio ordinario</b> sería la peor opción: público, lento y adversarial.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Descarta el litigio y explica por qué (público, lento, adversarial).</li>
+              <li>Usa la variable "relación que continúa" → mediación primero.</li>
+              <li>Conecta monto/complejidad + confidencialidad → arbitraje.</li>
+              <li>Menciona una ventaja concreta del arbitraje (experto / privado / laudo sin apelación).</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">5</span><span class="qmeta">Comparación · Responsabilidad civil</span></div>
+        <p class="qtext">Distingue <b>responsabilidad contractual y extracontractual</b>: origen, quién prueba la culpa, plazo de prescripción, y si una cláusula de limitación de responsabilidad protege. Da un ejemplo de negocio de cada una.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>Contractual:</b> nace de incumplir una obligación pactada; la culpa se <b>presume</b> por el solo incumplimiento; prescribe en <b>5 años</b>; una cláusula de limitación <b>sí</b> protege frente a la contraparte. Ej.: proveedor que entrega tarde a su cliente.<br>
+            <b>Extracontractual:</b> nace del deber general de no dañar, sin contrato previo; la <b>víctima debe probar</b> el dolo o la culpa; prescribe en <b>4 años</b>; la cláusula <b>no</b> protege frente a un tercero. Ej.: el camión de la empresa choca a un tercero en la ruta.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Distingue por la existencia (o no) de contrato previo.</li>
+              <li>Culpa presumida (contractual) vs. víctima prueba (extracontractual).</li>
+              <li>Plazos correctos: <b>5 años</b> vs. <b>4 años</b>.</li>
+              <li>La cláusula solo protege entre las partes, nunca frente a terceros.</li>
+              <li>Un ejemplo válido de cada tipo.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">6</span><span class="qmeta">Conceptual · Art. 19 N°21 y Estado de Derecho</span></div>
+        <p class="qtext">¿Qué garantiza el <b>Art. 19 N°21 de la Constitución</b> y cuáles son sus límites? Conéctalo con la idea de <b>Estado de Derecho</b> y por qué importa a un inversionista.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            El <b>Art. 19 N°21</b> garantiza la libertad de desarrollar cualquier <b>actividad económica lícita</b>, sin permiso previo. Límites: no atentar contra (i) la moral, (ii) el orden público, (iii) la seguridad nacional. Para el Estado empresario se exige una <b>Ley de Quórum Calificado</b> y jugar con las mismas reglas. Se conecta con el <b>Estado de Derecho</b>: todos, incluido el Estado, bajo la ley → reglas <b>predecibles</b>. A un inversionista le importa porque esa previsibilidad es la base para invertir: nadie puede cambiarle las reglas arbitrariamente.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Enuncia la libertad de emprender <b>lícita</b> y sin permiso previo.</li>
+              <li>Los <b>tres límites</b> (moral, orden público, seguridad nacional).</li>
+              <li>Estado empresario → <b>LQC</b> y sin privilegios.</li>
+              <li>Conecta con seguridad jurídica / previsibilidad para invertir.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">7</span><span class="qmeta">Análisis · Acto de comercio</span></div>
+        <p class="qtext">Clasificar como acto civil, comercial o mixto, justificando con habitualidad, ánimo de lucro e intermediación: (A) alguien compra 500 pares de zapatos para revenderlos por redes sociales; (B) una persona hace tortas por encargo, primero esporádicamente y luego 20 al mes contratando ayuda; (C) un abogado compra muebles nuevos para su oficina.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            <b>(A)</b> Acto <b>comercial</b>: hay intermediación (compra para revender) y ánimo de lucro.<br>
+            <b>(B)</b> Empieza como acto <b>civil aislado</b> y se vuelve <b>comercial habitual</b> cuando la actividad se hace constante y profesional (20/mes, contrata ayuda): aparecen habitualidad, intermediación y lucro.<br>
+            <b>(C)</b> Acto <b>civil</b>: por la teoría de lo accesorio no se contagia de comercialidad, porque la actividad principal (servicios jurídicos) no es mercantil.</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Clasifica los tres correctamente <b>y explica el porqué</b> (clasificar sin justificar = medio punto).</li>
+              <li>Identifica el momento en que (B) pasa a ser habitual.</li>
+              <li>Aplica la teoría de lo accesorio en (C).</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="simq">
+        <div class="simq-head"><span class="qnum">8</span><span class="qmeta">Comparación · EIRL</span></div>
+        <p class="qtext">Explicar qué problema resolvió la <b>Ley 19.857</b> al crear la EIRL, y comparar Empresario Individual con EIRL en cuanto a personalidad jurídica y responsabilidad.</p>
+        <details class="practice sim">
+          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
+          <div class="ans">
+            <div class="model"><span class="ml">Respuesta modelo</span>
+            La Ley 19.857 (2003) eliminó la necesidad del "socio de mentira": antes, para limitar la responsabilidad emprendiendo solo, había que formar una Ltda. con un socio simbólico. La EIRL permite a una <b>sola persona natural</b> crear una persona jurídica con patrimonio propio.<br>
+            <b>Empresario Individual:</b> no crea persona jurídica distinta; un solo patrimonio; responsabilidad <b>ilimitada</b> (Art. 2465 CC).<br>
+            <b>EIRL:</b> crea persona jurídica con patrimonio propio; el titular responde solo hasta su <b>aporte</b> (salvo fraude o mala fe).</div>
+            <div class="pauta"><span class="pl">✔ El corrector busca</span>
+            <ul>
+              <li>Explica el problema del "socio de mentira" y la formalización (separar RUT personal del RUT del negocio).</li>
+              <li>Empresario Individual = sin persona jurídica, responsabilidad ilimitada.</li>
+              <li>EIRL = persona jurídica con patrimonio propio, responde hasta el aporte.</li>
+            </ul></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="glob callout">
+        <span class="lab">🌍 Después del simulacro</span>
+        <p>Los componentes sin marcar en cada checklist señalan el tema a reforzar. La pestaña <b>Contenido</b> desarrolla cada uno; la pestaña <b>Last Read</b> concentra los datos que dan puntos.</p>
+      </div>
+
+    </div>
+  </section>
+</div><!-- /tab-simulacro -->
+
+<!-- ============ TAB: LAST READ ============ -->
+<div id="tab-lastread" class="tabpane">
+  <div class="hero hero-last">
+    <div class="wrap">
+      <div class="kicker">Repaso final · 10 minutos</div>
+      <h1>Last Read — lo esencial condensado</h1>
+      <p class="lead">Para leer la <b>noche antes</b> y de nuevo <b>10 minutos antes de entrar</b>. Todo lo que más pesa, en formato rápido: los 3 focos ★, definiciones clave, los datos que dan puntos, y los esqueletos de respuesta. No es un resumen largo — es un repaso relámpago.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+
+      <div class="bigidea">
+        <h3>Los 3 focos del profesor (★ lo que más pesa)</h3>
+        <p><b>1. Kelsen:</b> normas escalonadas, la inferior se ajusta a la superior → <b>seguridad jurídica</b>. &nbsp;·&nbsp; <b>2. La pirámide:</b> Constitución → Ley → Sub-legal → Individualizado. &nbsp;·&nbsp; <b>3. Diagnóstico de norma:</b> Qué es · Quién y con qué facultad · ¿Impugnable? · Riesgo si la ignoro.</p>
+      </div>
+
+      <h3 class="lr-h">Definiciones clave (una línea cada una)</h3>
+      <div class="grid c2">
+        <div class="card"><h4>Estado de Derecho</h4><p>Todos —incluido el Estado— bajo leyes públicas aplicadas por igual. Da reglas predecibles.</p></div>
+        <div class="card"><h4>Pirámide de Kelsen</h4><p>Toda norma inferior se ajusta a la superior; nada contradice la Constitución.</p></div>
+        <div class="card"><h4>Constitución</h4><p>Norma suprema: reconoce derechos y organiza/limita el poder. Da el marco; la ley el detalle.</p></div>
+        <div class="card"><h4>Diagnóstico de norma</h4><p>4 preguntas: qué es · quién/facultad · ¿impugnable? · riesgo si la ignoro.</p></div>
+        <div class="card"><h4>Resp. contractual</h4><p>Incumplir un contrato; culpa presumida; 5 años; cláusula protege entre las partes.</p></div>
+        <div class="card"><h4>Resp. extracontractual</h4><p>Dañar sin contrato; la víctima prueba la culpa; 4 años; la cláusula no protege a terceros.</p></div>
+        <div class="card"><h4>Lobby (Ley 20.730)</h4><p>Influir en decisión pública de forma <b>transparente</b> (Infolobby + acta). Derecho, no delito.</p></div>
+        <div class="card"><h4>Cohecho</h4><p>Beneficio económico a cambio de una decisión. "Plata de por medio". Delito.</p></div>
+        <div class="card"><h4>Tráfico de influencias</h4><p>Usar cargo o relación ("el pituto") para ventaja indebida. Delito.</p></div>
+        <div class="card"><h4>Ley 20.393 / 21.595</h4><p>Responsabilidad penal de la <b>empresa</b>; 21.595 amplía a delitos económicos (2024).</p></div>
+        <div class="card"><h4>MPD (escudo)</h4><p>Encargado autónomo · matriz de riesgos · canales de denuncia + cultura · efecto legal.</p></div>
+        <div class="card"><h4>Litigio / Mediación / Arbitraje</h4><p>Tribunal público y lento · tercero facilita, no impone · árbitro privado, laudo con fuerza de sentencia.</p></div>
+        <div class="card"><h4>Acto de comercio</h4><p>Comprar → (transformar) → vender con lucro. Distingue la intención y la intermediación, no el objeto. Arts. 3 y 7 C. de Comercio.</p></div>
+        <div class="card"><h4>Teoría de lo accesorio</h4><p>Lo accesorio sigue la suerte de lo principal: un acto se "contagia" de comercial si complementa un giro comercial.</p></div>
+        <div class="card"><h4>Empresa vs. sociedad</h4><p>Empresa = fenómeno económico, no es sujeto de derecho. Sociedad = ropaje jurídico, persona jurídica con patrimonio propio.</p></div>
+        <div class="card"><h4>Empresario Individual</h4><p>Persona natural como empresa. Caso único de responsabilidad <b>ilimitada</b> (Art. 2465 CC). Mismo RUT personal.</p></div>
+        <div class="card"><h4>EIRL (Ley 19.857)</h4><p>Persona jurídica de una sola persona natural, patrimonio propio, responde hasta el aporte. Fin del "socio de mentira".</p></div>
+        <div class="card"><h4>SpA / S.A. vs. Ltda.</h4><p>En S.A. y SpA manda el capital (intuitu pecuniae). En Ltda. mandan las personas (intuitu personae, confianza).</p></div>
+      </div>
+
+      <h3 class="lr-h">Datos que dan puntos (memorízalos)</h3>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Dato</th><th>Valor exacto</th></tr>
+          <tr><td>Libertad de emprender</td><td><b>Art. 19 N°21</b> CPR · límites: moral, orden público, seguridad nacional</td></tr>
+          <tr><td>Contrato = ley para las partes</td><td><b>Art. 1545</b> Código Civil</td></tr>
+          <tr><td>Efecto relativo de las sentencias</td><td><b>Art. 3°</b> Código Civil</td></tr>
+          <tr><td>Tratados de DD.HH.</td><td>Jerarquía constitucional · <b>Art. 5</b> CPR (bloque de constitucionalidad)</td></tr>
+          <tr><td>Prescripción resp. contractual</td><td><b>5 años</b> (culpa presumida)</td></tr>
+          <tr><td>Prescripción resp. extracontractual</td><td><b>4 años</b> (víctima prueba la culpa)</td></tr>
+          <tr><td>Ley de lobby</td><td><b>Ley 20.730</b> · portal <b>Infolobby</b></td></tr>
+          <tr><td>Resp. penal de la persona jurídica</td><td><b>Ley 20.393</b> · ampliada por <b>Ley 21.595</b> (2024)</td></tr>
+          <tr><td>Quórum leyes interpretativas y LOC</td><td><b>4/7</b> de diputados y senadores en ejercicio</td></tr>
+          <tr><td>Quórum LQC</td><td><b>Mayoría absoluta (50% + 1)</b> en ejercicio</td></tr>
+          <tr><td>Quórum ley ordinaria</td><td><b>Mayoría simple</b> de los presentes</td></tr>
+          <tr><td>DFL vs. DL</td><td>DFL = con permiso del Congreso · DL = sin autorización del Congreso</td></tr>
+          <tr><td>Actos de comercio / comerciante</td><td><b>Art. 3</b> (enumera actos) y <b>Art. 7</b> (define comerciante) Código de Comercio</td></tr>
+          <tr><td>Responsabilidad ilimitada / prenda general</td><td><b>Art. 2465</b> Código Civil</td></tr>
+          <tr><td>EIRL</td><td><b>Ley 19.857</b> (2003)</td></tr>
+          <tr><td>Soc. Resp. Ltda.</td><td><b>Ley 3.918</b></td></tr>
+          <tr><td>Sociedad Anónima</td><td><b>Ley 18.046</b></td></tr>
+          <tr><td>SpA</td><td>C. de Comercio <b>Arts. 424</b> y ss.</td></tr>
+          <tr><td>Sociedad en Comandita</td><td>C. de Comercio <b>Arts. 470</b> y ss.</td></tr>
+        </table>
+      </div>
+      <div class="callout trap" style="margin-top:14px">
+        <span class="lab">⚠️ Memorizar sí o sí</span>
+        <p>Los <b>quórums</b> (4/7 · 50%+1 · mayoría simple) son el único dato que conviene saber <b>literal</b>: aparecen como pregunta directa ("para este tipo de ley, ¿qué quórum se necesita?"). El resto se responde con el concepto claro.</p>
+      </div>
+
+      <h3 class="lr-h">Esqueletos de respuesta (escribe así)</h3>
+      <div class="grid c2">
+        <div class="skeleton">
+          <div class="sl">Explicar la pirámide de Kelsen</div>
+          <ol>
+            <li>Qué es + para qué → <code>seguridad jurídica</code>.</li>
+            <li>Regla: la inferior se ajusta a la superior.</li>
+            <li>Los 4 niveles con un ejemplo cada uno.</li>
+            <li>Cierre de negocio: por eso una circular no pasa sobre una ley.</li>
+          </ol>
+        </div>
+        <div class="skeleton">
+          <div class="sl">Diagnosticar una norma</div>
+          <ol>
+            <li>Qué es <code>[ley/reglamento/circular…]</code> y su nivel.</li>
+            <li>Quién la dictó y si tenía <code>facultad</code>.</li>
+            <li>¿Contradice una superior? → <code>impugnación</code>.</li>
+            <li>Riesgo si la ignoro <code>[multa/nulidad/delito]</code>.</li>
+          </ol>
+        </div>
+        <div class="skeleton">
+          <div class="sl">Caso de ética / compliance</div>
+          <ol>
+            <li>¿Lobby? Aplica los 3 elementos + falta <code>transparencia</code>.</li>
+            <li>¿Delito? <code>cohecho</code> vs. <code>tráfico</code>.</li>
+            <li>Ley 20.393 → responde la <code>empresa</code>.</li>
+            <li>Escudo: <code>MPD</code> y sus elementos.</li>
+          </ol>
+        </div>
+        <div class="skeleton">
+          <div class="sl">Elegir mecanismo de conflicto</div>
+          <ol>
+            <li>¿Valor/complejidad? → <code>arbitraje</code> experto.</li>
+            <li>¿Confidencialidad? → arbitraje privado.</li>
+            <li>¿Urgencia? → arbitraje o mediación.</li>
+            <li>¿Relación continúa? → <code>mediación</code> primero.</li>
+          </ol>
+        </div>
+        <div class="skeleton">
+          <div class="sl">¿Civil o comercial? (comerciante)</div>
+          <ol>
+            <li>¿Hay <code>intermediación</code> (compra para revender)?</li>
+            <li>¿Hay <code>ánimo de lucro</code>?</li>
+            <li>¿Es <code>habitual</code> y profesional?</li>
+            <li>Si es aislado: ¿es <code>accesorio</code> a un giro comercial?</li>
+          </ol>
+        </div>
+        <div class="skeleton">
+          <div class="sl">Elegir vehículo societario</div>
+          <ol>
+            <li>¿Quién es dueño? <code>individual</code> vs. colectiva.</li>
+            <li>¿Responsabilidad? ilimitada (Emp. Individual) vs. <code>limitada</code>.</li>
+            <li>¿Qué manda? <code>capital</code> (S.A./SpA) vs. persona (Ltda.).</li>
+            <li>Nombrar ley aplicable (19.857, 3.918, 18.046…).</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="glob callout" style="margin-top:24px">
+        <span class="lab">🌍 Justo antes de entrar</span>
+        <p>Si solo te queda 1 minuto: <b>Kelsen = orden de normas para dar seguridad jurídica</b>; <b>pirámide = Constitución → Ley → Sub-legal → Contratos/sentencias</b>; <b>diagnóstico = qué es · quién/facultad · impugnable · riesgo</b>. Con eso entras firme.</p>
+      </div>
+
+    </div>
+  </section>
+</div><!-- /tab-lastread -->
 
 <footer>
   <div class="wrap">
@@ -744,9 +1565,23 @@ function onScroll(){
 }
 document.addEventListener('scroll',onScroll,{passive:true});
 onScroll();
-// Close mobile nav on link click
-document.querySelectorAll('nav.main a').forEach(a=>a.addEventListener('click',()=>{
-  document.querySelector('nav.main').classList.remove('open');
+
+// ---- Tabs ----
+const tabs=document.querySelectorAll('.tab');
+const panes=document.querySelectorAll('.tabpane');
+function showTab(name){
+  tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab===name));
+  panes.forEach(p=>p.classList.toggle('active', p.id==='tab-'+name));
+  window.scrollTo({top:0,behavior:'instant' in window ? 'instant':'auto'});
+  onScroll();
+}
+tabs.forEach(t=>t.addEventListener('click',()=>showTab(t.dataset.tab)));
+
+// Sub-nav (section anchors) — smooth scroll within Contenido
+document.querySelectorAll('.subnav a').forEach(a=>a.addEventListener('click',e=>{
+  const id=a.getAttribute('href');
+  const el=document.querySelector(id);
+  if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
 }));
 </script>
 </body>
