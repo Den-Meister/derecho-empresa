@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<title>Derecho y Empresa · Control (S.A. y SpA) · FEN-UDD</title>
+<title>Derecho y Empresa · Control 13-nov (Clases 10 y 11) · FEN-UDD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -284,6 +284,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
   nav.main a{padding:11px 12px;font-size:15px}
   .nav-toggle{display:inline-flex;margin-left:auto;background:var(--card-2);border:1px solid var(--line);color:var(--ink);border-radius:10px;width:42px;height:38px;align-items:center;justify-content:center;cursor:pointer;font-size:18px}
 }
+section.block{scroll-margin-top:110px}
+@media(max-width:720px){body{font-size:16px}.hero{padding:40px 0 28px}}
+body{overflow-x:hidden}
+@media(max-width:720px){.bigidea{padding-top:36px}}
 </style>
 </head>
 <body>
@@ -291,7 +295,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 
 <header class="top">
   <div class="wrap top-inner">
-    <div class="brand">Derecho y Empresa<small>Control · S.A. y SpA</small></div>
+    <div class="brand">Derecho y Empresa<small>Control 13-nov · Clases 10 y 11</small></div>
     <div class="tabs" role="tablist">
       <button class="tab active" data-tab="contenido">📖 Contenido</button>
       <button class="tab" data-tab="simulacro">✍️ Simulacro</button>
@@ -305,42 +309,178 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 
 <div class="hero">
   <div class="wrap">
-    <div class="kicker">Control · Unidad II — Sociedades de capital</div>
-    <h1>La Sociedad Anónima y la SpA</h1>
-    <p class="lead">Guía de estudio enfocada en el control: de los vehículos de confianza personal a las estructuras hechas para <b>levantar capital y repartir el poder de decisión</b>. Cubre la Sociedad Anónima (Ley 18.046) y la Sociedad por Acciones (Ley 20.190) con pactos de accionistas.</p>
+    <div class="kicker">Derecho y Empresa · ECD 224 · Prof. Manuel Somarriva L.</div>
+    <h1>Sociedades, impuestos y relación laboral</h1>
+    <p class="lead">Guía de estudio en orden de curso: <b>Unidad II</b> (sociedades y libre competencia, Clases 5 a 8), <b>Unidad III</b> (impuestos, Clases 8 a 10) y <b>Unidad IV</b> (relación laboral, Clase 11). La Unidad I está en el hub respaldado del Certamen 1.</p>
     <div class="chips">
       <span class="chip">FEN · Ing. Comercial · <b>2° sem 2026</b></span>
-      <span class="chip">Evaluación: <b>Control</b></span>
-      <span class="chip">Clases <b>6 y 7</b></span>
+      <span class="chip">Próximo: <b>Control 13-nov</b> (Clases 10 y 11)</span>
+      <span class="chip">Examen: <b>3-dic</b></span>
     </div>
     <div class="exam-banner">
-      <b>★ Foco del control:</b> Clase 6 (Sociedad Anónima: capital, gobierno corporativo y responsabilidad de directores) y Clase 7 (SpA, vesting y pactos de accionistas). Los dos ejes más probables: <b>los quórums de la junta</b> (50%+1 vs 2/3) y la elección de vehículo (<b>SpA vs. S.A./SAC</b>). Secciones marcadas con ★.
+      <b>★ Control (individual, 25 min):</b> "las últimas 2 clases, impuestos y requisitos del contrato de trabajo" → <b>Clase 10</b> (IVA, obligaciones, sanciones, fiscalización, prescripción, insolvencia) y <b>Clase 11</b> en lo que toca al contrato (empleador/trabajador, subordinación, contenido mínimo Art. 10, plazos Art. 9, plazo fijo → indefinido). Solo esas secciones llevan ★; el Simulacro y el Last Read cubren solo eso. De la Clase 9 se usa únicamente el sistema integrado, porque el caso Muebles La Madera de la Clase 10 lo aplica.
+    </div>
+    <div class="callout outside" style="margin-top:14px">
+      <span class="lab">⧉ Leyenda</span>
+      <p>⧉ marca contenido que <b>no viene de los PPT del curso</b> (casos de práctica inventados o notas externas). Ante cualquier diferencia, manda el deck.</p>
     </div>
   </div>
 </div>
 
 <nav class="subnav">
   <div class="wrap subnav-inner">
-    <a href="#sa-que">S.A. — qué es</a>
-    <a href="#sa-tipos">Abierta vs Cerrada</a>
-    <a href="#sa-mercado">Mercado de valores</a>
-    <a href="#sa-capital">Capital ★</a>
-    <a href="#sa-organos">Órganos</a>
-    <a href="#sa-juntas">Juntas y quórums ★</a>
-    <a href="#sa-directorio">Directorio</a>
-    <a href="#sa-oblig">Oblig. S.A. abierta</a>
-    <a href="#sa-resp">Resp. directores</a>
-    <a href="#sa-reorg">Reorg. y disolución</a>
-    <a href="#spa-que">SpA — qué es</a>
-    <a href="#spa-flex">Capital &amp; vesting</a>
-    <a href="#spa-pactos">Pactos ★</a>
-    <a href="#spa-vs">SpA vs SAC ★</a>
-    <a href="#comparativa">Comparativa</a>
-    <a href="#repaso">Repaso</a>
+    <a href="#soc-que">Cl.5 Sociedad</a><a href="#soc-nace">Cómo nace</a><a href="#soc-hecho">Soc. de hecho</a><a href="#soc-velo">Velo</a><a href="#soc-srl">SRL &amp; Comandita</a>
+    <a href="#sa-que">Cl.6 S.A.</a><a href="#sa-tipos">Abierta/Cerrada</a><a href="#sa-mercado">Mercado valores</a><a href="#sa-capital">Capital</a><a href="#sa-organos">Órganos</a><a href="#sa-juntas">Juntas y quórums</a><a href="#sa-directorio">Directorio</a><a href="#sa-oblig">Oblig. abierta</a><a href="#sa-resp">Resp. directores</a><a href="#sa-reorg">Reorganización</a>
+    <a href="#spa-que">Cl.7 SpA</a><a href="#spa-flex">Vesting</a><a href="#spa-pactos">Pactos</a><a href="#spa-vs">SpA vs SAC</a><a href="#comparativa">Comparativa</a>
+    <a href="#libre-comp">Cl.8 Libre competencia</a><a href="#repaso">Repaso U. II</a>
+    <a href="#trib-mapa">Cl.8 Tributo</a><a href="#trib-limites">Límites</a>
+    <a href="#renta-gatillo">Cl.9 Hecho gravado</a><a href="#renta-nexo">Domicilio</a><a href="#renta-cat">Categorías</a><a href="#renta-integ">Sist. integrado</a><a href="#renta-nga">Elusión</a>
+    <a href="#iva">★ Cl.10 IVA</a><a href="#trib-cumplir">★ Obligaciones</a><a href="#trib-sanciones">★ Sanciones</a><a href="#trib-defensa">★ Fiscalización</a><a href="#insolvencia">★ Insolvencia</a>
+    <a href="#lab-sujetos">★ Cl.11 Subordinación</a><a href="#lab-contrato">★ Contrato: Arts. 9-10</a><a href="#lab-sub">Subcontratación</a><a href="#lab-jornada">Jornada y sueldo</a><a href="#lab-termino">Término</a>
   </div>
 </nav>
 
-<!-- ===== CLASE 6: SOCIEDAD ANÓNIMA ===== -->
+<!-- ===================== UNIDAD II: SOCIEDADES ===================== -->
+
+<section class="block" id="soc-que">
+  <div class="wrap">
+    <div class="sec-tag">Clase 5 · Art. 2053 Código Civil</div>
+    <h2>Qué es una sociedad (y sus 5 requisitos)</h2>
+    <div class="bigidea">
+      <h3>Definición (Art. 2053 CC)</h3>
+      <p>Un <b>contrato</b> en que dos o más personas ponen algo en común con la mira de <b>repartir los beneficios</b>. La sociedad forma una <b>persona jurídica distinta</b> de los socios: tiene su propio RUT, patrimonio, deudas y activos.</p>
+    </div>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>Es un contrato</h4><p>Nace del acuerdo de voluntades; crea la obligación de <b>aportar</b>.</p></div>
+      <div class="card"><span class="num">2</span><h4>Dos o más personas</h4><p>La esencia de lo colectivo. <b>Excepciones modernas:</b> la SpA y la EIRL pueden ser de <b>una sola</b>.</p></div>
+      <div class="card"><span class="num">3</span><h4>Estipulación de aportes</h4><p>Nadie es socio gratis: hay que poner algo en común para el capital.</p></div>
+      <div class="card"><span class="num">4</span><h4>Búsqueda de beneficio</h4><p>El fin es <b>repartir utilidades</b> (la diferencia con una fundación o corporación).</p></div>
+      <div class="card"><span class="num">5</span><h4>Affectio societatis</h4><p>La voluntad <b>activa y constante</b> de colaborar.</p></div>
+      <div class="card"><h4>📌 Los aportes</h4><p>Pueden ser <b>dinero, especies</b> (bienes) o <b>trabajo</b> (industria). ⚠️ En <b>S.A. y SpA no se puede aportar solo trabajo</b> para formar capital: debe ser una garantía tangible para los acreedores.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Affectio societatis en detalle</span>
+      <p>No es un afecto emocional (los socios no tienen que ser amigos): es un <b>afecto jurídico de colaboración</b>, poniendo el interés de la sociedad por sobre el personal. Por qué importa: en una Ltda., si este ánimo <b>desaparece de forma irremediable</b> (los socios se pelean y ya no colaboran), es <b>causal para pedir la disolución</b> — el negocio no sigue si el "alma" colaborativa muere.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="soc-nace">
+  <div class="wrap">
+    <div class="sec-tag">Clase 5 · Requisitos formales</div>
+    <h2>Cómo nace una sociedad: el "ritual"</h2>
+    <p class="sec-sub">El orden del nacimiento es muy preguntable. Son tres pasos encadenados con un <b>plazo fatal de 60 días</b>.</p>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>Escritura pública</h4><p>Los socios firman ante <b>notario</b>. Ahí se redactan los <b>estatutos</b> (las reglas: aportes, administración, reparto de utilidades). Es la solemnidad.</p></div>
+      <div class="card"><span class="num">2</span><h4>Extracto + inscripción</h4><p>Un <b>extracto</b> (visado por el notario) se <b>inscribe en el Registro de Comercio</b> y se <b>publica en el Diario Oficial</b>, dentro de <b>60 días</b>.</p></div>
+      <div class="card"><span class="num">3</span><h4>Oponibilidad a terceros</h4><p>Ese registro público genera la <b>presunción legal</b> de que todos saben que la sociedad existe, dándole fuerza frente a quienes no participaron.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Menciones esenciales de la escritura</span>
+      <p>Nombre de la empresa, individualización del dueño/socios, <b>capital inicial, giro, domicilio y duración</b>.</p>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Vicios: subsanables vs. insubsanables</span>
+      <p>Un error menor (ej. publicar el día 62) se puede <b>sanear</b>. Pero la <b>falta de escritura pública</b> es un vicio <b>insubsanable</b>: la nulidad es absoluta y la sociedad queda como <b>sociedad de hecho</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="soc-hecho">
+  <div class="wrap">
+    <div class="sec-tag">Clase 5 · La sanción por no formalizarse</div>
+    <h2>Sociedad de Hecho</h2>
+    <div class="bigidea">
+      <h3>Qué es</h3>
+      <p>Una agrupación que en la práctica <b>funciona como empresa</b> (aporta capital, asume riesgos, reparte ganancias) pero <b>no tiene existencia como persona jurídica</b>, porque nunca se constituyó formalmente o hubo un vicio insubsanable.</p>
+    </div>
+    <div class="grid c2">
+      <div class="card"><h4>Nivel interno (entre socios)</h4><p>La ley la reconoce como una <b>comunidad de bienes</b>: cualquiera puede pedir a un tribunal que se <b>liquide</b> el negocio y se restituyan aportes y ganancias.</p></div>
+      <div class="card"><h4>Nivel externo (frente a terceros)</h4><p>Al no existir persona jurídica, <b>no hay velo corporativo ni separación de patrimonios</b>: los fundadores responden con <b>todo su patrimonio personal, de forma solidaria</b>.</p></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Característica</th><th>Sociedad válida (Colectiva/Ltda. bien constituida)</th><th>Sociedad de Hecho</th></tr>
+        <tr><td><b>¿Existe legalmente?</b></td><td>Sí, persona jurídica con RUT propio.</td><td>No, jurídicamente no existe como empresa.</td></tr>
+        <tr><td><b>Patrimonio</b></td><td>Separado del de sus dueños; compra bienes a su nombre.</td><td>No tiene patrimonio propio; todo es de las personas naturales.</td></tr>
+        <tr><td><b>¿A quién demandas?</b></td><td>A la sociedad, que responde con su patrimonio.</td><td>Directamente a las personas naturales, <b>solidariamente</b>.</td></tr>
+        <tr><td><b>El problema</b></td><td>Ninguno si se cumplió el ritual.</td><td>Le falta el "ritual": no hay escudo de responsabilidad.</td></tr>
+      </table>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ La idea clave</span>
+      <p>La sociedad de hecho es la <b>sanción</b> por saltarse el ritual: sin escritura pública no hay persona jurídica, y sin persona jurídica <b>no hay muralla</b> que proteja el patrimonio personal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="soc-velo">
+  <div class="wrap">
+    <div class="sec-tag">Clase 5 · Dos herramientas contra el fraude</div>
+    <h2>Velo corporativo y simulación</h2>
+    <div class="grid c2">
+      <div class="card"><h4>Velo corporativo — ataca la ESTRUCTURA</h4><p>El velo es la <b>separación patrimonial</b> entre el dueño y la sociedad (la "muralla"). El <b>levantamiento del velo</b> es cuando un juez <b>desconoce esa separación</b> al acreditarse que la estructura se usó de forma <b>fraudulenta o abusiva</b> para perjudicar a terceros (ej. como fachada para sustraer bienes de los acreedores). Solo aplica si hay <b>persona jurídica</b>.</p></div>
+      <div class="card"><h4>Simulación — ataca el ACTO/contrato</h4><p>Es cuando <b>el contrato es la mentira</b> (ej. decir que se vendió cuando no se cobró nada). Aplica a cualquier acto civil o comercial, <b>entre cualquiera</b> (no necesita una empresa de por medio).</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Cómo se prueba el fraude: las 3 P</span>
+      <p><b>Precio</b> fuera de mercado (tasación: $1.000 vs. valor real) · <b>Pariente</b> / vínculo o conflicto de interés (venta a un familiar o "palo blanco") · <b>Pago</b> ficticio (la escritura dice "pagado al contado" pero las <b>cartolas bancarias</b> muestran que la plata nunca ingresó).</p>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ No confundir</span>
+      <p>Si la mentira está en <b>un contrato puntual</b> → <b>simulación</b>. Si la mentira es <b>usar la empresa como disfraz</b> → <b>velo</b>. Al levantar el velo, el dueño responde con <b>todo su patrimonio personal</b> frente a los acreedores.</p>
+    </div>
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> Caso: maquinaria de $12.000.000 vendida a un familiar en $100.000 <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">El dueño de una EIRL próxima a la quiebra transfiere maquinaria (valor real $12.000.000) a un familiar por $100.000, para que los acreedores no la embarguen. (a) principio del velo y cuándo se levanta; (b) los tres indicios aplicados; (c) con qué patrimonio responde el dueño si se levanta.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>(a)</b> El velo es la separación patrimonial dueño/EIRL; se <b>levanta</b> excepcionalmente cuando la estructura se usó de forma fraudulenta/abusiva para perjudicar a terceros (fachada para esconder bienes).<br>
+        <b>(b) Precio:</b> $100.000 por algo que vale $12.000.000 (irrisorio). <b>Pariente:</b> se transfirió a un familiar (conflicto de interés). <b>Pago:</b> revisar cartolas — casi seguro ficticio. El objetivo declarado (evitar embargo) confirma el fraude.<br>
+        <b>(c)</b> Cae la muralla: el dueño responde con <b>todo su patrimonio personal</b>; además se puede revertir la transferencia para que la maquinaria vuelva y sea embargable.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="soc-srl">
+  <div class="wrap">
+    <div class="sec-tag">Clase 5 · Sociedades de personas</div>
+    <h2>SRL, Sociedad Colectiva y Comandita</h2>
+    <h3 style="font-size:20px;margin:6px 0 10px">Sociedad de Responsabilidad Limitada (SRL / Ltda.)</h3>
+    <div class="grid c3">
+      <div class="card"><h4>Socios</h4><p>Máximo <b>50</b>; si se supera, debe transformarse (ej. en S.A.).</p></div>
+      <div class="card"><h4>Responsabilidad</h4><p>Limitada <b>al monto de los aportes</b> (o a la suma mayor que fijen en la escritura).</p></div>
+      <div class="card"><h4>Cesión de derechos</h4><p>Al ser <i>intuitu personae</i>, nadie vende su parte ni entra un socio nuevo sin la <b>unanimidad (100%)</b>.</p></div>
+      <div class="card"><h4>Giros prohibidos</h4><p>No puede hacer lo reservado a S.A.: <b>bancos, aseguradoras, AFP, fondos mutuos</b>.</p></div>
+      <div class="card"><h4>Administración</h4><p>La ejercen los socios, o mandatarios elegidos de común acuerdo.</p></div>
+      <div class="card"><h4>⚠️ El requisito fatal</h4><p>El nombre debe terminar en <b>"Limitada" o "Ltda."</b>. Si se omite, los socios <b>responden solidariamente</b> con su patrimonio.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Disolución de la SRL/Colectiva</span>
+      <p>Causales: <b>mutuo acuerdo</b> (unanimidad, nueva escritura) · <b>muerte de un socio</b> (se disuelve salvo cláusula de continuar con herederos) · <b>reunión de todos los derechos en una sola mano</b> · <b>vencimiento del plazo</b> · <b>decisión judicial</b> (quiebra o pérdida irremediable del affectio societatis).</p>
+    </div>
+    <h3 style="font-size:20px;margin:22px 0 10px">Sociedad en Comandita (Art. 470 C. de Comercio)</h3>
+    <div class="grid c2">
+      <div class="card"><h4>Socios Gestores (el motor)</h4><p>A cargo de la <b>administración</b> y del uso de la razón social. Responden <b>ilimitada y solidariamente</b>.</p></div>
+      <div class="card"><h4>Socios Comanditarios (el capital)</h4><p>Aportan el dinero pero están <b>excluidos de la administración</b>. Responden solo <b>hasta su aporte</b>.</p></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ La Comandita es mixta</span>
+      <p>No es toda limitada ni toda ilimitada: depende del rol. <b>Gestor = ilimitado</b> (administra); <b>comanditario = limitado</b> (solo pone plata). Hoy es poco usada: casi siempre conviene una SpA.</p>
+    </div>
+    <details class="practice">
+      <summary><span class="tag integrar">Integrar</span> Caso: el socio que no apareció más (Carlos) <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Tres amigos forman una Sociedad Colectiva (restaurante, $5.000.000 c/u). Carlos deja de asistir y no responde; los otros dos siguen operando y reinvirtiendo sin él. (a) ¿qué affectio se compromete y qué se puede hacer? (b) ¿pueden expulsarlo solos? (c) si reaparece a los 2 años reclamando utilidades, ¿qué prueba y qué exige?</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>
+        <b>(a)</b> El affectio societatis (voluntad activa de colaborar) se muere; si es irremediable, cualquier socio puede pedir la <b>disolución</b> judicial.<br>
+        <b>(b)</b> <b>No.</b> Es <i>intuitu personae</i>: modificar la sociedad exige <b>unanimidad</b>. No hay expulsión unilateral; el camino es demandar la disolución o negociar su salida.<br>
+        <b>(c)</b> Carlos <b>sigue siendo socio</b> (nunca salió formalmente). Debe probar su calidad de socio (<b>escritura + aporte de $5.000.000</b>) y puede exigir su <b>parte proporcional</b> de utilidades y patrimonio: las utilidades reinvertidas son patrimonio social del que es codueño.</div>
+      </div>
+    </details>
+  </div>
+</section>
 
 <section class="block" id="sa-que">
   <div class="wrap">
@@ -404,7 +544,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 
 <section class="block" id="sa-capital">
   <div class="wrap">
-    <div class="sec-tag">★ Clase 6 · Gobierno corporativo</div>
+    <div class="sec-tag">Clase 6 · Gobierno corporativo</div>
     <h2>El capital de la S.A.: autorizado, suscrito y pagado</h2>
     <p class="sec-sub">Tres etapas, tres riesgos distintos. Ejemplo aplicado: <b>Viñas del Valle S.A.</b>, con capital autorizado de 500.000 acciones.</p>
     <div class="tbl-wrap">
@@ -440,7 +580,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 
 <section class="block" id="sa-juntas">
   <div class="wrap">
-    <div class="sec-tag">★ Clase 6 · Juntas y quórums</div>
+    <div class="sec-tag">Clase 6 · Juntas y quórums</div>
     <h2>Junta Ordinaria vs. Extraordinaria (y sus quórums)</h2>
     <p class="sec-sub">Este es uno de los temas más preguntables: distinguir <b>qué se decide en cada junta</b> y con <b>qué quórum</b>.</p>
     <div class="tbl-wrap">
@@ -553,8 +693,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
   </div>
 </section>
 
-<!-- ===== CLASE 7: SpA Y PACTOS ===== -->
-
 <section class="block" id="spa-que">
   <div class="wrap">
     <div class="sec-tag">Clase 7 · Ley 20.190</div>
@@ -597,7 +735,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 
 <section class="block" id="spa-pactos">
   <div class="wrap">
-    <div class="sec-tag">★ Clase 7 · Gobernanza entre socios</div>
+    <div class="sec-tag">Clase 7 · Gobernanza entre socios</div>
     <h2>Pactos de accionistas: la letra chica que protege (o no)</h2>
     <div class="bigidea">
       <h3>Qué es</h3>
@@ -624,7 +762,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 
 <section class="block" id="spa-vs">
   <div class="wrap">
-    <div class="sec-tag">★ Clase 7 · La decisión del fundador</div>
+    <div class="sec-tag">Clase 7 · La decisión del fundador</div>
     <h2>SpA vs. S.A. Cerrada (SAC) — y qué "traje" ponerse</h2>
     <div class="tbl-wrap">
       <table>
@@ -666,28 +804,561 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
   </div>
 </section>
 
+<section class="block" id="libre-comp">
+  <div class="wrap">
+    <div class="sec-tag">Clase 8 · Cierre de la Unidad II</div>
+    <h2>Libre competencia y control de fusiones (DL 211 y FNE)</h2>
+    <p class="sec-sub">Cuando la decisión societaria implica comprar, fusionarse o crecer, entra otra autoridad: la Fiscalía Nacional Económica (FNE).</p>
+    <div class="bigidea">
+      <h3>Antes de concentrarse, avisar</h3>
+      <p>El <b>Decreto Ley 211</b> protege la libre competencia: diversas empresas pueden participar y ofrecer libremente en igualdad de condiciones, sin acuerdos anticompetitivos, barreras artificiales ni abusos de posición dominante. La <b>FNE</b> investiga colusiones y revisa <b>preventivamente</b> las operaciones de concentración (fusiones, adquisiciones de control, joint ventures) <b>antes</b> de que se ejecuten.</p>
+    </div>
+    <div class="grid c2">
+      <div class="card"><h4>Cuándo notificar (umbrales copulativos, ventas en Chile del año anterior)</h4><p><b>Conjunto:</b> las ventas sumadas de las empresas que se concentran superan <b>UF 2.500.000</b>. <b>Individual:</b> al menos <b>dos</b> de ellas venden, cada una, más de <b>UF 450.000</b>. Se deben cumplir <b>ambos</b>.</p></div>
+      <div class="card"><h4>Plazos de la FNE</h4><p><b>Fase 1:</b> 30 días desde iniciada la investigación. Si hay riesgo para la competencia, <b>Fase 2:</b> hasta 90 días adicionales.</p></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Gun jumping</span>
+      <p>Ejecutar la operación <b>antes</b> de la revisión genera multas propias <b>aunque la fusión sea inofensiva</b>: multas por cada día de atraso en notificar, e incluso la orden de deshacer la operación ya ejecutada.</p>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Semáforo M&amp;A: 4 preguntas</span>
+      <p>(1) ¿Las ventas superan el umbral legal? (2) ¿Compiten en el mismo mercado? (dos competidores directos = más riesgo de bloqueo que proveedor-cliente) (3) ¿Ya se ejecutó sin avisar? (4) ¿Qué pasa si me equivoco? (multas diarias, deshacer la operación).</p>
+    </div>
+    <div class="takeaway"><span class="lab">Cierre de la Unidad II (deck)</span><p>"El vehículo societario no es un trámite: es la primera decisión de gestión de riesgo de cualquier negocio." Elegir mal el tipo social —o descuidar su formalización— puede costar el patrimonio personal completo.</p></div>
+  </div>
+</section>
+
 <section class="block" id="repaso">
   <div class="wrap">
-    <div class="sec-tag">Cierre</div>
-    <h2>Repaso relámpago</h2>
-    <p class="sec-sub">Responder estas de corrido y con palabras propias indica que las Clases 6 y 7 están listas para el control. Lo marcado con ★ es lo de mayor probabilidad.</p>
+    <div class="sec-tag">Cierre de sociedades</div>
+    <h2>Repaso relámpago — sociedades</h2>
+    <p class="sec-sub">Responder estas de corrido y con palabras propias indica que las Clases 5 a 8 están listas para el examen.</p>
     <div class="grid c2">
       <div class="card"><h4>S.A. (Ley 18.046)</h4><p>Capital, no persona. Accionistas aportan y delegan en un directorio revocable. Capital en acciones, libre cesibilidad.</p></div>
       <div class="card"><h4>Abierta vs Cerrada</h4><p>Abierta: oferta pública / 500+ accionistas / 10% en 100+; fiscaliza la CMF; directorio ≥5. Cerrada: privada, directorio ≥3.</p></div>
-      <div class="card"><h4>★ Capital: 3 etapas</h4><p>Autorizado (techo) ≥ Suscrito (compromiso, pagar en ≤3 años) ≥ Pagado (dinero real).</p></div>
+      <div class="card"><h4>Capital: 3 etapas</h4><p>Autorizado (techo) ≥ Suscrito (compromiso, pagar en ≤3 años) ≥ Pagado (dinero real).</p></div>
       <div class="card"><h4>Órganos</h4><p>Junta (dueños) → Directorio (estrategia, revocable) → Gerente General (ejecución, representación legal).</p></div>
-      <div class="card"><h4>★ Quórums de junta</h4><p>Extraordinaria general: 50%+1. Decisiones extremas (Art. 67: fusión, disolución, disminuir capital, cambiar giro): 2/3. Citar: directorio o 10%.</p></div>
+      <div class="card"><h4>Quórums de junta</h4><p>Extraordinaria general: 50%+1. Decisiones extremas (Art. 67: fusión, disolución, disminuir capital, cambiar giro): 2/3. Citar: directorio o 10%.</p></div>
       <div class="card"><h4>Director independiente (Art. 50 bis)</h4><p>Obligatorio en abiertas con patrimonio bursátil ≥1.500.000 UF y 12,5% en manos de accionistas &lt;10% → directorio ≥7 + Comité.</p></div>
       <div class="card"><h4>Obligaciones S.A. abierta</h4><p>Dividendo mínimo 30% (salvo unanimidad), auditores externos, clasificadoras de riesgo.</p></div>
       <div class="card"><h4>Resp. directores (Art. 41)</h4><p>Buen hombre de negocios; responden solidariamente por culpa o dolo. Business judgment rule: un mal resultado no basta.</p></div>
       <div class="card"><h4>SpA (Ley 20.190)</h4><p>Simplificación de la S.A. para VC. Unipersonal, constitución ágil (60 días), objeto múltiple, acciones de industria, admin a la carta.</p></div>
-      <div class="card"><h4>★ SpA vs SAC</h4><p>SpA permite aporte de trabajo (acciones de industria), múltiples clases de acciones y no exige directorio. SAC: sin aporte de trabajo, directorio ≥3.</p></div>
-      <div class="card"><h4>Vesting</h4><p>Acciones por trabajo que se desbloquean gradualmente (25%/año × 4). Alinea permanencia con propiedad.</p></div>
-      <div class="card"><h4>Pactos: drag vs tag</h4><p>Drag-along: el mayoritario arrastra al minoritario a vender. Tag-along: el minoritario se suma a la venta del controlador.</p></div>
+      <div class="card"><h4>SpA vs SAC</h4><p>SpA permite aporte de trabajo (acciones de industria), múltiples clases de acciones y no exige directorio. SAC: sin aporte de trabajo, directorio ≥3.</p></div>
+      <div class="card"><h4>Vesting y pactos</h4><p>Vesting: 25%/año × 4. Drag-along: el mayoritario arrastra; tag-along: el minoritario se suma.</p></div>
+      <div class="card"><h4>Libre competencia (DL 211)</h4><p>Notificar a la FNE si ventas conjuntas &gt; UF 2.500.000 y al menos dos &gt; UF 450.000. Fase 1: 30 días; Fase 2: +90. Gun jumping = multa.</p></div>
     </div>
     <div class="glob callout" style="margin-top:24px">
       <span class="lab">🌍 Cómo estudiar esto</span>
-      <p>El control premia el concepto claro y aplicarlo a casos. Prioriza los <b>quórums de la junta</b> (50%+1 vs 2/3), las <b>3 etapas del capital</b> y la elección <b>SpA vs SAC</b> con vesting y pactos — son el corazón de las Clases 6 y 7.</p>
+      <p>Se premia el concepto claro aplicado a casos. Lo central de la Unidad II: personas vs. capital, quórums de la junta (50%+1 vs 2/3), 3 etapas del capital, SpA vs SAC con vesting y pactos, y velo corporativo. El simulacro y el Last Read de sociedades están respaldados en el hub del Certamen 2.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== UNIDAD III: IMPUESTOS ===================== -->
+
+<section class="block" id="trib-mapa">
+  <div class="wrap">
+    <div class="sec-tag">Clase 8 · Unidad III — Impuestos y Tributación</div>
+    <h2>El tributo y el mapa tributario chileno</h2>
+    <p class="sec-sub">Antes de calcular nada: qué es un tributo, qué leyes lo regulan y la gran división entre impuestos directos e indirectos.</p>
+    <div class="bigidea">
+      <h3>El impuesto es una variable financiera, no un trámite</h3>
+      <p>Un tributo es una <b>prestación obligatoria, generalmente en dinero, exigida por el Estado</b> utilizando su poder soberano (<b>poder de imperio</b>). No es un acuerdo voluntario: si no se paga, el Estado usa la fuerza legal (embargos, multas, clausuras).</p>
+    </div>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>Es pecuniario</h4><p>Consiste en entregar <b>dinero</b>; excluye cargas personales como el servicio militar.</p></div>
+      <div class="card"><span class="num">2</span><h4>Poder de imperio y coactivo</h4><p>Lo impone el Estado; no se negocia. Si no se paga → embargos, multas, clausuras.</p></div>
+      <div class="card"><span class="num">3</span><h4>Finalidad pública</h4><p>Financiar el gasto público y las necesidades de la nación.</p></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa: tributo ≠ impuesto</span>
+      <p>"Tributo" es la <b>familia</b>, "impuesto" es el <b>hijo</b>. Todo impuesto es un tributo, pero no todo tributo es un impuesto: también existen <b>tasas</b> y <b>contribuciones especiales</b>.</p>
+    </div>
+    <h3 style="margin-top:30px">Las tres leyes clave</h3>
+    <div class="grid c3">
+      <div class="card"><h4>Código Tributario</h4><p>El manual de reglas generales: derechos del contribuyente, facultades del Servicio de Impuestos Internos (SII), multas y procedimientos.</p></div>
+      <div class="card"><h4>Ley sobre Impuesto a la Renta (DL 824)</h4><p>Grava la <b>generación de riqueza</b>: lo que la empresa o persona <b>gana</b>.</p></div>
+      <div class="card"><h4>Ley sobre Impuesto a las Ventas y Servicios — IVA (DL 825)</h4><p>Grava el <b>consumo y las transacciones</b>: lo que la empresa <b>vende o compra</b>.</p></div>
+    </div>
+    <h3 style="margin-top:30px">La gran división: directos vs. indirectos</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th></th><th>Impuestos directos</th><th>Impuestos indirectos</th></tr>
+      <tr><td><b>Qué gravan</b></td><td>El patrimonio o los ingresos de una persona o empresa.</td><td>El consumo o las transacciones, sin importar la capacidad de pago.</td></tr>
+      <tr><td><b>Quién soporta el peso</b></td><td>Quien genera la riqueza; se identifica directamente su capacidad de pago.</td><td>El <b>consumidor final</b>; la empresa vendedora solo <b>recauda</b> para el Fisco.</td></tr>
+      <tr><td><b>Ejemplo clave</b></td><td><b>Impuesto a la Renta</b>: si la empresa tuvo utilidades, el Estado cobra una parte de esa ganancia.</td><td><b>IVA (19%)</b>: mismo porcentaje sea el comprador estudiante o millonario.</td></tr>
+    </table></div>
+    <details class="practice"><summary><span class="tag">Recordar</span> Definir tributo, dar sus 3 características y explicar por qué el IVA es indirecto <span class="arw">›</span></summary>
+      <div class="ans"><p class="qq">Escribir la respuesta antes de abrir.</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>Tributo: prestación obligatoria, generalmente en dinero, exigida por el Estado en ejercicio de su poder de imperio. Características: <b>pecuniario</b> (dinero, no cargas personales), <b>coactivo</b> (nace del poder de imperio; si no se paga hay embargos, multas, clausuras) y con <b>finalidad pública</b> (financiar el gasto público). El IVA es <b>indirecto</b> porque grava el consumo sin mirar la capacidad de pago: lo soporta el consumidor final y la empresa solo lo recauda para el Fisco.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="trib-limites">
+  <div class="wrap">
+    <div class="sec-tag">Clase 8 · El escudo constitucional de la empresa</div>
+    <h2>Límites al poder tributario, doble tributación y precios de transferencia</h2>
+    <p class="sec-sub">El poder tributario no es absoluto: el Estado solo puede cobrar dentro de los límites que marca la Constitución Política de la República (CPR). Hacia afuera, los convenios internacionales evitan que dos países cobren lo mismo.</p>
+    <div class="grid c2">
+      <div class="card"><span class="num">1</span><h4>Legalidad (reserva de ley)</h4><p><i>"Nullum tributum sine lege"</i>: solo una <b>ley aprobada por el Congreso</b> puede crear, modificar o eliminar un impuesto. La iniciativa es <b>exclusiva del Presidente</b> (Art. 62 N°1 CPR).</p></div>
+      <div class="card"><span class="num">2</span><h4>Igualdad tributaria (Art. 19 N°2)</h4><p>Sin diferencias <b>arbitrarias</b>. Válido cobrarle distinto a un banco que a una panadería; inconstitucional cobrarle distinto a <b>dos panaderías idénticas</b>.</p></div>
+      <div class="card"><span class="num">3</span><h4>Generalidad</h4><p>Sin privilegios fiscales ni intocables: el impuesto se aplica a <b>todos</b> los que realicen la conducta gravada.</p></div>
+      <div class="card"><span class="num">4</span><h4>No confiscatoriedad (Art. 19 N°20)</h4><p>El Estado no puede fijar tributos tan altos que, en la práctica, <b>quiten la propiedad o destruyan el negocio</b>.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Aplicado: una circular no crea impuestos</span>
+      <p>Por la reserva de ley, una <b>circular del SII no puede ampliar el hecho gravado</b> más allá de lo que dice la ley (Clase 10). Conecta con la pirámide de Kelsen: la circular es sub-legal y no puede pasar por encima de la ley.</p>
+    </div>
+    <div class="vs">
+      <div class="col a"><h4>Doble tributación internacional</h4><ul>
+        <li><b>El problema:</b> dos países cobran impuestos a la <b>misma empresa</b>, por el <b>mismo dinero</b>, en el <b>mismo año</b> (ej.: una SpA chilena vende software en España y ambos exigen 25% sobre esa ganancia).</li>
+        <li><b>La solución — CDI:</b> los Convenios para Evitar la Doble Tributación son <b>tratados bilaterales</b> donde dos países acuerdan quién grava qué rentas o cómo se reparte la carga.</li>
+        <li><b>Para la empresa:</b> sin CDI vigente, Chile y el país comprador podrían gravar la misma ganancia de exportación; con CDI, esa doble carga se evita o se mitiga.</li>
+      </ul></div>
+      <div class="col b"><h4>Precios de transferencia (arm's length)</h4><ul>
+        <li><b>Principio:</b> el SII exige que las transacciones entre <b>partes relacionadas</b> se pacten a <b>precios de mercado</b>, como si fueran empresas independientes.</li>
+        <li><b>El riesgo:</b> el precio entre matriz y filial puede usarse para <b>trasladar utilidades</b> a países con menor carga.</li>
+        <li><b>Ejemplo:</b> la matriz extranjera vende insumos a su filial chilena a precio artificialmente alto → la filial muestra menos utilidad y paga menos Impuesto de Primera Categoría.</li>
+        <li><b>Si se incumple:</b> el SII ajusta la base imponible y aplica multa adicional (<b>Art. 41 E Ley de la Renta</b>). Se respalda con un <b>estudio de precios de transferencia</b>.</li>
+      </ul></div>
+    </div>
+    <details class="practice"><summary><span class="tag">Recordar</span> Nombrar los 4 límites constitucionales al poder tributario, con su norma <span class="arw">›</span></summary>
+      <div class="ans"><div class="model"><span class="ml">Respuesta modelo</span>(1) <b>Legalidad / reserva de ley</b> — solo una ley crea, modifica o elimina impuestos; iniciativa exclusiva del Presidente (Art. 62 N°1 CPR). (2) <b>Igualdad tributaria</b> — sin diferencias arbitrarias (Art. 19 N°2). (3) <b>Generalidad</b> — sin privilegios ni intocables. (4) <b>No confiscatoriedad</b> — el tributo no puede quitar la propiedad ni destruir el negocio (Art. 19 N°20).</div></div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="renta-gatillo">
+  <div class="wrap">
+    <div class="sec-tag">Clase 9 · Cuándo nace la obligación de pagar</div>
+    <h2>El hecho gravado y la ecuación del impuesto</h2>
+    <p class="sec-sub">Que exista una ley tributaria no significa pagar de inmediato. El impuesto necesita un "gatillo" (hecho gravado) y una medida (base imponible × tasa).</p>
+    <div class="bigidea">
+      <h3>Hecho gravado = el gatillo</h3>
+      <p>Es el <b>evento específico de la vida real</b> que, al ocurrir, hace nacer la obligación de pagarle al Estado.</p>
+    </div>
+    <div class="grid c2">
+      <div class="card"><h4>Un acto o negocio jurídico</h4><p>Lo más frecuente en una empresa: celebrar una <b>compraventa</b>, prestar un <b>servicio</b> o <b>importar</b> mercadería.</p></div>
+      <div class="card"><h4>Un hecho material o una situación corporativa</h4><p>El paso físico de bienes por la frontera (Aduanas), o fijar la <b>residencia o domicilio</b> de una empresa en Chile (define bajo qué reglas tributará).</p></div>
+    </div>
+    <div class="skeleton">
+      <div class="sl">La ecuación del negocio</div>
+      <p style="margin:0 0 8px;color:var(--ink)"><b>Base imponible × Tasa = Impuesto a pagar</b></p>
+      <ol>
+        <li><b>Base imponible (la medida):</b> el hecho gravado traducido a números; el monto sobre el que se calcula. Ej.: el valor neto de los productos vendidos en una factura.</li>
+        <li><b>Tasa (la proporción):</b> el porcentaje que fija la ley. Ej.: <code>19%</code> en el IVA; entre <code>10% y 27%</code> en el Impuesto de Primera Categoría según el régimen.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="renta-nexo">
+  <div class="wrap">
+    <div class="sec-tag">Clase 9 · DL 824 — Ley de la Renta</div>
+    <h2>Domicilio y residencia: el nexo con Chile</h2>
+    <p class="sec-sub">A diferencia del IVA, la Ley de la Renta grava el <b>incremento real de patrimonio</b>: si al final del año la empresa o la persona es más rica que al principio, el Estado cobra una parte de esa nueva riqueza.</p>
+    <div class="vs">
+      <div class="col a"><h4>Domicilio — la intención</h4><ul><li>Residencia en Chile con el <b>ánimo real o presunto de permanecer</b> (ej.: traer a la familia, comprar una casa matriz).</li></ul></div>
+      <div class="col b"><h4>Residencia — la matemática</h4><ul><li>Permanecer físicamente en Chile por <b>más de 183 días</b>, consecutivos o no, dentro de un período de <b>12 meses</b>.</li></ul></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 La regla</span>
+      <p>Basta <b>uno solo</b> de los dos criterios para quedar obligado a tributar en Chile por <b>rentas mundiales</b>. Solo se deja de tributar en Chile por las rentas extranjeras si se pierden <b>ambos</b>.</p>
+    </div>
+    <details class="practice"><summary><span class="tag aplicar">Aplicar</span> Caso: Sebastián trabaja 6 meses desde Argentina <span class="arw">›</span></summary>
+      <div class="ans"><p class="qq">Sebastián tiene domicilio en Chile (su familia y su vida están aquí) y pasa 6 meses trabajando desde Argentina. ¿Se interrumpe su obligación de tributar en Chile? ¿Y si hubiera estado más de 183 días fuera?</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>No se interrumpe: su obligación nace del <b>domicilio</b> (ánimo de permanecer: familia y vida en Chile), no solo de la residencia física. Si hubiera estado más de 183 días fuera, perdería el criterio de <b>residencia</b>, pero al mantener el domicilio <b>igual sigue obligado</b>. Solo quedaría eximido de tributar en Chile por sus rentas extranjeras si perdiera <b>ambos</b> criterios.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="renta-cat">
+  <div class="wrap">
+    <div class="sec-tag">Clase 9 · Cómo se clasifica la riqueza</div>
+    <h2>Primera vs. Segunda Categoría, regímenes e impuestos finales</h2>
+    <p class="sec-sub">La Renta separa lo que genera el <b>capital</b> (Primera Categoría) de lo que genera el <b>trabajo</b> (Segunda Categoría). Luego, cuando la plata llega al bolsillo del dueño, aparecen los impuestos finales.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th></th><th>Primera Categoría</th><th>Segunda Categoría</th></tr>
+      <tr><td><b>Fuerza principal</b></td><td>El <b>capital</b> predomina sobre el trabajo.</td><td>El <b>trabajo</b> (físico o intelectual) predomina sobre el capital.</td></tr>
+      <tr><td><b>Ejemplos</b></td><td>Comercio, industria, minería, agricultura, sociedades.</td><td>Empleados con contrato, independientes con boleta de honorarios, asesores.</td></tr>
+      <tr><td><b>Impuesto y tasa</b></td><td>Impuesto de Primera Categoría (IDPC): <b>10% a 27%</b> según régimen.</td><td>Impuesto Único de Segunda Categoría: <b>progresivo</b>, tope máximo 35–40%.</td></tr>
+      <tr><td><b>Dato clave</b></td><td>Al vender bienes o servicios corporativos, suele generar <b>IVA</b>.</td><td>Los honorarios profesionales <b>no generan IVA</b>.</td></tr>
+    </table></div>
+    <h3 style="margin-top:28px">Elegir el régimen tributario (decisión al constituir la empresa)</h3>
+    <p class="sec-sub" style="margin-bottom:10px">Afecta la tasa, la contabilidad exigida y el flujo de caja disponible para reinvertir.</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Régimen</th><th>Tasa e IDPC</th><th>Para quién</th></tr>
+      <tr><td><b>Régimen General</b> (Art. 14 A)</td><td>Tasa de <b>27%</b>. Contabilidad completa.</td><td>Grandes empresas cuyos socios no necesitan retirar utilidades de inmediato.</td></tr>
+      <tr><td><b>Pro Pyme General</b> (Art. 14 D N°3)</td><td>Entre <b>12,5% y 25%</b> según la escala de transición vigente. Contabilidad completa, con beneficios como depreciación instantánea.</td><td>Empresas medianas.</td></tr>
+      <tr><td><b>Pro Pyme Transparente</b> (Art. 14 D N°8)</td><td>La empresa <b>no paga IDPC</b>; las utilidades tributan directamente en el Global Complementario del dueño.</td><td>Emprendimientos pequeños cuyos dueños retiran casi toda la utilidad del año.</td></tr>
+    </table></div>
+    <div class="tbl-wrap"><table>
+      <tr><th>Año comercial</th><th>Año tributario</th><th>Régimen</th><th>Tasa IDPC</th></tr>
+      <tr><td>Permanente</td><td>Permanente</td><td>General (grandes empresas)</td><td><b>27%</b></td></tr>
+      <tr><td>2020 al 2024</td><td>2021 al 2025</td><td>Pro Pyme General</td><td>10%</td></tr>
+      <tr><td>2025 al 2027</td><td>2026 al 2028</td><td>Pro Pyme General</td><td><b>12,5%</b></td></tr>
+      <tr><td>2028</td><td>2029</td><td>Pro Pyme General</td><td>15%</td></tr>
+      <tr><td>2029 en adelante</td><td>2030 en adelante</td><td>Pro Pyme General</td><td>25%</td></tr>
+    </table></div>
+    <h3 style="margin-top:28px">Los impuestos finales: cuando la plata llega al bolsillo</h3>
+    <div class="vs">
+      <div class="col a"><h4>Impuesto Global Complementario (IGC)</h4><ul><li>Lo pagan las <b>personas naturales con domicilio o residencia en Chile</b>, sumando <b>todas</b> sus rentas del año: las de su trabajo y las utilidades que retiran de sus empresas.</li></ul></div>
+      <div class="col b"><h4>Impuesto Adicional (IA)</h4><ul><li>Lo pagan personas o empresas <b>sin domicilio ni residencia en Chile</b>, cuando sacan sus ganancias del país hacia el extranjero.</li></ul></div>
+    </div>
+    <details class="practice"><summary><span class="tag">Tablas</span> Tramos del Impuesto Único de Segunda Categoría y del Global Complementario (referencia) <span class="arw">›</span></summary>
+      <div class="ans">
+        <p class="qq">Impuesto Único de Segunda Categoría (trabajadores dependientes) — tramos en UTA (Unidad Tributaria Anual)</p>
+        <div class="tbl-wrap"><table>
+          <tr><th>Tramo</th><th>Rango (UTA)</th><th>Tasa marginal</th></tr>
+          <tr><td>1</td><td>0 a 13,5 (aprox. $0 a $10.800.000 anuales)</td><td>Exento (0%)</td></tr>
+          <tr><td>2</td><td>Sobre 13,5 hasta 30</td><td>4%</td></tr>
+          <tr><td>3</td><td>Sobre 30 hasta 50</td><td>8%</td></tr>
+          <tr><td>4</td><td>Sobre 50 hasta 70</td><td>13,5%</td></tr>
+          <tr><td>5</td><td>Sobre 70 hasta 90</td><td>23%</td></tr>
+          <tr><td>6</td><td>Sobre 90 hasta 120</td><td>30,4%</td></tr>
+          <tr><td>7</td><td>Sobre 120 hasta 310</td><td>35%</td></tr>
+          <tr><td>8</td><td>Sobre 310 en adelante</td><td>40% (tope máximo)</td></tr>
+        </table></div>
+        <p class="qq">Global Complementario — mismos tramos y factores, con <b>cantidad a rebajar</b> (UTA): 0 · 0,54 · 1,74 · 4,49 · 11,14 · 17,80 · 23,32 · 38,82.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="renta-integ">
+  <div class="wrap">
+    <div class="sec-tag">Clase 9 · Integración tributaria · base del caso Muebles La Madera (Clase 10)</div>
+    <h2>El sistema integrado: el IDPC como "vale de descuento"</h2>
+    <p class="sec-sub">El mito: "la empresa paga impuesto por sus ganancias y luego el dueño paga otra vez al retirar: el Estado cobra dos veces". La realidad: el impuesto de la empresa es un <b>crédito</b> para el dueño.</p>
+    <div class="bigidea">
+      <h3>El IDPC es un "vale de descuento" a nombre del dueño</h3>
+      <p>El Impuesto de Primera Categoría que paga la empresa queda guardado en el SII como crédito del dueño. Al retirar, el dueño descuenta lo que la empresa ya adelantó y <b>solo paga la diferencia</b>.</p>
+    </div>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>La empresa gana y paga</h4><p>La empresa obtiene utilidad y paga el <b>IDPC</b>.</p></div>
+      <div class="card"><span class="num">2</span><h4>El dueño retira</h4><p>El SII calcula su <b>Global Complementario</b> sobre el total de sus ingresos.</p></div>
+      <div class="card"><span class="num">3</span><h4>Aplica el crédito</h4><p>El dueño descuenta lo que la empresa ya pagó y <b>solo paga la diferencia</b> (o recibe devolución si el crédito es mayor).</p></div>
+    </div>
+    <h3 style="margin-top:28px">Ejemplo del deck: SV Consulting SpA (Pro Pyme General, año comercial 2025)</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Paso</th><th>Cálculo</th><th>Resultado</th></tr>
+      <tr><td>Utilidad antes de impuesto</td><td>—</td><td><b>$36.000.000</b></td></tr>
+      <tr><td>Tasa Pro Pyme General (tramo 2025–2027)</td><td>—</td><td>12,5%</td></tr>
+      <tr><td>IDPC a pagar por la empresa</td><td>$36.000.000 × 12,5%</td><td><b>$4.500.000</b></td></tr>
+      <tr><td>Utilidad neta disponible para retiro</td><td>$36.000.000 − $4.500.000</td><td><b>$31.500.000</b></td></tr>
+      <tr><td>Sebastián retira</td><td>57,14% de la utilidad neta</td><td>$18.000.000</td></tr>
+      <tr><td>Crédito proporcional</td><td>$4.500.000 × (18.000.000 / 31.500.000)</td><td><b>≈ $2.571.429</b></td></tr>
+      <tr><td>IGC bruto sobre el retiro</td><td>$18.000.000 × 4% (tasa efectiva de Sebastián)</td><td>$720.000</td></tr>
+      <tr><td>IGC neto</td><td>$720.000 − $2.571.429</td><td><b>Negativo → DEVOLUCIÓN</b></td></tr>
+    </table></div>
+    <div class="callout ex">
+      <span class="lab">📌 Por qué hay devolución</span>
+      <p>La tasa efectiva del IGC de Sebastián (<b>4%</b>) es menor que la tasa del IDPC ya pagado por la empresa (<b>12,5%</b>): el "vale" vale más que lo que debe, y el Fisco le devuelve la diferencia.</p>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampas del cálculo</span>
+      <p>(1) El crédito es <b>proporcional</b> a lo retirado: retiro ÷ utilidad neta (no ÷ utilidad antes de impuesto). (2) El IDPC se calcula sobre la utilidad <b>antes</b> de impuesto; lo disponible para retirar es la utilidad <b>neta</b>. (3) Devolución ocurre cuando la tasa personal es menor que la del IDPC.</p>
+    </div>
+    <details class="practice"><summary><span class="tag integrar">Integrar</span> Caso del deck: Muebles La Madera SpA (Régimen General, 27%) <span class="arw">›</span></summary>
+      <div class="ans"><p class="qq">Muebles La Madera SpA está en el Régimen General (IDPC 27%). Su único dueño, Juan, es persona natural con residencia en Chile. En el año compró madera y herramientas por $10.000.000 neto y vendió muebles por $30.000.000 neto. A fin de año Juan retira todas las utilidades netas; no tiene otro ingreso y cae en el Tramo 1 (exento) del Global Complementario. (a) Calcular la utilidad y el IDPC. (b) ¿Qué pasa con el crédito por el IDPC? (c) ¿Por qué el sistema integrado puede terminar en devolución?</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>(a) Utilidad = $30.000.000 − $10.000.000 = <b>$20.000.000</b>. IDPC = $20.000.000 × 27% = <b>$5.400.000</b>. Utilidad neta = <b>$14.600.000</b>.<br>(b) Juan retira el 100% de la utilidad neta, así que le corresponde el <b>100% del crédito: $5.400.000</b>. Su IGC es $0 (tramo exento): IGC neto = $0 − $5.400.000 → saldo negativo → <b>devolución de $5.400.000</b>.<br>(c) Porque el IDPC funciona como un "vale de descuento" del dueño: si el impuesto personal (aquí 0%) es menor que lo que la empresa ya adelantó (27%), el Fisco devuelve la diferencia. El sistema evita cobrar dos veces y cobra según la tasa personal del dueño.</div>
+        <div class="callout outside" style="margin-top:12px"><span class="lab">⧉ Fuera — no viene de los PPT</span><p>En la ley vigente el Régimen General (Art. 14 A) es "semi-integrado": el dueño no recupera el 100% del crédito por IDPC. El deck no trata ese matiz; para la evaluación corresponde aplicar la lógica del deck (crédito completo).</p></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="renta-nga">
+  <div class="wrap">
+    <div class="sec-tag">Clase 9 · La línea es más fina de lo que parece</div>
+    <h2>Planificación tributaria vs. elusión vs. evasión</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>Figura</th><th>Qué es</th><th>Ejemplo</th><th>Consecuencia</th></tr>
+      <tr><td><b>Planificación legítima</b></td><td>Usar las opciones y beneficios que la propia ley ofrece, con una <b>razón de negocios real</b> además del ahorro.</td><td>Elegir el régimen Pro Pyme, usar una franquicia de I+D, aportar bienes en vez de venderlos.</td><td>Lícita.</td></tr>
+      <tr><td><b>Elusión</b> (prohibida desde 2016)</td><td>Figuras jurídicas <b>artificiosas</b> cuyo <b>único propósito</b> es evitar el hecho gravado, sin razón de negocios de fondo.</td><td>Dividir una empresa en varias sociedades ficticias para que cada una quede en un tramo exento.</td><td>Norma General Anti-Elusión (NGA, Arts. 4 bis a 4 quinquies Código Tributario): el SII, <b>con autorización del Tribunal Tributario y Aduanero</b>, recalifica y cobra el impuesto + reajustes e intereses.</td></tr>
+      <tr><td><b>Evasión</b> (delito)</td><td><b>Ocultar o falsear</b> información para no pagar. Hay <b>dolo</b>.</td><td>Facturas falsas, doble contabilidad.</td><td>Sanción penal.</td></tr>
+    </table></div>
+    <div class="callout ex">
+      <span class="lab">📌 El test del SII</span>
+      <p>Si se le quita el beneficio tributario a la operación, <b>¿todavía tiene sentido para el negocio?</b> Si sí → planificación. Si no → elusión.</p>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Elusión ≠ evasión</span>
+      <p>En la elusión no se oculta nada: se usa una forma legal de manera artificiosa (se ataca con la NGA). En la evasión se miente o se oculta, hay <b>dolo</b> y es <b>delito</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="iva">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 10 · DL 825</div>
+    <h2>IVA: débito, crédito y hecho gravado</h2>
+    <p class="sec-sub">El IVA no castiga a la empresa por producir: grava el <b>valor extra</b> que añade a un producto antes de venderlo. El único que realmente soporta el peso es el <b>consumidor final</b>.</p>
+    <div class="bigidea">
+      <h3>Método chileno: impuesto contra impuesto</h3>
+      <p>No se calcula el "valor agregado" de cada pieza. Se suma todo el IVA cobrado al vender, se resta el IVA pagado al comprar insumos, y la diferencia se entrega al Fisco: <b>Débito Fiscal − Crédito Fiscal = IVA a pagar</b> (mensual).</p>
+    </div>
+    <div class="vs">
+      <div class="col a"><h4>Débito Fiscal (las ventas)</h4><ul><li>El IVA que se <b>cobra a los clientes</b> al vender.</li><li>Entra a la caja, pero <b>no es de la empresa: es del Estado</b>.</li><li>Las <b>boletas también generan débito</b>.</li></ul></div>
+      <div class="col b"><h4>Crédito Fiscal (las compras)</h4><ul><li>El IVA <b>soportado</b> al comprar insumos a proveedores.</li><li>Funciona como "escudo" para rebajar el débito.</li><li><b>Regla de oro:</b> solo da crédito la compra respaldada con <b>factura con IVA detallado</b>. Las boletas <b>no</b> dan crédito.</li></ul></div>
+    </div>
+    <h3 style="margin-top:26px">Hecho gravado del IVA (Art. 8 DL 825)</h3>
+    <div class="grid c2">
+      <div class="card"><h4>Venta de bienes — requisitos</h4><p>(1) Traspaso de <b>propiedad</b>, (2) sobre <b>bienes corporales muebles</b> (o inmuebles de empresas constructoras), (3) a <b>título oneroso</b>, (4) en <b>territorio chileno</b>, (5) por un <b>vendedor habitual</b>.</p></div>
+      <div class="card"><h4>Prestación de servicios — requisitos</h4><p>(1) Una acción <b>a favor de otro</b>, (2) a cambio de <b>remuneración</b>, (3) que provenga de actividades de <b>Primera Categoría</b>, (4) prestada o utilizada <b>en Chile</b>.</p></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ La excepción clave</span>
+      <p>Los servicios de <b>Segunda Categoría</b> —las <b>boletas de honorarios</b> de un profesional independiente— <b>no llevan IVA</b>.</p>
+    </div>
+    <h3 style="margin-top:26px">Ejemplo del deck: ElectroMax Ltda.</h3>
+    <div class="tbl-wrap"><table>
+      <tr><th>Concepto</th><th>Cálculo</th><th>Monto</th></tr>
+      <tr><td>Débito: ventas con factura</td><td>$22.000.000 × 19%</td><td>$4.180.000</td></tr>
+      <tr><td>Débito: ventas con boleta a consumidores</td><td>$8.000.000 × 19%</td><td>$1.520.000</td></tr>
+      <tr><td><b>Débito Fiscal total</b></td><td></td><td><b>$5.700.000</b></td></tr>
+      <tr><td><b>Crédito Fiscal total</b> (solo compras con factura)</td><td>$14.000.000 × 19%</td><td><b>$2.660.000</b></td></tr>
+      <tr><td>Honorarios con boleta y recibos manuales de proveedores informales</td><td>No dan crédito</td><td>$0</td></tr>
+      <tr><td><b>IVA neto a pagar</b></td><td>$5.700.000 − $2.660.000</td><td><b>$3.040.000</b></td></tr>
+    </table></div>
+    <details class="practice"><summary><span class="tag comparar">Comparar</span> ¿Por qué la boleta genera débito pero no da crédito? <span class="arw">›</span></summary>
+      <div class="ans"><div class="model"><span class="ml">Respuesta modelo</span>Al vender, todo IVA cobrado al cliente (con factura o con boleta) es del Estado: por eso la boleta <b>sí genera débito</b>. Para rebajar ese débito, la ley exige respaldar la compra con <b>factura con IVA detallado</b>; una boleta (o un recibo manual, o una boleta de honorarios) <b>no da derecho a crédito</b>. Es la "regla de oro" del sistema.</div></div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="trib-cumplir">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 10 · Cumplir no es solo pagar</div>
+    <h2>Obligaciones principales y accesorias; calendario tributario</h2>
+    <div class="vs">
+      <div class="col a"><h4>Obligación principal (el fondo)</h4><ul><li>El <b>pago efectivo</b> de los impuestos (IVA, Renta, etc.): el dinero pasa de la caja de la empresa al Fisco.</li></ul></div>
+      <div class="col b"><h4>Obligaciones accesorias (la forma)</h4><ul><li><b>Inicio de actividades</b>, obtención de <b>RUT</b>, emisión de <b>facturas y boletas</b>, <b>libros contables</b> y <b>declaraciones juradas</b>.</li></ul></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ El error del novato</span>
+      <p>Creer que si la empresa <b>no tuvo ventas</b> en un mes, no tiene obligaciones. Las obligaciones accesorias se cumplen <b>igual</b>.</p>
+    </div>
+    <div class="grid c3">
+      <div class="card"><h4>F29 — Formulario 29 · mensual</h4><p>Declara y paga el <b>IVA</b> (débito − crédito) y los <b>PPM</b> (Pagos Provisionales Mensuales) del Impuesto a la Renta. Vence en los primeros días de cada mes.</p></div>
+      <div class="card"><h4>F22 — Formulario 22 · anual</h4><p>Declara la <b>Operación Renta</b> del año anterior (IDPC y Global Complementario de los dueños). Se presenta en <b>abril</b>.</p></div>
+      <div class="card"><h4>DJ — Declaraciones Juradas</h4><p>Informes anuales al SII sobre sueldos, honorarios e inversiones que <b>respaldan</b> lo declarado en el F22.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="trib-sanciones">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 10 · El semáforo de las sanciones</div>
+    <h2>Infracción civil, infracción administrativa y delito tributario</h2>
+    <p class="sec-sub">La pregunta que ordena todo: <b>¿hubo intención de engañar (dolo)?</b></p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Categoría</th><th>Ejemplo</th><th>Elemento clave</th><th>Sanción</th></tr>
+      <tr><td><b>Infracción civil</b> (el atraso)</td><td>Pagar el IVA con días de retraso, sin intención de engañar.</td><td>Retardo <b>sin dolo</b>.</td><td>Reajustes, intereses y multas sobre lo adeudado.</td></tr>
+      <tr><td><b>Infracción administrativa</b> (el desorden)</td><td>No presentar libros cuando el SII los pide, o no emitir boleta.</td><td>Entraba la fiscalización, pero <b>sin fraude</b>.</td><td>Multas pecuniarias e incluso <b>clausura temporal</b> del local.</td></tr>
+      <tr><td><b>Delito tributario</b> (el fraude)</td><td>Comprar facturas falsas, doble contabilidad, esconder ingresos a propósito.</td><td><b>Dolo</b>: intención maliciosa de engañar al Fisco.</td><td>Multas de <b>hasta 300%</b> de lo evadido y <b>cárcel</b>.</td></tr>
+    </table></div>
+    <details class="practice"><summary><span class="tag integrar">Integrar</span> Caso del deck: ElectroMax — dos infracciones, dos categorías <span class="arw">›</span></summary>
+      <div class="ans"><p class="qq">En el mismo período, ElectroMax: (i) pagó el IVA con 30 días de atraso durante 6 meses seguidos; (ii) su empleado de contabilidad registró recibos manuales de un proveedor informal como si fueran facturas en el libro de compras, para aumentar el crédito fiscal. (a) Clasificar cada conducta y justificar. (b) Sanción de cada una. (c) ¿Qué elemento subjetivo marca la diferencia?</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>(a) (i) <b>Infracción civil</b>: es un retardo en el pago, sin intención de engañar (aunque sea reiterado). (ii) <b>Delito tributario</b>: hacer pasar recibos manuales por facturas para inflar el crédito fiscal es falsear información a propósito.<br>(b) (i) Reajustes, intereses y multas sobre el monto adeudado. (ii) Multas de hasta el 300% de lo evadido y penas de cárcel.<br>(c) El <b>dolo</b>: en (i) no hay intención de engañar; en (ii) hay intención maliciosa de engañar al Fisco. (Además, los recibos manuales nunca dan derecho a crédito: solo la factura con IVA detallado.)</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="trib-defensa">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 10 · Cuando el SII se excede o fiscaliza</div>
+    <h2>Impugnación, fiscalización y prescripción</h2>
+    <div class="grid c3">
+      <div class="card"><h4>Reserva de ley</h4><p>Solo una ley crea, modifica o amplía un impuesto. Una <b>circular del SII no puede ampliar el hecho gravado</b> más allá de la ley.</p></div>
+      <div class="card"><h4>Vías de impugnación</h4><p>Reclamar ante el <b>Tribunal Tributario y Aduanero (TTA)</b>, o presentar un <b>recurso de protección</b> ante la <b>Corte de Apelaciones</b> por vulneración de garantías constitucionales.</p></div>
+      <div class="card"><h4>CDI en la exportación</h4><p>Un Convenio para Evitar la Doble Tributación vigente entre Chile y el país destino evita que ambos graven la misma ganancia.</p></div>
+    </div>
+    <h3 style="margin-top:26px">La secuencia de una fiscalización</h3>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>Citación</h4><p>El SII pide aclarar, rectificar o complementar la declaración dentro de <b>un mes (prorrogable)</b>. Primera oportunidad real de corregir.</p></div>
+      <div class="card"><span class="num">2</span><h4>Liquidación</h4><p>Si la citación no resuelve, el SII determina el impuesto que a su juicio corresponde. <b>Desde aquí</b> se puede reclamar ante el TTA.</p></div>
+      <div class="card"><span class="num">3</span><h4>Giro</h4><p>La <b>orden de pago</b>. Una vez girado, el monto es exigible, salvo un reclamo pendiente que lo suspenda.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Por qué importa el orden</span>
+      <p>Cada etapa es una oportunidad distinta de defensa; responder bien a la citación muchas veces evita llegar a liquidación y giro.</p>
+    </div>
+    <h3 style="margin-top:26px">Prescripción tributaria: hasta cuándo puede cobrar el SII</h3>
+    <div class="vs">
+      <div class="col a"><h4>Plazo ordinario — 3 años</h4><ul><li>Plazo general para revisar y liquidar diferencias, contado desde que <b>venció el plazo legal para pagar</b>.</li></ul></div>
+      <div class="col b"><h4>Plazo extraordinario — 6 años</h4><ul><li>Si la declaración <b>no se presentó</b> o es <b>maliciosamente falsa</b>: mayor reproche, plazo más largo.</li></ul></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Interrupción y suspensión</span>
+      <p>Una <b>citación</b> puede aumentar el plazo en algunos meses; un <b>reclamo</b> en curso suspende el conteo mientras se resuelve. Para la empresa: define cuánto tiempo guardar facturas, contratos y libros para defenderse.</p>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ No mezclar plazos</span>
+      <p>Prescripción tributaria: <b>3 / 6 años</b>. Responsabilidad civil (Clase 02): contractual 5 / extracontractual 4. Actos civil 5 / comercial 4 (Clase 04). Son plazos distintos para cosas distintas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="insolvencia">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 10 · Cuando el negocio entra en crisis</div>
+    <h2>Ley 20.720 de Insolvencia y Reemprendimiento</h2>
+    <div class="vs">
+      <div class="col a"><h4>Reorganización judicial</h4><ul><li>Para el negocio <b>viable</b> con problema de caja.</li><li>Renegocia con los acreedores <b>mientras sigue funcionando</b>, con un <b>veedor</b> supervisando.</li></ul></div>
+      <div class="col b"><h4>Liquidación concursal</h4><ul><li>Para el negocio que <b>ya no es viable</b>.</li><li>Ordena el cierre: un <b>liquidador</b> vende los activos y paga a los acreedores según su <b>prioridad legal</b>.</li></ul></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ La decisión que no se puede postergar</span>
+      <p>Esperar demasiado para elegir entre ambos caminos es, en la práctica, la forma más cara de quedarse sin ninguna opción.</p>
+    </div>
+    <div class="takeaway"><span class="lab">Cierre de la Unidad III (deck)</span><p>"El impuesto no se negocia con el SII: se planifica con anticipación, dentro del marco que la ley permite." Hecho gravado, base imponible y sistema integrado afectan directamente el flujo de caja.</p></div>
+  </div>
+</section>
+
+<!-- ===================== UNIDAD IV: RELACIÓN LABORAL ===================== -->
+
+<section class="block" id="lab-sujetos">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 11 · Unidad IV — Relación Laboral</div>
+    <h2>Empleador, trabajador y la subordinación</h2>
+    <p class="sec-sub">No basta con prestar un servicio a cambio de dinero: lo que convierte una relación en <b>contrato de trabajo</b> es la <b>subordinación y dependencia</b>.</p>
+    <div class="grid c2">
+      <div class="card"><h4>Empleador</h4><p>Persona <b>natural o jurídica</b> que utiliza los servicios intelectuales o materiales de una o más personas en virtud de un contrato de trabajo.</p></div>
+      <div class="card"><h4>Trabajador</h4><p>Toda persona <b>natural</b> que presta servicios personales, <b>bajo dependencia o subordinación</b>, en virtud de un contrato de trabajo.</p></div>
+    </div>
+    <div class="bigidea">
+      <h3>Contrato individual de trabajo</h3>
+      <p>Convención por la cual empleador y trabajador se obligan <b>recíprocamente</b>: el trabajador a prestar <b>servicios personales bajo dependencia y subordinación</b>, y el empleador a pagar una <b>remuneración determinada</b>.</p>
+    </div>
+    <div class="grid c2">
+      <div class="card"><h4>El enfoque de negocios</h4><p>Si la empresa dicta el <b>"cómo, cuándo y dónde"</b> (horario fijado, instrucciones directas, uniforme, correo corporativo), hay un empleado, <b>sin importar el nombre del documento</b>.</p></div>
+      <div class="card"><h4>El mito de los honorarios</h4><p>Emitir boleta de honorarios o firmar un "contrato civil" <b>no evita</b> la relación laboral. Si en la práctica hay subordinación, la ley (<b>Primacía de la Realidad</b>) asume que existe contrato de trabajo.</p></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa</span>
+      <p>Mirar el papel en vez de los hechos. El nombre del contrato ("prestación de servicios", "honorarios") no decide: deciden los indicios de subordinación.</p>
+    </div>
+    <details class="practice"><summary><span class="tag aplicar">Aplicar</span> ⧉ Caso de práctica: el diseñador "a honorarios" <span class="arw">›</span></summary>
+      <div class="ans"><p class="qq">⧉ Caso inventado para practicar (aplica criterios del deck). Una agencia contrata a un diseñador que emite boleta de honorarios mensual. La agencia le fija horario de 9 a 18, le da instrucciones diarias, le asigna correo corporativo y le exige trabajar en la oficina. ¿Es una relación civil o laboral?</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>Es <b>laboral</b>. Figura: contrato de trabajo por <b>primacía de la realidad</b>. Hay subordinación y dependencia: la agencia dicta el cómo (instrucciones), el cuándo (horario) y el dónde (oficina), y lo integra (correo corporativo). La boleta de honorarios no evita la relación laboral: la ley asume que existe contrato de trabajo, con todas sus obligaciones para el empleador.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="lab-contrato">
+  <div class="wrap">
+    <div class="sec-tag">★ Control · Clase 11 · Arts. 9, 10 y 159 N°4 Código del Trabajo</div>
+    <h2>Requisitos del contrato: contenido mínimo y plazos para escriturar</h2>
+    <h3 style="margin-top:6px">Contenido mínimo del contrato (Art. 10)</h3>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>Identificación y fecha</h4><p>Lugar y fecha del contrato; individualización de las partes con nacionalidad y fechas de nacimiento e ingreso del trabajador.</p></div>
+      <div class="card"><span class="num">2</span><h4>Remuneración</h4><p>Monto, forma y período de pago.</p></div>
+      <div class="card"><span class="num">3</span><h4>Plazo del contrato</h4><p><b>Indefinido</b>, a <b>plazo fijo</b> o por <b>obra o faena</b>.</p></div>
+      <div class="card"><span class="num">4</span><h4>Naturaleza de los servicios</h4><p>Qué servicios y el lugar o ciudad donde se prestan. Puede señalar dos o más funciones alternativas o complementarias.</p></div>
+      <div class="card"><span class="num">5</span><h4>Jornada</h4><p>Duración y distribución de la jornada, salvo sistema de turnos regulado en el reglamento interno.</p></div>
+      <div class="card"><span class="num">6</span><h4>Demás pactos</h4><p>Cualquier otro acuerdo, siempre que <b>no vulnere derechos mínimos</b>.</p></div>
+    </div>
+    <h3 style="margin-top:28px">El contrato y los plazos (Art. 9)</h3>
+    <div class="grid c3">
+      <div class="card"><h4>Naturaleza consensual</h4><p>El contrato <b>nace cuando ambas partes se ponen de acuerdo</b>; no necesita el papel para existir. La ley exige escriturarlo como <b>medio de prueba</b>.</p></div>
+      <div class="card"><h4>Plazos límite para escriturar</h4><p>Contratos de <b>30 días o más</b>: <b>15 días</b> desde la incorporación. Contratos <b>menores a 30 días o por obra</b>: <b>5 días</b>.</p></div>
+      <div class="card"><h4>El castigo por atraso</h4><p>Multa de <b>1 a 5 UTM</b> (Unidad Tributaria Mensual) y, lo más crítico: se <b>presume</b> que las condiciones del contrato (sueldo, cargo) son <b>las que declare el trabajador</b>.</p></div>
+    </div>
+    <div class="callout trap">
+      <span class="lab">⚠️ Trampa</span>
+      <p>"Sin contrato firmado no hay relación laboral" es falso: el contrato es <b>consensual</b> y existe desde el acuerdo. La escrituración es prueba; no hacerla a tiempo traslada el riesgo al empleador (presunción a favor del trabajador).</p>
+    </div>
+    <h3 style="margin-top:28px">De plazo fijo a indefinido (Art. 159 N°4)</h3>
+    <div class="grid c3">
+      <div class="card"><span class="num">1</span><h4>Continuidad de hecho</h4><p>Llegó la fecha de término, pero el trabajador <b>siguió prestando servicios</b> al día siguiente con conocimiento del empleador.</p></div>
+      <div class="card"><span class="num">2</span><h4>Límite de renovaciones</h4><p>El contrato se renueva <b>por segunda vez</b> (la ley solo permite <b>una única renovación</b> a plazo fijo).</p></div>
+      <div class="card"><span class="num">3</span><h4>La regla del 12/15</h4><p>Más de dos contratos a plazo, prestando servicios <b>12 meses o más</b> dentro de un período de <b>15 meses</b>.</p></div>
+    </div>
+    <details class="practice"><summary><span class="tag integrar">Integrar</span> Caso del deck: la contratación apresurada (Carmen, FoodTech SpA) <span class="arw">›</span></summary>
+      <div class="ans"><p class="qq">Startup FoodTech SpA contrata a Carmen como "Growth Manager" el 1 de marzo. No firman el contrato ese día; pasan las semanas y sigue sin firmarse, mientras Carmen trabaja jornada completa desde el primer día. (a) ¿Plazo legal máximo para escriturar y desde cuándo se cuenta? (b) Si a los 20 días sigue sin firmar, ¿qué presunción se activa? (c) ¿Qué otra sanción arriesga la empresa?</p>
+        <div class="model"><span class="ml">Respuesta modelo</span>(a) Es un contrato de 30 días o más (jornada completa, sin plazo corto): <b>15 días</b> contados <b>desde su incorporación</b> (1 de marzo) — Art. 9 Código del Trabajo. El contrato ya existe desde el acuerdo (es consensual); lo que vence es el plazo para escriturarlo.<br>(b) A los 20 días el plazo está vencido: se <b>presume legalmente</b> que las condiciones del contrato (sueldo, cargo) son <b>las que declare Carmen</b>.<br>(c) Multa de <b>1 a 5 UTM</b>.</div>
+      </div>
+    </details>
+    <details class="practice"><summary><span class="tag">Recordar</span> Las 3 situaciones que convierten un plazo fijo en indefinido <span class="arw">›</span></summary>
+      <div class="ans"><div class="model"><span class="ml">Respuesta modelo</span>(1) <b>Continuidad de hecho</b>: sigue trabajando después de la fecha de término con conocimiento del empleador. (2) <b>Segunda renovación</b>: la ley permite una sola renovación a plazo fijo. (3) <b>Regla 12/15</b>: más de dos contratos a plazo con 12 meses o más de servicios dentro de 15 meses.</div></div>
+    </details>
+  </div>
+</section>
+
+<section class="block" id="lab-sub">
+  <div class="wrap">
+    <div class="sec-tag">Clase 11 · Fuera de los requisitos del contrato · secundario para el control</div>
+    <h2>Subcontratación y seguridad laboral</h2>
+    <h3 style="margin-top:6px">Ley 20.123: subcontratación</h3>
+    <p class="sec-sub" style="margin-bottom:12px">La Empresa Principal contrata a una Empresa Contratista para una obra o servicio. Los trabajadores de la contratista <b>no son</b> trabajadores de la principal.</p>
+    <div class="grid c2">
+      <div class="card"><h4>Responsabilidad subsidiaria (regla general)</h4><p>Si la contratista no paga sueldos o cotizaciones, los trabajadores pueden demandar a la principal, pero <b>solo después de agotar</b> la acción contra la contratista.</p></div>
+      <div class="card"><h4>Responsabilidad solidaria (riesgo mayor)</h4><p>Si la principal <b>no ejerce su Derecho de Información Laboral</b> (exigir certificados de cumplimiento, Art. 183-C), sube a <b>solidaria</b>: el trabajador la demanda directamente.</p></div>
+      <div class="card"><h4>Suministro (Empresas de Servicios Transitorios)</h4><p>Distinto de la subcontratación: relación laboral <b>triangular</b>, temporal y limitada a causales específicas (reemplazos, aumentos estacionales), con plazo máximo legal.</p></div>
+      <div class="card"><h4>Enfoque de negocio</h4><p>Pedir y archivar <b>mensualmente</b> los certificados de cumplimiento laboral y previsional de cada contratista es lo único que mantiene a la empresa en "subsidiario" y no en "solidario".</p></div>
+    </div>
+    <h3 style="margin-top:26px">Ley 16.744: accidentes del trabajo y enfermedades profesionales</h3>
+    <div class="grid c2">
+      <div class="card"><h4>Cobertura</h4><p>Accidente en el lugar de trabajo, accidente <b>de trayecto</b> (ida o vuelta) y <b>enfermedades profesionales</b>.</p></div>
+      <div class="card"><h4>Financiamiento y gestión</h4><p>Cotización obligatoria <b>del empleador</b> (no del trabajador). Lo administran el Instituto de Seguridad Laboral (ISL) o las Mutualidades de Empleadores.</p></div>
+      <div class="card"><h4>Obligación de prevención</h4><p>Condiciones seguras, informar los riesgos del puesto (<b>Art. 184</b> Código del Trabajo) y, con subcontratación, coordinar la seguridad de todos los presentes.</p></div>
+      <div class="card"><h4>Si no cumple</h4><p>Además de las prestaciones del seguro, un empleador negligente puede enfrentar una <b>demanda de indemnización adicional</b>.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Ocurrió un accidente: 4 preguntas</span>
+      <p>(1) ¿Se denunció de inmediato a la mutualidad o al ISL (Denuncia Individual de Accidente del Trabajo, DIAT)? (2) ¿Trayecto o lugar de trabajo? (el de trayecto suele requerir constancia en Carabineros o testigos) (3) ¿Hay un contratista involucrado? (4) ¿Se investigaron las causas?</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="lab-jornada">
+  <div class="wrap">
+    <div class="sec-tag">Clase 11 · Fuera de los requisitos del contrato · secundario para el control</div>
+    <h2>Jornada, teletrabajo, liquidación de sueldo y seguro de cesantía</h2>
+    <div class="grid c2">
+      <div class="card"><h4>Jornada ordinaria (Arts. 21 y 22)</h4><p>Tiempo en que se prestan efectivamente servicios, incluido el tiempo a disposición del empleador sin labor por causas no imputables al trabajador. <b>Ley 21.561:</b> máximo <b>40 horas semanales</b>, en no más de <b>6</b> ni menos de <b>4</b> días.</p></div>
+      <div class="card"><h4>Excepción del Art. 22</h4><p>Gerentes, administradores y trabajadores sin fiscalización superior inmediata (ej. vendedores en terreno): sin límite de horario. No marcan tarjeta, pero <b>tampoco generan horas extras</b>.</p></div>
+      <div class="card"><h4>Jornada extraordinaria</h4><p>La que excede el máximo legal o la pactada (si es menor). <b>Excepcional</b> y temporal (inventario, Cyber Monday). Recargo mínimo del <b>50%</b> sobre la hora ordinaria.</p></div>
+      <div class="card"><h4>Teletrabajo</h4><p>Pacto <b>por escrito</b> con el lugar de prestación; la empresa provee y mantiene los <b>equipos</b> y respeta el <b>derecho a desconexión</b>. Tratarlo como "sin jornada" expone a la misma fiscalización.</p></div>
+    </div>
+    <h3 style="margin-top:26px">Bruto vs. líquido (Art. 41)</h3>
+    <div class="vs">
+      <div class="col a"><h4>Haberes (suman)</h4><ul><li>Sueldo base (no menor al Ingreso Mínimo Mensual).</li><li>Comisiones y participaciones variables.</li><li>Sobresueldo por horas extras.</li></ul></div>
+      <div class="col b"><h4>Descuentos legales (restan)</h4><ul><li>AFP (vejez, aprox. 10–12%).</li><li>Salud: Fonasa o Isapre, <b>7%</b>.</li><li>Seguro de Cesantía (<b>0,6%</b> en contratos indefinidos).</li><li>El empleador es <b>agente retenedor</b>: descuenta y paga directamente, incluido el Impuesto Único de Segunda Categoría.</li></ul></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Seguro de Cesantía (Ley 19.728)</span>
+      <p>Obligatorio, financiado por empleador y trabajador. El empleador aporta a la <b>Cuenta Individual de Cesantía (CIC)</b> y a un <b>Fondo de Cesantía Solidario</b>; en contratos indefinidos el trabajador también cotiza. Al terminar el contrato se gira la CIC (y, si no alcanza y se cumplen requisitos, el Fondo Solidario). <b>No reemplaza</b> la indemnización por años de servicio (Art. 161): son compatibles. No pagarla genera los mismos recargos que el resto de las cotizaciones y complica el finiquito. <b>Checklist del deck:</b> (1) ¿se paga todos los meses? (2) ¿el contrato es indefinido o a plazo? (cambia el porcentaje de cada parte) (3) ¿el finiquito refleja las cotizaciones pagadas? (si no, puede gatillar la Ley Bustos y bloquear el despido) (4) ¿el trabajador sabe que puede girar su CIC? (no es obligatorio informarlo, pero evita reclamos).</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="lab-termino">
+  <div class="wrap">
+    <div class="sec-tag">Clase 11 · Fuera de los requisitos del contrato · secundario para el control</div>
+    <h2>Término del contrato, Ley Bustos, fuero y derecho colectivo</h2>
+    <div class="grid c3">
+      <div class="card"><span class="num">159</span><h4>Salida natural</h4><p>Mutuo acuerdo, renuncia, término del plazo fijo. Nadie "echa" a nadie. <b>Sin</b> indemnización por años de servicio.</p></div>
+      <div class="card"><span class="num">160</span><h4>Despido disciplinario</h4><p>Falta grave del trabajador. <b>Cero</b> indemnización, pero exige <b>prueba sólida</b> de la causal.</p></div>
+      <div class="card"><span class="num">161</span><h4>Decisión estratégica</h4><p>El trabajador no hizo nada malo; la empresa se reestructura. El más caro: <b>aviso previo + indemnización por años de servicio</b>.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Causales del Art. 160</span>
+      <p>Conductas graves (falta de probidad, acoso sexual, agresiones o insultos al empleador) · abandono de trabajo (irse de la faena sin permiso, o negarse a trabajar en lo pactado) · inasistencia injustificada (<b>2 días seguidos o 3 en un mes</b>) · negligencia y daño (actos temerarios, destrucción intencional).</p>
+    </div>
+    <div class="grid c2">
+      <div class="card"><h4>Ley Bustos: el candado del despido</h4><p>No se puede despedir por Art. 160 debiendo cotizaciones. Hay <b>3 días</b> para enviar carta certificada con la causal y los comprobantes de cotizaciones al día. Si se despide con deuda: <b>nulidad del despido</b>; se sigue pagando sueldo hasta pagar y convalidar con nueva carta.</p></div>
+      <div class="card"><h4>Fuero: a quién no se puede despedir</h4><p><b>Maternal</b> (Art. 201: embarazo hasta 1 año después del postnatal) · <b>Sindical</b> (Art. 243: mandato + 6 meses) · <b>Por denuncia</b> (Ley Karin, mientras dure la investigación). Sin autorización judicial previa (desafuero) → despido <b>nulo</b>, reincorporación y pago de remuneraciones.</p></div>
+    </div>
+    <div class="callout ex">
+      <span class="lab">📌 Derecho colectivo</span>
+      <p>Libertad sindical (afiliarse o no, sin condicionar contratación ni despido) · fuero de negociación (<b>10 días antes</b> del proyecto hasta <b>30 días después</b> de suscrito el contrato colectivo) · respuesta del empleador al proyecto en <b>10 días</b> · servicios mínimos (por acuerdo o fijados por la Dirección del Trabajo) · huelga: <b>prohibido reemplazar</b> a los trabajadores en huelga, con personal externo o interno, salvo servicios mínimos vía equipo de emergencia.</p>
     </div>
   </div>
 </section>
@@ -698,250 +1369,200 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;a
 <div id="tab-simulacro" class="tabpane">
   <div class="hero hero-sim">
     <div class="wrap">
-      <div class="kicker">Modo examen · Control (Clases 6 y 7)</div>
+      <div class="kicker">Modo control · Clase 10 (impuestos) + Clase 11 (requisitos del contrato)</div>
       <h1>Simulacro del control</h1>
-      <p class="lead">Método de uso: leer la pregunta, escribir la respuesta aparte y <b>solo después</b> abrir la pauta. El valor está en producir la respuesta en frío.</p>
+      <p class="lead">Control individual de 25 minutos. Método: leer la pregunta, escribir la respuesta aparte (con reloj) y solo después abrir la pauta.</p>
       <div class="exam-banner">
-        Preguntas construidas a partir de los casos de los decks. <b>Criterio de corrección:</b> se asigna puntaje por cada componente presente; clasificar sin explicar el porqué vale la mitad. <em>El formato exacto del control no está confirmado; estas preguntas apuntan a dominar los conceptos y su aplicación.</em>
+        Preguntas construidas desde los casos y herramientas de las Clases 10 y 11 (las situaciones inventadas van marcadas ⧉). <b>Criterio usado:</b> puntaje por componente presente; clasificar sin explicar el porqué vale la mitad. El formato exacto del control no está confirmado. <b>Forma de respuesta del curso (Clase 01):</b> identificar la figura jurídica → citar la norma → fundamentar la decisión de negocio. Las pautas son una ayuda de estudio, no la pauta del profesor.
       </div>
     </div>
   </div>
-
   <section class="block">
     <div class="wrap">
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">1</span><span class="qmeta">Aplicación · ★ Capital</span></div>
-        <p class="qtext">Viñas del Valle S.A. tiene un capital autorizado de 500.000 acciones; 420.000 fueron suscritas y 300.000 están pagadas. Explicar qué significa cada una de las tres etapas y qué riesgo implica la diferencia entre suscrito y pagado.</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            <b>Autorizado (500.000):</b> el techo legal que la Junta aprobó emitir; acciones creadas pero aún sin dueño. <b>Suscrito (420.000):</b> accionistas que se comprometieron por contrato a comprarlas, con plazo improrrogable de <b>3 años</b> para pagar. <b>Pagado (300.000):</b> el dinero que ya ingresó a la caja; es la base real de solvencia. <b>Riesgo:</b> de las 420.000 suscritas, 120.000 están comprometidas pero no pagadas; si no se pagan en 3 años, el accionista moroso <b>pierde sus derechos</b> sobre lo no pagado.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Define correctamente las 3 etapas (autorizado ≥ suscrito ≥ pagado).</li><li>Menciona el plazo de 3 años improrrogable del suscrito.</li><li>Nombra la consecuencia de no pagar (moroso pierde derechos).</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">1</span><span class="qmeta">Clase 10 · Hecho gravado del IVA</span></div>
+        <p class="qtext">(a) Señalar los requisitos del hecho gravado del IVA (Art. 8 DL 825) para la venta de bienes y para la prestación de servicios. (b) ⧉ Situaciones de práctica: indicar si llevan IVA y por qué: (i) una tienda que vende habitualmente notebooks en Chile; (ii) un abogado independiente que cobra con boleta de honorarios.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>(a) <b>Venta de bienes:</b> traspaso de propiedad, sobre bienes corporales muebles (o inmuebles de empresas constructoras), a título oneroso, en territorio chileno, por un vendedor habitual. <b>Servicios:</b> acción a favor de otro, a cambio de remuneración, proveniente de actividades de Primera Categoría, prestada o utilizada en Chile. (b) (i) <b>Sí</b>: cumple todos los requisitos de la venta (bien corporal mueble, oneroso, en Chile, vendedor habitual). (ii) <b>No</b>: es un servicio de Segunda Categoría; las boletas de honorarios no llevan IVA.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Los 5 requisitos de la venta y los 4 de los servicios.</li><li>Aplica los requisitos a cada situación (no solo "sí/no").</li><li>Excepción: Segunda Categoría / honorarios sin IVA.</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">2</span><span class="qmeta">Análisis · ★ Quórums</span></div>
-        <p class="qtext">Los hermanos Morales controlan el 60% de Viñas del Valle S.A. y quieren aprobar, en la próxima reunión del directorio, un aumento de capital y la disolución voluntaria. Los minoritarios (40%) dicen que pueden bloquear ambas. (a) ¿Es el directorio la instancia correcta? (b) ¿Basta el 60% para el aumento de capital? (c) ¿Basta el 60% para la disolución?</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            <b>(a)</b> No. Son materias de <b>Junta Extraordinaria de Accionistas</b>, no del directorio (alteran la esencia de la sociedad).<br>
-            <b>(b) Aumento de capital:</b> quórum de <b>mayoría absoluta (50%+1)</b>. El 60% <b>basta</b> para aprobarlo; el 40% <b>no</b> puede bloquearlo.<br>
-            <b>(c) Disolución voluntaria:</b> es decisión extrema del <b>Art. 67</b> → quórum de <b>2/3 (66,7%)</b>. El 60% <b>no basta</b>; el 40% <b>sí</b> puede bloquearla (tiene más de 1/3). Los minoritarios tienen razón en esto último.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Identifica la instancia correcta (Junta Extraordinaria, no directorio).</li><li>Aumento = 50%+1 → 60% aprueba, 40% no bloquea.</li><li>Disolución = 2/3 → 60% no basta, 40% sí bloquea.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">2</span><span class="qmeta">Clase 10 · Cálculo de IVA</span></div>
+        <p class="qtext">ElectroMax Ltda. tuvo en el mes: ventas con factura por $22.000.000 neto; ventas con boleta a consumidores por $8.000.000 neto; compras a proveedores con factura por $14.000.000 neto; además pagó honorarios con boleta y compró a un proveedor informal con recibos manuales. Tasa de IVA: 19%. Calcular débito fiscal, crédito fiscal e IVA a pagar, explicando qué documentos dan crédito.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>Débito: $22.000.000 × 19% = $4.180.000 + $8.000.000 × 19% = $1.520.000 → <b>$5.700.000</b> (las boletas también generan débito). Crédito: solo compras con factura: $14.000.000 × 19% = <b>$2.660.000</b>. Honorarios con boleta y recibos manuales <b>no dan crédito</b> (regla de oro: solo la factura con IVA detallado). IVA a pagar = $5.700.000 − $2.660.000 = <b>$3.040.000</b>, declarado y pagado en el F29 mensual.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Débito incluye ventas con boleta.</li><li>Crédito solo con factura; excluye boletas de honorarios y recibos.</li><li>Ecuación débito − crédito y resultado correcto.</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">3</span><span class="qmeta">Análisis · Responsabilidad de directores</span></div>
-        <p class="qtext">Un accionista con el 10% quiere demandar al directorio de una S.A. (4 miembros, todos de la familia controladora) por tomar decisiones que los benefician. (a) ¿Qué estándar fija la Ley 18.046 y qué debe probar el accionista? (b) ¿Basta con que las decisiones hayan beneficiado a la familia? (c) ¿Para qué serviría un director independiente?</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            <b>(a)</b> El estándar del <b>"buen hombre de negocios"</b> (Art. 41): los directores responden solidariamente con su patrimonio por el daño causado con <b>culpa o dolo</b>. El accionista debe probar <b>negligencia o dolo</b>, no solo el perjuicio.<br>
-            <b>(b)</b> No basta. Por la <b>business judgment rule</b>, un mal resultado o que beneficie al controlador no condena por sí solo; hay que acreditar la falta de cuidado debido (y "voté con la mayoría" no es defensa).<br>
-            <b>(c)</b> Un <b>director independiente</b> (sin vínculos con el controlador) representaría el interés general y protegería a los minoritarios, revisando operaciones con partes relacionadas.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Nombra el estándar "buen hombre de negocios" (Art. 41) y la solidaridad.</li><li>Exige probar culpa/dolo (business judgment rule); el mal resultado no basta.</li><li>Explica el rol protector del director independiente.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">3</span><span class="qmeta">Clase 10 · Caso Muebles La Madera (IDPC y retiro)</span></div>
+        <p class="qtext">Muebles La Madera SpA está en el Régimen General (Impuesto de Primera Categoría, IDPC, 27%). Su único dueño, Juan, es persona natural con residencia en Chile. En el año compró madera y herramientas por $10.000.000 neto y vendió muebles por $30.000.000 neto. Juan retira toda la utilidad neta; no tiene otro ingreso y cae en el tramo exento del Global Complementario. (a) Calcular la utilidad y el IDPC. (b) ¿Qué pasa con el crédito por el IDPC? (c) Explicar por qué el sistema integrado puede generar una devolución.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>(a) Utilidad $20.000.000; IDPC = $20.000.000 × 27% = <b>$5.400.000</b>; utilidad neta $14.600.000. (b) Al retirar el 100% de la utilidad neta, Juan usa el 100% del crédito ($5.400.000). Su Global Complementario es $0 (exento) → $0 − $5.400.000 = negativo → <b>devolución de $5.400.000</b>. (c) El IDPC funciona como un "vale de descuento" a nombre del dueño: si su impuesto personal es menor que lo que la empresa ya adelantó, el Fisco devuelve la diferencia; así no se cobra dos veces.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Utilidad e IDPC bien calculados.</li><li>Crédito aplicado contra un impuesto personal de $0 → devolución.</li><li>Explica la lógica del crédito (no hay doble tributación).</li></ul></div>
+          <p class="hint">⧉ En la ley vigente el Régimen General es semi-integrado (el crédito no se recupera al 100%); el deck no trata ese matiz.</p>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">4</span><span class="qmeta">Caso · ★ SpA vs SAC</span></div>
-        <p class="qtext">Diego aporta el capital inicial; Valentina aporta los algoritmos que desarrolló (propiedad intelectual) y su trabajo full-time. Evalúan constituir una SpA o una S.A. Cerrada. (a) ¿Puede Valentina aportar sus algoritmos y su trabajo? (b) Para cada vehículo, ¿son posibles el aporte de bienes inmateriales y el de trabajo? (c) Si quieren dar acciones a dos colaboradores sujetas a permanencia, ¿qué mecanismo y en qué vehículo?</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            <b>(a)</b> Los <b>algoritmos</b> (bien inmaterial avaluable) se pueden aportar en ambos vehículos. El <b>trabajo</b> solo puede ser capital vía <b>acciones de industria</b>, que permite la <b>SpA</b>, no la SAC.<br>
-            <b>(b) SpA:</b> sí a bienes inmateriales y sí a trabajo (acciones de industria). <b>SAC:</b> sí a bienes inmateriales, <b>no</b> al trabajo (el aporte de trabajo no es capital en las S.A.).<br>
-            <b>(c)</b> <b>Vesting</b> (acciones que se desbloquean con la permanencia, ej. 25%/año × 4), posible en la <b>SpA</b>. Conviene constituir una <b>SpA</b>.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Distingue aporte de bienes (ambos) del aporte de trabajo (solo SpA, acciones de industria).</li><li>Concluye que la SpA es el vehículo correcto.</li><li>Nombra el vesting para los colaboradores.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">4</span><span class="qmeta">Clase 10 · Obligaciones y calendario</span></div>
+        <p class="qtext">⧉ Situación de práctica. Una empresa recién constituida no tuvo ventas en su primer mes y su gerente sostiene que ese mes "no tiene ninguna obligación tributaria". Evaluar la afirmación distinguiendo obligación principal y obligaciones accesorias, y explicar para qué sirven el F29, el F22 y las Declaraciones Juradas.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>Es incorrecta: es "el error del novato". La <b>obligación principal</b> (el fondo) es pagar el impuesto; sin ventas puede no haber IVA que pagar, pero las <b>obligaciones accesorias</b> (la forma) se cumplen igual: inicio de actividades, RUT, emisión de facturas y boletas, libros contables y declaraciones juradas. <b>F29:</b> mensual, declara y paga IVA (débito − crédito) y PPM; vence en los primeros días del mes. <b>F22:</b> anual (abril), Operación Renta del año anterior (IDPC y Global Complementario de los dueños). <b>DJ:</b> informes anuales (sueldos, honorarios, inversiones) que respaldan el F22.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Distingue principal (pagar) de accesorias (forma) y concluye que estas siguen vigentes.</li><li>Enumera las accesorias.</li><li>F29 mensual / F22 anual en abril / DJ como respaldo.</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">5</span><span class="qmeta">Comparación · Pactos de accionistas</span></div>
-        <p class="qtext">Explicar la diferencia entre una cláusula de <b>arrastre (drag-along)</b> y una de <b>acompañamiento (tag-along)</b>, e indicar a quién protege cada una.</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            <b>Drag-along (arrastre):</b> permite al socio <b>mayoritario obligar</b> a los minoritarios a vender cuando aparece un comprador por el 100% — protege/favorece al <b>mayoritario</b> (y facilita cerrar la venta total). <b>Tag-along (acompañamiento):</b> si el controlador vende, el <b>minoritario puede sumarse</b> y vender en las mismas condiciones — protege al <b>minoritario</b>.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Drag-along = mayoritario arrastra a vender.</li><li>Tag-along = minoritario se suma a la venta del controlador.</li><li>Identifica correctamente a quién protege cada una.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">5</span><span class="qmeta">Clase 10 · Sanciones (caso ElectroMax)</span></div>
+        <p class="qtext">ElectroMax, en el mismo período: (i) pagó el IVA con 30 días de atraso durante 6 meses seguidos; (ii) su empleado de contabilidad registró recibos manuales de un proveedor informal como si fueran facturas en el libro de compras, para aumentar el crédito fiscal. (a) Clasificar cada conducta y justificar. (b) Sanción de cada una. (c) ¿Qué elemento subjetivo marca la diferencia?</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>(a) (i) <b>Infracción civil</b>: retardo en el pago sin intención de engañar (aunque sea reiterado). (ii) <b>Delito tributario</b>: falsea información a propósito para inflar el crédito. (b) (i) Reajustes, intereses y multas sobre lo adeudado. (ii) Multas de hasta <b>300%</b> de lo evadido y <b>cárcel</b>. (c) El <b>dolo</b>: intención maliciosa de engañar al Fisco. Contraste: una infracción administrativa sería entrabar la fiscalización sin fraude (no presentar libros, no emitir boleta) → multas y clausura temporal.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Clasifica bien ambas y explica por qué (clasificar sin justificar = mitad).</li><li>Sanción de cada una (300% + cárcel en el delito).</li><li>Nombra el dolo como criterio.</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">6</span><span class="qmeta">Conceptual · Info privilegiada / Ley 18.045</span></div>
-        <p class="qtext">Un gerente de una S.A. abierta sabe que mañana se anunciará una fusión aún no comunicada al mercado, y quiere comprar acciones hoy. ¿Qué figura de la Ley 18.045 está en juego, por qué es grave, y qué es un "hecho esencial"?</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            Está en juego el <b>uso de información privilegiada</b>: usar información no divulgada al mercado para operar (o pasarla a un tercero, <i>tipping</i>) es <b>delito</b>, no solo una infracción administrativa. La fusión es un <b>hecho esencial</b>: información que un inversionista razonable consideraría relevante para comprar/vender/mantener, y que la S.A. abierta debe informar de inmediato al mercado. Comprar antes del anuncio es exactamente la conducta sancionada.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Identifica el uso de información privilegiada y que es delito.</li><li>Define hecho esencial (relevante para un inversionista razonable).</li><li>Conecta: operar antes de divulgar es la conducta sancionada.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">6</span><span class="qmeta">Clase 10 · Reserva de ley e impugnación</span></div>
+        <p class="qtext">⧉ Situación de práctica (aplica la regla de la Clase 10). El Servicio de Impuestos Internos (SII) emite una circular que instruye cobrar IVA sobre un servicio que la ley no grava. ¿Qué principio se vulnera, por qué la circular no puede hacerlo y qué vías de impugnación tiene la empresa?</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>Se vulnera la <b>reserva de ley</b> ("nullum tributum sine lege"): solo una ley aprobada por el Congreso puede crear, modificar o ampliar un impuesto. Una circular del SII <b>no puede ampliar el hecho gravado</b> más allá de lo que dice la ley. Vías: reclamar ante el <b>Tribunal Tributario y Aduanero (TTA)</b>, o <b>recurso de protección</b> ante la <b>Corte de Apelaciones</b> por vulneración de garantías constitucionales.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Nombra la reserva de ley.</li><li>Una circular no amplía el hecho gravado.</li><li>Las dos vías (TTA / recurso de protección ante la Corte de Apelaciones).</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">7</span><span class="qmeta">Aplicación · Director independiente</span></div>
-        <p class="qtext">¿Cuándo está una S.A. abierta obligada a tener director independiente y Comité de Directores, y qué efecto tiene en la composición del directorio?</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            Es obligatorio (Art. 50 bis, Ley 18.046) en S.A. <b>abiertas</b> con <b>patrimonio bursátil ≥ 1.500.000 UF</b> y donde al menos el <b>12,5%</b> de las acciones con derecho a voto esté en manos de accionistas que individualmente controlen menos del 10%. Efecto: directorio de <b>al menos 7 miembros</b> y un <b>Comité de Directores</b> (mayoría independiente) que revisa EEFF, auditoría, remuneraciones de gerentes y operaciones con partes relacionadas.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Las dos condiciones (1.500.000 UF y 12,5%).</li><li>Que es solo para abiertas.</li><li>El efecto: directorio ≥7 + Comité de Directores.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">7</span><span class="qmeta">Clase 10 · Fiscalización y prescripción</span></div>
+        <p class="qtext">El SII detecta una diferencia en el IVA declarado por una empresa. Describir la secuencia de etapas que seguirá el SII, desde qué etapa se puede reclamar ante el Tribunal Tributario y Aduanero, y cuál es el plazo de prescripción si la declaración se presentó correctamente y si fue maliciosamente falsa.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span><b>Citación</b> (aclarar, rectificar o complementar dentro de un mes, prorrogable; primera oportunidad real de corregir) → <b>liquidación</b> (el SII determina el impuesto que a su juicio corresponde; <b>desde aquí</b> se reclama ante el TTA) → <b>giro</b> (orden de pago; exigible salvo reclamo pendiente que lo suspenda). Prescripción: <b>3 años</b> (ordinario, desde que venció el plazo legal para pagar); <b>6 años</b> si no se presentó declaración o es maliciosamente falsa. Una citación puede aumentar el plazo; un reclamo en curso lo suspende.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Las 3 etapas en orden y qué ocurre en cada una.</li><li>Reclamo ante el TTA desde la liquidación.</li><li>3 vs 6 años con su criterio.</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="simq">
-        <div class="simq-head"><span class="qnum">8</span><span class="qmeta">Conceptual · Reorganización</span></div>
-        <p class="qtext">Distinguir transformación, fusión (por creación y por incorporación) y división. ¿Qué pasa en general con los contratos vigentes y qué quórum exige la junta?</p>
-        <details class="practice sim">
-          <summary><span class="tag">Ver pauta y autocorrección</span><span class="arw">›</span></summary>
-          <div class="ans">
-            <div class="model"><span class="ml">Respuesta modelo</span>
-            <b>Transformación:</b> cambia de tipo social sin disolverse ni crear nueva persona jurídica (misma empresa, otro traje). <b>Fusión por creación:</b> dos o más se disuelven y forman una nueva que asume todo. <b>Fusión por incorporación:</b> una absorbe a otra(s), que se disuelven. <b>División:</b> reparte su patrimonio en dos o más sociedades. Los <b>contratos se mantienen</b> por regla general (la continuadora asume la posición), salvo cláusulas de cambio de control. Quórum: <b>2/3</b> (altera la esencia); si hay concentración entre competidores, notificar a la <b>FNE</b>.</div>
-            <div class="pauta"><span class="pl">✔ El corrector busca</span>
-            <ul><li>Define las cuatro figuras correctamente.</li><li>Contratos se mantienen (continuadora asume la posición).</li><li>Quórum 2/3; menciona la FNE si hay concentración.</li></ul></div>
-          </div>
-        </details>
+      <div class="simq"><div class="simq-head"><span class="qnum">8</span><span class="qmeta">Clase 10 · Insolvencia (Ley 20.720)</span></div>
+        <p class="qtext">Distinguir la reorganización judicial y la liquidación concursal de la Ley 20.720: para qué tipo de negocio sirve cada una, quién interviene y por qué no conviene postergar la decisión.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span><b>Reorganización judicial:</b> negocio <b>viable</b> con problema de caja; renegocia con los acreedores mientras sigue operando, supervisado por un <b>veedor</b>. <b>Liquidación concursal:</b> negocio <b>no viable</b>; ordena el cierre: un <b>liquidador</b> vende los activos y paga a los acreedores según su prioridad legal. Postergar la decisión es, en la práctica, la forma más cara de quedarse sin ninguna opción.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Criterio de viabilidad para elegir.</li><li>Veedor vs liquidador.</li><li>El costo de postergar.</li></ul></div>
+        </div></details>
       </div>
 
-      <div class="glob callout">
-        <span class="lab">🌍 Después del simulacro</span>
-        <p>Los componentes sin marcar en cada checklist señalan el tema a reforzar. La pestaña <b>Contenido</b> desarrolla cada uno; <b>Last Read</b> concentra los datos que dan puntos.</p>
+      <div class="simq"><div class="simq-head"><span class="qnum">9</span><span class="qmeta">Clase 11 · Subordinación ⧉</span></div>
+        <p class="qtext">⧉ Situación de práctica. Una consultora contrata a una analista "a honorarios": emite boleta mensual, pero la consultora le fija horario, le da instrucciones diarias, le asigna correo corporativo y le exige ir a la oficina. La consultora sostiene que no hay contrato de trabajo porque firmaron un "contrato de prestación de servicios". Evaluar.</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>Hay <b>contrato de trabajo</b>: servicios personales a cambio de remuneración, bajo <b>subordinación y dependencia</b>, que es el elemento que lo distingue de otros contratos. La consultora dicta el cómo (instrucciones), el cuándo (horario) y el dónde (oficina), y la integra (correo corporativo). Por la <b>primacía de la realidad</b>, el nombre del documento y la boleta de honorarios no evitan la relación laboral; la empresa asume las obligaciones de empleador (entre ellas, escriturar el contrato en plazo).</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Define el contrato y nombra la subordinación como elemento distintivo.</li><li>Aplica primacía de la realidad a los hechos.</li><li>Concluye contrato de trabajo y su consecuencia.</li></ul></div>
+        </div></details>
       </div>
 
+      <div class="simq"><div class="simq-head"><span class="qnum">10</span><span class="qmeta">Clase 11 · Contenido mínimo y plazo fijo</span></div>
+        <p class="qtext">(a) Enumerar el contenido mínimo del contrato de trabajo según el Art. 10 del Código del Trabajo. (b) Indicar las tres situaciones en que un contrato a plazo fijo se transforma en indefinido (Art. 159 N°4).</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>(a) <b>Identificación y fecha</b> (lugar y fecha; partes con nacionalidad, fechas de nacimiento e ingreso); <b>remuneración</b> (monto, forma, período); <b>plazo</b> (indefinido, plazo fijo, obra o faena); <b>naturaleza de los servicios</b> y lugar o ciudad (puede haber funciones alternativas o complementarias); <b>jornada</b> (duración y distribución, salvo turnos del reglamento interno); <b>demás pactos</b> que no vulneren derechos mínimos. (b) <b>Continuidad de hecho</b> tras el término con conocimiento del empleador; <b>segunda renovación</b> (solo se permite una); <b>regla 12/15</b>: más de dos contratos a plazo con 12 meses o más de servicios dentro de 15 meses.</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Las 6 menciones del Art. 10.</li><li>Las 3 situaciones del Art. 159 N°4.</li></ul></div>
+        </div></details>
+      </div>
+
+      <div class="simq"><div class="simq-head"><span class="qnum">11</span><span class="qmeta">Clase 11 · Caso: la contratación apresurada</span></div>
+        <p class="qtext">Startup FoodTech SpA contrata a Carmen como "Growth Manager" el 1 de marzo, con jornada completa desde ese día. Por el lanzamiento, el contrato no se firma y a los 20 días sigue sin escriturarse. (a) ¿Existe contrato de trabajo? (b) ¿Cuál era el plazo legal para escriturarlo y desde cuándo se cuenta? (c) ¿Qué presunción legal se activa y qué otra sanción arriesga la empresa?</p>
+        <details class="practice sim"><summary>Ver pauta y autocorrección <span class="arw">›</span></summary><div class="ans">
+          <div class="model"><span class="ml">Respuesta modelo</span>(a) Sí: el contrato de trabajo es <b>consensual</b>, nace del acuerdo; la ley exige escriturarlo como <b>medio de prueba</b> (Art. 9). (b) Contrato de 30 días o más → <b>15 días desde la incorporación</b> (1 de marzo); a los 20 días el plazo está vencido. (Si fuera menor a 30 días o por obra: 5 días.) (c) Se <b>presume legalmente</b> que las condiciones (sueldo, cargo) son <b>las que declare Carmen</b>; además, multa de <b>1 a 5 UTM</b> (Unidad Tributaria Mensual).</div>
+          <div class="pauta"><span class="pl">✔ El corrector busca</span><ul><li>Contrato consensual: existe sin papel.</li><li>Plazo correcto y desde la incorporación.</li><li>Presunción a favor del trabajador + multa 1–5 UTM.</li></ul></div>
+        </div></details>
+      </div>
+
+      <div class="glob callout"><span class="lab">🌍 Después del simulacro</span><p>Los componentes sin marcar en cada checklist señalan el tema a reforzar; las secciones ★ de Contenido los desarrollan.</p></div>
     </div>
   </section>
-</div><!-- /tab-simulacro -->
+</div>
 
 <!-- ============ TAB: LAST READ ============ -->
 <div id="tab-lastread" class="tabpane">
   <div class="hero hero-last">
     <div class="wrap">
-      <div class="kicker">Repaso final · 10 minutos</div>
-      <h1>Last Read — lo esencial del control</h1>
-      <p class="lead">Para leer la <b>noche antes</b> y de nuevo <b>10 minutos antes de entrar</b>: definiciones clave, los datos que dan puntos y los esqueletos de respuesta de las Clases 6 y 7.</p>
+      <div class="kicker">Repaso final · Control 13-nov · Clases 10 y 11</div>
+      <h1>Last Read — Clase 10 y requisitos del contrato</h1>
+      <p class="lead">El kit de arriba es lo único para releer justo antes de entrar. Lo de abajo es la columna completa para la noche anterior. Todo viene de la Clase 10 y de la parte de contrato de la Clase 11.</p>
     </div>
   </div>
-
   <section class="block">
     <div class="wrap">
 
       <div class="bigidea">
-        <h3>Los focos del control (★ lo que más pesa)</h3>
-        <p><b>1. Quórums de la junta:</b> 50%+1 general, 2/3 para lo extremo (Art. 67). &nbsp;·&nbsp; <b>2. Capital:</b> autorizado ≥ suscrito ≥ pagado (suscrito: 3 años). &nbsp;·&nbsp; <b>3. SpA vs SAC:</b> aporte de trabajo (acciones de industria), vesting y pactos.</p>
+        <h3>Kit de entrada (releer antes de entrar)</h3>
+        <p><b>Forma de respuesta del curso:</b> (1) identificar la figura jurídica → (2) citar la norma → (3) fundamentar la decisión de negocio. Clasificar siempre con el porqué.<br>
+        <b>Minuto uno, en el borde de la hoja:</b> IVA = Débito − Crédito (crédito solo con factura) · Art. 8: venta (propiedad · bien corporal mueble · oneroso · en Chile · vendedor habitual) / servicio (a favor de otro · remuneración · 1ª Categoría · en Chile) · sanciones: civil · administrativa · delito (dolo) · citación → liquidación → giro · prescripción 3 / 6 · Art. 10: identificación · remuneración · plazo · servicios · jornada · demás pactos · Art. 9: 15 / 5 días · Art. 159 N°4: continuidad · 2ª renovación · 12/15.<br>
+        <b>Si una lista no vuelve:</b> escribir los elementos que salgan, explicar la lógica que los une (ej. "la diferencia entre sanciones es el dolo") y seguir; máximo un minuto por lista.</p>
       </div>
 
-      <h3 class="lr-h">Definiciones clave (una línea cada una)</h3>
+      <h3 class="lr-h">Clase 10 — Impuestos (IVA, cumplimiento, sanciones, fiscalización, insolvencia)</h3>
       <div class="grid c2">
-        <div class="card"><h4>Sociedad Anónima (Ley 18.046)</h4><p>Fondo común en acciones; accionistas responden solo por su aporte; la administra un directorio revocable. Manda el capital.</p></div>
-        <div class="card"><h4>S.A. Abierta vs Cerrada</h4><p>Abierta: oferta pública / 500+ accionistas / 10% en 100+; la fiscaliza la CMF; directorio ≥5. Cerrada: privada; directorio ≥3.</p></div>
-        <div class="card"><h4>Ley 18.045</h4><p>Regula el mercado de valores: oferta pública, hecho esencial, información privilegiada (delito), OPA.</p></div>
-        <div class="card"><h4>Capital (3 etapas)</h4><p>Autorizado (techo) → Suscrito (compromiso, pagar en ≤3 años) → Pagado (dinero real).</p></div>
-        <div class="card"><h4>Órganos</h4><p>Junta (dueños) → Directorio (estrategia, revocable, "todo o nada") → Gerente General (ejecución).</p></div>
-        <div class="card"><h4>Junta ordinaria vs extraordinaria</h4><p>Ordinaria: 1 vez al año, evalúa gestión/balance/dividendos. Extraordinaria: cambia la esencia (capital, fusión, disolución).</p></div>
-        <div class="card"><h4>Director independiente (Art. 50 bis)</h4><p>Sin vínculos con el controlador; protege a minoritarios. Obligatorio bajo ciertos umbrales → directorio ≥7 + Comité.</p></div>
-        <div class="card"><h4>Resp. directores (Art. 41)</h4><p>"Buen hombre de negocios"; solidaria por culpa o dolo. Business judgment rule: el mal resultado no basta.</p></div>
-        <div class="card"><h4>SpA (Ley 20.190)</h4><p>S.A. simplificada para VC. Unipersonal, ágil (60 días), objeto múltiple, acciones de industria, admin a la carta.</p></div>
-        <div class="card"><h4>Vesting</h4><p>Acciones por trabajo que se desbloquean gradualmente (25%/año × 4). Alinea permanencia con propiedad.</p></div>
-        <div class="card"><h4>Pacto de accionistas</h4><p>Acuerdo privado entre socios, extra a los estatutos: quién decide, quién vende y a quién.</p></div>
-        <div class="card"><h4>Drag-along vs Tag-along</h4><p>Drag: el mayoritario arrastra al minoritario a vender. Tag: el minoritario se suma a la venta del controlador.</p></div>
+        <div class="card"><h4>Lógica del IVA</h4><p>Grava el valor agregado; lo soporta el consumidor final. Método chileno: impuesto contra impuesto.</p></div>
+        <div class="card"><h4>Débito vs crédito</h4><p>Débito: IVA cobrado al vender (incluye boletas); es del Estado. Crédito: IVA pagado al comprar, <b>solo con factura</b> con IVA detallado.</p></div>
+        <div class="card"><h4>Hecho gravado (Art. 8 DL 825)</h4><p>Venta: 5 requisitos. Servicio: 4 requisitos. Excepción: Segunda Categoría (honorarios) sin IVA.</p></div>
+        <div class="card"><h4>Muebles La Madera</h4><p>Utilidad × 27% = IDPC; el IDPC es "vale de descuento" del dueño: si su impuesto personal es menor → devolución.</p></div>
+        <div class="card"><h4>Obligaciones</h4><p>Principal: pagar. Accesorias: inicio de actividades, RUT, facturas y boletas, libros, DJ — aunque no haya ventas.</p></div>
+        <div class="card"><h4>Calendario</h4><p>F29 mensual (IVA + PPM) · F22 anual en abril (Operación Renta) · DJ anuales de respaldo.</p></div>
+        <div class="card"><h4>Sanciones</h4><p>Civil (atraso sin dolo) · administrativa (entraba la fiscalización, sin fraude) · delito (dolo).</p></div>
+        <div class="card"><h4>Reserva de ley e impugnación</h4><p>Una circular no amplía el hecho gravado. Vías: TTA o recurso de protección ante la Corte de Apelaciones. CDI evita doble tributación al exportar.</p></div>
+        <div class="card"><h4>Fiscalización</h4><p>Citación (1 mes, prorrogable) → Liquidación (desde aquí, reclamo ante TTA) → Giro (orden de pago).</p></div>
+        <div class="card"><h4>Insolvencia (Ley 20.720)</h4><p>Viable con problema de caja → reorganización (veedor). No viable → liquidación (liquidador). No postergar.</p></div>
       </div>
 
-      <h3 class="lr-h">Datos que dan puntos (memorízalos)</h3>
-      <div class="tbl-wrap">
-        <table>
-          <tr><th>Dato</th><th>Valor exacto</th></tr>
-          <tr><td>Ley de la Sociedad Anónima</td><td><b>Ley 18.046</b></td></tr>
-          <tr><td>Ley del mercado de valores</td><td><b>Ley 18.045</b> (fiscaliza la CMF)</td></tr>
-          <tr><td>Ley de la SpA</td><td><b>Ley 20.190</b></td></tr>
-          <tr><td>Requisitos S.A. Abierta (basta uno)</td><td>oferta pública · <b>500+</b> accionistas · <b>10%</b> en manos de <b>100+</b> accionistas</td></tr>
-          <tr><td>Directorio mínimo</td><td><b>5</b> (abierta) · <b>3</b> (cerrada)</td></tr>
-          <tr><td>Quórum Junta Extraordinaria (general)</td><td><b>Mayoría absoluta (50% + 1)</b> de acciones con derecho a voto</td></tr>
-          <tr><td>Quórum reforzado (Art. 67)</td><td><b>2/3</b> — fusión, disolución anticipada, disminuir capital, cambiar giro</td></tr>
-          <tr><td>Convocar Junta Extraordinaria</td><td>el Directorio, o accionistas con <b>≥10%</b></td></tr>
-          <tr><td>Plazo para pagar capital suscrito</td><td><b>3 años</b> improrrogable (si no, el moroso pierde derechos)</td></tr>
-          <tr><td>Dividendo mínimo obligatorio (abierta)</td><td><b>30%</b> de utilidades líquidas (salvo acuerdo unánime)</td></tr>
-          <tr><td>Director independiente obligatorio</td><td>patrimonio bursátil <b>≥ 1.500.000 UF</b> y <b>12,5%</b> en accionistas que controlan &lt;10% → directorio <b>≥7</b> + Comité</td></tr>
-          <tr><td>Plazo de duración del directorio</td><td>máximo <b>3 años</b> (esencialmente revocable, revocación total)</td></tr>
-          <tr><td>Constitución SpA</td><td>escritura pública o instrumento privado protocolizado; inscribir en <b>60 días</b></td></tr>
-          <tr><td>Vesting típico</td><td><b>25% por año, durante 4 años</b></td></tr>
-          <tr><td>Mínimo de accionistas S.A.</td><td><b>2</b> (si se reúnen todas en una mano, se disuelve)</td></tr>
-        </table>
+      <h3 class="lr-h">Clase 11 — Requisitos del contrato de trabajo</h3>
+      <div class="grid c2">
+        <div class="card"><h4>Empleador / trabajador</h4><p>Empleador: persona natural o jurídica que usa servicios en virtud de un contrato de trabajo. Trabajador: persona natural que presta servicios bajo dependencia o subordinación.</p></div>
+        <div class="card"><h4>Contrato individual de trabajo</h4><p>Convención recíproca: servicios personales bajo dependencia y subordinación ↔ remuneración determinada.</p></div>
+        <div class="card"><h4>Subordinación</h4><p>Si la empresa dicta el cómo, cuándo y dónde (horario, instrucciones, uniforme, correo), hay empleado, sin importar el nombre del documento.</p></div>
+        <div class="card"><h4>Primacía de la realidad</h4><p>Boleta de honorarios o "contrato civil" no evitan la relación laboral si hay subordinación.</p></div>
+        <div class="card"><h4>Contenido mínimo (Art. 10)</h4><p>Identificación y fecha · remuneración · plazo · naturaleza de los servicios y lugar · jornada · demás pactos.</p></div>
+        <div class="card"><h4>Plazos y sanción (Art. 9)</h4><p>Consensual; se escritura como prueba. 15 días (≥30 días) / 5 días (&lt;30 u obra), desde la incorporación. Atraso: multa 1–5 UTM + presunción a favor de lo que declare el trabajador.</p></div>
+        <div class="card"><h4>Plazo fijo → indefinido (Art. 159 N°4)</h4><p>Continuidad de hecho · segunda renovación · más de dos contratos con 12 meses de servicios en 15.</p></div>
       </div>
+
+      <h3 class="lr-h">Datos que dan puntos</h3>
+      <div class="tbl-wrap"><table>
+        <tr><th>Dato</th><th>Valor exacto</th></tr>
+        <tr><td>IVA</td><td><b>19%</b> · DL 825 · hecho gravado <b>Art. 8</b></td></tr>
+        <tr><td>IVA a pagar</td><td>Débito Fiscal − Crédito Fiscal (mensual, F29)</td></tr>
+        <tr><td>IDPC Régimen General</td><td><b>27%</b> (caso Muebles La Madera)</td></tr>
+        <tr><td>Formularios</td><td><b>F29</b> mensual (IVA + PPM) · <b>F22</b> anual, abril · DJ anuales</td></tr>
+        <tr><td>Delito tributario</td><td>Multas hasta <b>300%</b> de lo evadido + cárcel</td></tr>
+        <tr><td>Citación</td><td>Responder dentro de <b>un mes</b> (prorrogable)</td></tr>
+        <tr><td>Prescripción tributaria</td><td><b>3 años</b> ordinario · <b>6 años</b> sin declaración o maliciosamente falsa</td></tr>
+        <tr><td>Impugnar</td><td>Tribunal Tributario y Aduanero · recurso de protección ante la Corte de Apelaciones</td></tr>
+        <tr><td>Insolvencia</td><td><b>Ley 20.720</b>: reorganización (veedor) / liquidación (liquidador)</td></tr>
+        <tr><td>Contenido mínimo del contrato</td><td><b>Art. 10</b> Código del Trabajo (6 menciones)</td></tr>
+        <tr><td>Plazo para escriturar</td><td><b>Art. 9</b>: <b>15 días</b> (≥30 días) · <b>5 días</b> (&lt;30 días u obra), desde la incorporación</td></tr>
+        <tr><td>Sanción por no escriturar</td><td>Multa <b>1 a 5 UTM</b> + presunción: valen las condiciones que declare el trabajador</td></tr>
+        <tr><td>Plazo fijo → indefinido</td><td><b>Art. 159 N°4</b> · una sola renovación permitida · regla 12/15</td></tr>
+      </table></div>
 
       <h3 class="lr-h">Esqueletos de respuesta</h3>
       <div class="grid c2">
-        <div class="skeleton">
-          <div class="sl">Caso de quórum en la junta</div>
-          <ol>
-            <li>¿Instancia? → materia estructural = <code>Junta Extraordinaria</code> (no el directorio).</li>
-            <li>¿Decisión extrema del <code>Art. 67</code>? → <code>2/3</code>; si no → <code>50%+1</code>.</li>
-            <li>Compara el % del controlador/minoría con el quórum.</li>
-          </ol>
-        </div>
-        <div class="skeleton">
-          <div class="sl">Elegir vehículo (SpA / SAC / S.A.)</div>
-          <ol>
-            <li>¿Hay aporte de <code>trabajo</code>? → SpA (acciones de industria).</li>
-            <li>¿Busca <code>Venture Capital</code> / flexibilidad? → SpA.</li>
-            <li>¿Capital masivo en Bolsa? → S.A. Abierta. ¿Privacidad + directorio? → SAC.</li>
-          </ol>
-        </div>
-        <div class="skeleton">
-          <div class="sl">Responsabilidad de un director</div>
-          <ol>
-            <li>Estándar: <code>buen hombre de negocios</code> (Art. 41), solidaria.</li>
-            <li>Probar <code>culpa o dolo</code> — no basta el mal resultado (<code>business judgment rule</code>).</li>
-            <li>"Voté con la mayoría" no exime.</li>
-          </ol>
-        </div>
-        <div class="skeleton">
-          <div class="sl">Aplicar un pacto de accionistas</div>
-          <ol>
-            <li>¿Quién vende y a quién? → <code>derecho preferente</code>.</li>
-            <li>¿El fuerte arrastra? <code>drag-along</code>. ¿El débil se suma? <code>tag-along</code>.</li>
-            <li>¿Empate? <code>deadlock</code>. ¿Se va antes? <code>recompra</code> (vesting).</li>
-          </ol>
-        </div>
+        <div class="skeleton"><div class="sl">Calcular IVA</div><ol><li>Débito = ventas (factura + boleta) × 19%.</li><li>Crédito = solo compras con factura × 19% (excluir boletas, honorarios, recibos).</li><li>IVA a pagar = Débito − Crédito → F29.</li></ol></div>
+        <div class="skeleton"><div class="sl">IDPC y retiro (Muebles La Madera)</div><ol><li>Utilidad = ventas − compras; IDPC = utilidad × 27%.</li><li>Utilidad neta = utilidad − IDPC.</li><li>Crédito del dueño = IDPC (si retira todo).</li><li>Impuesto personal − crédito → si es negativo, devolución.</li></ol></div>
+        <div class="skeleton"><div class="sl">Clasificar una infracción tributaria</div><ol><li>¿Hubo dolo? → <b>delito</b> (300% + cárcel).</li><li>Sin dolo, ¿solo atraso en pagar? → <b>civil</b> (reajustes, intereses, multas).</li><li>Sin dolo, ¿entraba la fiscalización? → <b>administrativa</b> (multas, clausura).</li></ol></div>
+        <div class="skeleton"><div class="sl">Defensa ante el SII</div><ol><li>¿La norma excede la ley? → reserva de ley → TTA o recurso de protección.</li><li>¿Fiscalización? → responder bien la citación; reclamar desde la liquidación.</li><li>¿Plazo? → 3 años, o 6 si no declaró o hubo falsedad maliciosa.</li></ol></div>
+        <div class="skeleton"><div class="sl">¿Hay contrato de trabajo?</div><ol><li>Servicios personales + remuneración + <b>subordinación</b>.</li><li>Indicios: horario, instrucciones, lugar, uniforme o correo corporativo.</li><li>Primacía de la realidad: el nombre del papel no decide.</li></ol></div>
+        <div class="skeleton"><div class="sl">Contrato sin escriturar</div><ol><li>Existe igual (consensual, Art. 9).</li><li>Plazo: 15 días (≥30 días) o 5 días (&lt;30 u obra), desde la incorporación.</li><li>Vencido: multa 1–5 UTM + presunción a favor de lo que declare el trabajador.</li></ol></div>
       </div>
 
-      <div class="glob callout" style="margin-top:24px">
-        <span class="lab">🌍 Justo antes de entrar</span>
-        <p>Si queda 1 minuto: <b>quórum junta = 50%+1, salvo Art. 67 (fusión/disolución/baja capital/cambio giro) = 2/3</b>; <b>capital = autorizado ≥ suscrito (3 años) ≥ pagado</b>; <b>SpA permite aporte de trabajo (acciones de industria) y vesting; la SAC no</b>.</p>
+      <h3 class="lr-h">Trampas del control</h3>
+      <div class="grid c2">
+        <div class="callout trap"><span class="lab">⚠️ Boleta</span><p>Genera <b>débito</b> al vender, pero <b>no da crédito</b> al comprar.</p></div>
+        <div class="callout trap"><span class="lab">⚠️ Honorarios</span><p>Sin IVA (Segunda Categoría); y la boleta de honorarios no evita un contrato de trabajo si hay subordinación.</p></div>
+        <div class="callout trap"><span class="lab">⚠️ Sin ventas ≠ sin obligaciones</span><p>Las obligaciones accesorias se cumplen igual.</p></div>
+        <div class="callout trap"><span class="lab">⚠️ Atraso reiterado ≠ delito</span><p>Sin dolo sigue siendo infracción civil; lo que hace delito es la intención de engañar.</p></div>
+        <div class="callout trap"><span class="lab">⚠️ Contrato sin firma</span><p>No significa "sin contrato": es consensual; la escritura es prueba.</p></div>
+        <div class="callout trap"><span class="lab">⚠️ Plazos que se cruzan</span><p>Prescripción tributaria 3/6 años · escriturar contrato 15/5 días · citación 1 mes.</p></div>
       </div>
-
     </div>
   </section>
-</div><!-- /tab-lastread -->
+</div>
 
 <footer>
   <div class="wrap">
-    <span>Derecho y Empresa · Control · Clases 6 y 7 (Sociedad Anónima y SpA) · FEN-UDD 2026</span>
-    <span>Contenido basado en el material del curso. El hub del Certamen 1 quedó respaldado aparte.</span>
+    <span>Derecho y Empresa · Unidades II a IV · Control 13-nov (Clases 10 y 11) · FEN-UDD 2026</span>
+    <span>Contenido basado en el material del curso. ⧉ = no viene de los PPT.</span>
   </div>
 </footer>
 
@@ -952,8 +1573,8 @@ const prog=document.getElementById('progress');
 const toTop=document.getElementById('toTop');
 function onScroll(){
   const h=document.documentElement;
-  const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
-  prog.style.width=(scrolled*100)+'%';
+  const max=(h.scrollHeight-h.clientHeight)||1;
+  prog.style.width=((h.scrollTop/max)*100)+'%';
   toTop.classList.toggle('show', h.scrollTop>400);
 }
 document.addEventListener('scroll',onScroll,{passive:true});
@@ -961,15 +1582,17 @@ onScroll();
 const tabs=document.querySelectorAll('.tab');
 const panes=document.querySelectorAll('.tabpane');
 function showTab(name){
+  if(!document.getElementById('tab-'+name)) name='contenido';
   tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab===name));
   panes.forEach(p=>p.classList.toggle('active', p.id==='tab-'+name));
   window.scrollTo({top:0});
   onScroll();
+  try{localStorage.setItem('dye-tab',name);}catch(e){}
 }
 tabs.forEach(t=>t.addEventListener('click',()=>showTab(t.dataset.tab)));
+try{const s=localStorage.getItem('dye-tab'); if(s) showTab(s);}catch(e){}
 document.querySelectorAll('.subnav a').forEach(a=>a.addEventListener('click',e=>{
-  const id=a.getAttribute('href');
-  const el=document.querySelector(id);
+  const el=document.querySelector(a.getAttribute('href'));
   if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
 }));
 </script>
